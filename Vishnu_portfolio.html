@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajvishnu Meenakshi Sundaram — Engineering Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--s1:#111118;--s2:#18181f;--s3:#1e1e28;--b1:rgba(255,255,255,0.08);--b2:rgba(255,255,255,0.14);--tx:#e8e8f0;--mu:#8888aa;--fa:#444466;--ac:#7c6ef5;--ac2:#a89cf7;--gl:rgba(124,110,245,0.15);--tl:#2ec4a6;--am:#f5a623;--gr:#5ec97e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.8;overflow-x:hidden}
+::selection{background:var(--ac);color:#fff}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--fa);border-radius:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b1);height:58px;display:flex;align-items:center;padding:0 2rem;gap:0}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--tx);margin-right:2rem;letter-spacing:-0.02em}.logo span{color:var(--ac)}
+.nav-links{display:flex;overflow-x:auto;flex:1}
+.nl{font-size:13px;font-family:'DM Mono',monospace;padding:0 16px;height:58px;display:flex;align-items:center;color:var(--mu);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.nl:hover{color:var(--tx)}.nl.active{color:var(--ac2);border-bottom-color:var(--ac)}
+.nbadge{margin-left:auto;font-size:12px;font-family:'DM Mono',monospace;padding:4px 12px;border-radius:20px;background:var(--gl);color:var(--ac2);border:1px solid rgba(124,110,245,0.3)}
+.page{display:none;padding-top:58px;min-height:100vh}.page.active{display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+.ew{font-family:'DM Mono',monospace;font-size:12px;color:var(--ac);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.ew::before{content:'';width:28px;height:1px;background:var(--ac)}
+h1.big{font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;color:var(--tx);margin-bottom:1rem}
+h1.big .d{color:var(--mu)}
+.pt{font-family:'Syne',sans-serif;font-size:34px;font-weight:700;color:var(--tx);letter-spacing:-0.02em;margin-bottom:.5rem}
+.ps{font-size:15px;color:var(--mu)}
+.hs{font-size:17px;color:var(--mu);max-width:640px;line-height:1.65;margin-bottom:2rem}
+.mrow{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:2.5rem}
+.mi{font-family:'DM Mono',monospace;font-size:13px;color:var(--mu);display:flex;align-items:center;gap:6px}
+.mi svg{width:14px;height:14px;stroke:var(--ac);fill:none;flex-shrink:0}
+.srow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px;overflow:hidden;margin-bottom:3rem}
+.sb{background:var(--s1);padding:1.25rem 1.5rem;transition:background .2s}.sb:hover{background:var(--s2)}
+.sn{font-family:'Syne',sans-serif;font-size:30px;font-weight:700;color:var(--tx)}
+.sl{font-size:13px;font-family:'DM Mono',monospace;color:var(--mu);margin-top:2px}
+.btn1{font-family:'DM Mono',monospace;font-size:13px;padding:11px 26px;border-radius:8px;background:var(--ac);color:#fff;border:none;cursor:pointer;transition:opacity .2s}.btn1:hover{opacity:.85}
+.btn2{font-family:'DM Mono',monospace;font-size:13px;padding:11px 26px;border-radius:8px;background:none;color:var(--ac2);border:1px solid rgba(124,110,245,0.4);cursor:pointer;transition:background .2s}.btn2:hover{background:var(--gl)}
+.frow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem}
+.fc{font-family:'DM Mono',monospace;font-size:12px;padding:6px 15px;border-radius:20px;border:1px solid var(--b2);background:none;color:var(--mu);cursor:pointer;transition:all .2s}.fc:hover{color:var(--tx);border-color:var(--fa)}.fc.active{background:var(--gl);color:var(--ac2);border-color:rgba(124,110,245,0.4)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px;overflow:hidden}
+.pc{background:var(--s1);padding:1.5rem;cursor:pointer;transition:background .2s;position:relative}.pc:hover{background:var(--s2)}.pc.sel{background:var(--s2)}.pc.sel::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ac),var(--tl))}
+.ph{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.pi{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.pnum{font-family:'DM Mono',monospace;font-size:12px;color:var(--fa)}
+.ptit{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--tx);line-height:1.3;margin-bottom:2px}
+.porg{font-size:13px;font-family:'DM Mono',monospace;color:var(--mu)}
+.psum{font-size:14px;color:var(--mu);line-height:1.65;margin-bottom:12px}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tag{font-size:12px;font-family:'DM Mono',monospace;padding:3px 8px;border-radius:4px;background:var(--s3);color:var(--fa);border:1px solid var(--b1)}
+.tag.hi{background:var(--gl);color:var(--ac2);border-color:rgba(124,110,245,0.3)}
+.rbar{display:flex;align-items:center;gap:8px}
+.rl{font-size:12px;font-family:'DM Mono',monospace;color:var(--fa)}.rb{flex:1;height:2px;background:var(--s3);border-radius:1px}.rf{height:100%;border-radius:1px;background:linear-gradient(90deg,var(--ac),var(--tl))}.rv{font-size:12px;font-family:'DM Mono',monospace;color:var(--mu);min-width:30px;text-align:right}
+.dh{background:var(--s1);border-bottom:1px solid var(--b1);padding:2.5rem 2rem}
+.di{max-width:1100px;margin:0 auto}
+.bk{font-family:'DM Mono',monospace;font-size:12px;color:var(--mu);cursor:pointer;display:flex;align-items:center;gap:6px;margin-bottom:16px;border:1px solid var(--b1);padding:6px 14px;border-radius:20px;width:fit-content;transition:all .2s}.bk:hover{color:var(--tx);border-color:var(--b2)}
+.dnum{font-family:'DM Mono',monospace;font-size:12px;color:var(--ac);margin-bottom:6px}
+.dtit{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:var(--tx);line-height:1.2;margin-bottom:6px;letter-spacing:-0.02em}
+.dorg{font-size:14px;font-family:'DM Mono',monospace;color:var(--mu)}
+.nprow{display:flex;gap:8px;margin-top:1rem}
+.npb{font-family:'DM Mono',monospace;font-size:12px;padding:6px 14px;border:1px solid var(--b2);border-radius:20px;background:none;color:var(--mu);cursor:pointer;transition:all .2s}.npb:hover{color:var(--tx);border-color:var(--fa)}
+.dbody{max-width:1100px;margin:0 auto;padding:2.5rem 2rem;display:grid;grid-template-columns:1fr 370px;gap:2rem}
+.dmain{display:flex;flex-direction:column;gap:1.75rem}
+.dsb{display:flex;flex-direction:column;gap:1.25rem}
+.ds{background:var(--s1);border:1px solid var(--b1);border-radius:12px;padding:1.5rem}
+.dsl{font-family:'DM Mono',monospace;font-size:11px;color:var(--ac);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:8px}.dsl::after{content:'';flex:1;height:1px;background:var(--b1)}
+.dl{display:flex;flex-direction:column;gap:12px}
+.dli{display:flex;gap:12px}
+.dld{width:20px;height:20px;border-radius:50%;background:var(--gl);border:1px solid rgba(124,110,245,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px}
+.dld-i{width:6px;height:6px;border-radius:50%;background:var(--ac)}
+.dlt{font-size:15px;color:var(--mu);line-height:1.75}.dlt strong{color:var(--tx);font-weight:500}
+.tg{display:flex;flex-wrap:wrap;gap:6px}
+.tp{font-family:'DM Mono',monospace;font-size:12px;padding:4px 10px;border-radius:6px;background:var(--s3);color:var(--mu);border:1px solid var(--b1)}
+.tp.pr{background:var(--gl);color:var(--ac2);border-color:rgba(124,110,245,0.3)}
+.ac-chip{font-size:12px;font-family:'DM Mono',monospace;padding:4px 10px;border-radius:6px;background:var(--gl);color:var(--ac2);border:1px solid rgba(124,110,245,0.25)}
+.ob{background:linear-gradient(135deg,rgba(46,196,166,0.06),rgba(124,110,245,0.06));border:1px solid rgba(46,196,166,0.2);border-radius:10px;padding:1.25rem}
+.ob p{font-size:15px;color:var(--tx);line-height:1.75}
+.rbb{height:6px;background:var(--s3);border-radius:3px;overflow:hidden;margin-top:8px}.rbf{height:100%;background:linear-gradient(90deg,var(--ac),var(--tl));border-radius:3px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px;overflow:hidden;max-width:1100px;margin:0 auto 2rem}
+.sc{background:var(--s1);padding:1.75rem}
+.sct{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--tx);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.sr{margin-bottom:14px}
+.si{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.sn2{font-size:14px;color:var(--tx)}
+.slb{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:4px}
+.sp{font-family:'DM Mono',monospace;font-size:12px;color:var(--mu)}
+.st{height:3px;background:var(--s3);border-radius:2px;overflow:hidden}.sf{height:100%;border-radius:2px}
+.tl-wrap{max-width:720px;margin:0 auto;padding:0 2rem 3rem}
+.tli{display:flex;gap:1.5rem;margin-bottom:2.5rem;position:relative}.tli::before{content:'';position:absolute;left:19px;top:42px;bottom:-2.5rem;width:1px;background:var(--b1)}.tli:last-child::before{display:none}
+.tld{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;border:1px solid var(--b2);flex-shrink:0}
+.tldt{font-family:'DM Mono',monospace;font-size:11px;color:var(--ac);letter-spacing:.08em;margin-bottom:4px}
+.tlti{font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.tlor{font-size:13px;color:var(--mu);margin-bottom:8px;font-family:'DM Mono',monospace}
+.tldesc{font-size:14px;color:var(--mu);line-height:1.7;margin-bottom:10px}
+.tltag{display:flex;flex-wrap:wrap;gap:5px}
+.tlta{font-family:'DM Mono',monospace;font-size:11px;padding:2px 7px;border-radius:4px;background:var(--s2);color:var(--fa);border:1px solid var(--b1)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px 12px 0 0;overflow:hidden}
+.cc{background:var(--s1);padding:1.25rem 1.5rem;display:flex;gap:12px;align-items:flex-start}
+.cic{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.clb{font-family:'DM Mono',monospace;font-size:11px;color:var(--fa);margin-bottom:3px}
+.cv2{font-size:14px;color:var(--tx)}
+.docgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:1.5rem}
+.doc-card{background:var(--s1);border:1px solid var(--b1);border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:10px}
+.doc-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.doc-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.doc-sub{font-size:13px;color:var(--mu)}
+.doc-badge{font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:20px;width:fit-content}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">RMS<span>.</span></div>
+  <div class="nav-links">
+    <div class="nl active" onclick="sp('home')">Overview</div>
+    <div class="nl" onclick="sp('projects')">Projects</div>
+    <div class="nl" onclick="sp('skills')">Skills</div>
+    <div class="nl" onclick="sp('timeline')">Timeline</div>
+    <div class="nl" onclick="sp('docs')">Documents</div>
+    <div class="nl" onclick="sp('contact')">Contact</div>
+  </div>
+  <div class="nbadge">Available immediately</div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="wrap" style="padding-top:4rem">
+    <div class="ew">Engineering Portfolio · Apex.AI Application</div>
+    <h1 class="big">Rajvishnu<br><span class="d">Meenakshi Sundaram</span></h1>
+    <p class="hs">Application Engineer — embedded systems, distributed middleware, software validation, Python automation, and developer tooling. 7 years across automotive, sensor systems, and production Linux environments. Applying for Application Engineer at Apex.AI Munich.</p>
+    <div class="mrow">
+      <div class="mi"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>Berlin, Germany</div>
+      <div class="mi"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>rajvishnumech@gmail.com</div>
+      <div class="mi"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>M.Sc. Sensor Systems Technology · HKA Grade 2.0</div>
+      <div class="mi"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>EU Blue Card · January 2029</div>
+    </div>
+    <div class="srow">
+      <div class="sb"><div class="sn">9</div><div class="sl">// projects</div></div>
+      <div class="sb"><div class="sn">7</div><div class="sl">// years exp</div></div>
+      <div class="sb"><div class="sn">6</div><div class="sl">// companies</div></div>
+      <div class="sb"><div class="sn">13+</div><div class="sl">// technologies</div></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn1" onclick="sp('projects')">View all projects →</button>
+      <button class="btn2" onclick="sp('docs')">View documents →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="page-projects" class="page">
+  <div class="wrap">
+    <div class="ew">Engineering work</div>
+    <div class="pt">All projects</div>
+    <p class="ps" style="margin-bottom:1.75rem">Every project taken directly from the CV — click any card for the full technical breakdown.</p>
+    <div class="frow">
+      <button class="fc active" onclick="fc2('all',this)">All (9)</button>
+      <button class="fc" onclick="fc2('middleware',this)">Middleware &amp; protocols</button>
+      <button class="fc" onclick="fc2('software',this)">Software tooling</button>
+      <button class="fc" onclick="fc2('embedded',this)">Embedded systems</button>
+      <button class="fc" onclick="fc2('sensor',this)">Sensor validation</button>
+      <button class="fc" onclick="fc2('robotics',this)">Robotics</button>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</div>
+
+<!-- DETAIL -->
+<div id="page-detail" class="page"><div id="det"></div></div>
+
+<!-- SKILLS -->
+<div id="page-skills" class="page">
+  <div class="wrap">
+    <div class="ew">Technical profile</div>
+    <div class="pt">Skills &amp; expertise</div>
+    <p class="ps" style="margin-bottom:2rem">Taken directly from the Areas of Expertise section of the CV.</p>
+  </div>
+  <div class="sgrid" id="sgrid"></div>
+</div>
+
+<!-- TIMELINE -->
+<div id="page-timeline" class="page">
+  <div class="wrap" style="max-width:720px">
+    <div class="ew">Career history</div>
+    <div class="pt">Experience timeline</div>
+    <p class="ps" style="margin-bottom:2.5rem">Sept 2016 → Apr 2026 · 7 years · 6 organisations</p>
+  </div>
+  <div class="tl-wrap" id="tlwrap"></div>
+</div>
+
+<!-- DOCUMENTS -->
+<div id="page-docs" class="page">
+  <div class="wrap">
+    <div class="ew">Credentials &amp; references</div>
+    <div class="pt">Documents</div>
+    <p class="ps">All supporting documents available on request. Contact rajvishnumech@gmail.com to receive any document.</p>
+    <div class="docgrid" id="docgrid"></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <div class="wrap" style="max-width:720px">
+    <div class="ew">Get in touch</div>
+    <div class="pt" style="margin-bottom:2rem">Contact</div>
+    <div class="cgrid">
+      <div class="cc"><div class="cic" style="background:rgba(124,110,245,0.15)">✉</div><div><div class="clb">EMAIL</div><div class="cv2">rajvishnumech@gmail.com</div></div></div>
+      <div class="cc"><div class="cic" style="background:rgba(46,196,166,0.15)">☎</div><div><div class="clb">PHONE</div><div class="cv2">+49 176 59311471</div></div></div>
+      <div class="cc"><div class="cic" style="background:rgba(245,166,35,0.15)">⌖</div><div><div class="clb">LOCATION</div><div class="cv2">Alt Lichtenrade 100B, 12309 Berlin, Germany</div></div></div>
+      <div class="cc"><div class="cic" style="background:rgba(94,201,126,0.15)">✓</div><div><div class="clb">WORK AUTHORISATION</div><div class="cv2">EU Blue Card · valid to January 2029</div></div></div>
+    </div>
+    <div style="background:var(--s1);border:1px solid var(--b1);border-radius:0 0 12px 12px;padding:1.5rem">
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--ac);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Reference</div>
+      <div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--tx);margin-bottom:4px">Bert Hundertmark</div>
+      <div style="font-size:14px;color:var(--mu);margin-bottom:4px">Director of Electronic Development · TDK Sensors AG und Co. KG</div>
+      <div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--ac2)">Bert.Hundertmark@tdk.com</div>
+      <div style="font-size:13px;color:var(--fa);margin-top:8px;font-style:italic">Signed reference letter and Zwischenzeugnis available on request</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ALL PROJECT DATA TAKEN STRICTLY FROM APEX.AI CV
+const P=[
+{id:1,num:"01",title:"Distributed Embedded Software Validation Platform",org:"TDK Sensors AG and Co. KG · Berlin · Feb 2025 – Apr 2026",icon:"⚙",ibg:"rgba(124,110,245,0.2)",ic:"#a89cf7",cats:["middleware","embedded","software"],rel:95,
+tags:["CAPL","C-syntax","Distributed systems","Virtual middleware","Vector CANoe"],apex:["Middleware simulation","Distributed systems","C-syntax programming"],
+sum:"Built complete embedded software validation platforms integrating sensors, ECUs, and virtual middleware components — from hardware bring-up through production deployment on Linux production environment.",
+bullets:{
+  what:["Developed software-controlled distributed test environments integrating sensors, ECUs, and virtual middleware components","Built complete embedded software validation platforms from hardware bring-up through production deployment","Implemented CAPL-based software components — C-syntax scripting for state machines, protocol simulation, fault injection, and automated test execution within Vector CANoe middleware environments"],
+  how:["Built virtual ECU and sensor software models for MiL, SiL, and HiL workflows — enabled software integration and validation without physical hardware, analogous to simulation-based software development in ROS 2 environments","Developed software interfaces for CAN, LIN, SENT, SPI, and Ethernet communication protocols — implemented protocol-accurate virtual nodes and middleware abstractions for distributed embedded system validation","Implemented FPGA-based real-time software validation in VHDL — deterministic reproduction of distributed system communication behaviour and edge cases for software reliability testing"],
+  why:["Developed Python-based test automation scripts for regression testing, log analysis, and automated validation of distributed embedded software behaviour","Maintained structured software documentation and version control in Git, Jira, and Confluence — developer workflows, test procedures, and release artefacts with full traceability","Supported software testing, validation, and system integration activities aligned with ISO 26262 ASIL process requirements and ASPICE standards"],
+  outcome:"Delivered complete embedded software validation platforms used for automotive sensor and ECU interface testing across multiple product families at TDK Sensors AG."
+},
+tech:["CAPL (C-syntax)","Vector CANoe","SPI","LIN","SENT","CAN","Ethernet","FPGA/VHDL","Python","Git","Jira","ISO 26262","ASPICE","Linux production environment"]},
+
+{id:2,num:"02",title:"SENT Interface Validation — Vector VT System",org:"TDK Sensors AG and Co. KG · Berlin · Feb 2025 – Apr 2026",icon:"◈",ibg:"rgba(46,196,166,0.15)",ic:"#2ec4a6",cats:["middleware","embedded"],rel:85,
+tags:["SENT","VT System","Timing analysis","Calibration","Signal integrity"],apex:["Real-time systems","Safety-critical validation","Hardware integration"],
+sum:"Executed SENT interface validation using Vector VT System — software-hardware integration testing, timing analysis, and calibration stability assessment for distributed sensor middleware.",
+bullets:{
+  what:["Executed SENT interface validation using Vector VT System — software-hardware integration testing, timing analysis, and calibration stability assessment for distributed sensor middleware","Performed software troubleshooting, debugging, and root-cause analysis for distributed system communication failures — analysed middleware behaviour and resolved software-hardware integration issues"],
+  how:["Analysed middleware behaviour at the signal level using Vector VT System hardware — nanosecond-resolution timing capture for SENT protocol verification","Resolved software-hardware integration issues through systematic debugging — oscilloscopes, signal generators, and Vector toolchain working together on the Linux production environment","Supported software deployment and integration activities — hardware setup verification, interface validation, and system readiness checks prior to software release"],
+  why:["Contributed to continuous improvement of software tooling — optimised test automation, improved developer workflows, and enhanced reliability of software validation infrastructure","Provided technical support and guidance to internal users on software tool usage, troubleshooting procedures, and embedded systems validation workflows"],
+  outcome:"SENT interface validated for series release. Timing deviations identified and resolved before hardware integration. Formal certification evidence produced."
+},
+tech:["Vector VT System","SENT protocol","Timing analysis","Signal integrity","CANoe","Oscilloscopes","Linux","CAPL","Python"]},
+
+{id:3,num:"03",title:"UDS & J1939 Diagnostic Software Verification",org:"TDK Sensors AG and Co. KG · Berlin · Feb 2025 – Apr 2026",icon:"✦",ibg:"rgba(245,166,35,0.15)",ic:"#f5a623",cats:["middleware","embedded"],rel:80,
+tags:["UDS","J1939","CAN diagnostics","Protocol verification","ISO 26262"],apex:["ISO 26262 ASIL","Automotive diagnostics","Protocol verification"],
+sum:"Conducted CAN-based UDS and J1939 diagnostic software verification — validated distributed software communication stack behaviour against protocol specifications within ISO 26262 ASIL-compliant processes.",
+bullets:{
+  what:["Conducted CAN-based UDS and J1939 diagnostic software verification — validated distributed software communication stack behaviour against protocol specifications","Collaborated with cross-functional engineering teams to support software integration, product bring-up, and continuous improvement of validation environments"],
+  how:["Implemented CAPL-based diagnostic test sequences for systematic UDS service verification — programming session management, security access, data identifier reads, routine control","Validated J1939 communication stack behaviour — PGN verification, address claiming, network management state machines","All verification executed within ISO 26262 ASIL-compliant process with full requirements traceability in Jira and Confluence on Linux production environment"],
+  why:["Supported software testing, validation, and system integration activities aligned with ISO 26262 ASIL process requirements and ASPICE standards","Maintained structured software documentation and version control in Git — test procedures and release artefacts with full traceability"],
+  outcome:"UDS and J1939 diagnostic interfaces formally verified. Audit-ready evidence package delivered. Zero non-conformities in certification review."
+},
+tech:["UDS protocol","J1939","CAN","CAPL","Vector CANoe","ISO 26262","ASPICE","Git","Jira","Linux"]},
+
+{id:4,num:"04",title:"Python Test Automation & CI/CD-Adjacent Pipeline",org:"TDK Sensors AG & ITK Engineering · 2023–2026",icon:"⟩",ibg:"rgba(94,201,126,0.15)",ic:"#5ec97e",cats:["software"],rel:92,
+tags:["Python","CI/CD","Git","Power BI","Automation","Log analysis","Linux"],apex:["Python scripting","CI/CD workflows","Developer tooling"],
+sum:"Developed Python-based test automation scripts for regression testing, log analysis, and automated validation — plus CI/CD-adjacent pipeline with Power BI and Git integration, all running on Linux production environment.",
+bullets:{
+  what:["Developed Python-based test automation scripts for regression testing, log analysis, and automated validation of distributed embedded software behaviour","Implemented Power BI and Git integration for automated software release tracking — CI/CD-adjacent pipeline for quality KPI reporting and continuous validation monitoring (ITK Engineering)"],
+  how:["Python scripts for automated log parsing, statistical analysis, and pass/fail evaluation against specification limits — executed on Linux production environment","CI/CD-adjacent pipeline triggered by Git events — each test run tagged with commit hash enabling direct correlation between software changes and test outcomes","Power BI dashboards updated automatically after each test run — coverage metrics, pass/fail trends, open defect counts"],
+  why:["Contributed to continuous improvement of software tooling — optimised test automation, improved developer workflows, and enhanced reliability of software validation infrastructure","Documented embedded test bench architectures to improve software testability, developer onboarding, and cross-team knowledge transfer (ITK Engineering)"],
+  outcome:"Automated pipeline running on Linux reduced manual evaluation time significantly. Regressions caught automatically before manual review. CI/CD principles demonstrated in production automotive environment."
+},
+tech:["Python","Power BI","Git","CI/CD","Linux (production)","Log analysis","Statistical analysis","Jira","Confluence"]},
+
+{id:5,num:"05",title:"Flutter/Dart Engineering Tools",org:"ITK Engineering GmbH · Rülzheim · Aug 2023 – Mar 2024",icon:"◇",ibg:"rgba(124,110,245,0.15)",ic:"#a89cf7",cats:["software"],rel:85,
+tags:["Flutter","Dart","Desktop app","Developer tooling","Embedded workflow"],apex:["Software development","Developer tooling","Application engineering"],
+sum:"Developed Flutter/Dart engineering tools for test execution workflows — software automation for embedded system validation processes and developer tooling improvement at ITK Engineering.",
+bullets:{
+  what:["Developed Flutter/Dart engineering tools for test execution workflows — software automation for embedded system validation processes and developer tooling improvement","Supported debugging and configuration management of embedded software test environments and distributed validation systems"],
+  how:["Flutter/Dart desktop application unifying test execution workflow — test case selection, bench control, real-time progress monitoring, results presentation in a single interface","BLoC state management pattern — UI completely decoupled from test bench communication layer","Connected to Linux-based test infrastructure via structured APIs — bridging desktop UI with Linux-hosted test execution environment"],
+  why:["Demonstrates full application-level software development — architecture, state management, production tooling — not just scripting","Software tooling improvement is a core responsibility of the Apex.AI Application Engineer role"],
+  outcome:"Tool adopted by the validation team. Test cycle setup time reduced. New engineer onboarding improved due to unified workflow and inline documentation."
+},
+tech:["Flutter","Dart","BLoC pattern","Desktop development","Async programming","Linux backend APIs","State management"]},
+
+{id:6,num:"06",title:"ECU Firmware Flashing & Post-Flash Validation — Daimler",org:"ITK Engineering GmbH · Rülzheim · Aug 2023 – Mar 2024",icon:"↯",ibg:"rgba(245,166,35,0.15)",ic:"#f5a623",cats:["embedded"],rel:82,
+tags:["Firmware flashing","ECU","Daimler","UDS","Linux","Production hardware"],apex:["Production deployment","Customer support","Embedded systems"],
+sum:"Performed ECU firmware flashing and post-flash software validation — software update deployment on embedded production Daimler ECUs with systematic post-deployment verification on Linux.",
+bullets:{
+  what:["Performed ECU firmware flashing and post-flash software validation — software update deployment on embedded production control units and systematic post-deployment verification","Developed Python-based test automation and log analysis tools — automated data processing scripts for embedded software validation and developer workflow improvement"],
+  how:["Firmware flashing via UDS over CAN — programming session management, security access (seed-key), memory write services — entire workflow orchestrated from Linux production environment","Post-flash validation suite ran automatically after each flash — CAN communication health, diagnostic session verification, software version confirmation","Python scripts automated post-flash log analysis and defect flagging — results written to Jira with structured defect documentation"],
+  why:["Direct production embedded software deployment experience — analogous to Apex.OS customer deployment and integration support","Working on Daimler production hardware builds rigorous, methodical approach to software deployment critical for safety-certified software environments"],
+  outcome:"Zero post-delivery defects. Formal documentation accepted by Daimler QA without revision. Demonstrates production-grade software deployment discipline."
+},
+tech:["UDS protocol","CAN","ECU flashing","CAPL","Vector CANoe","Python","Linux (production)","Jira","Daimler production hardware"]},
+
+{id:7,num:"07",title:"PLC-based Robotic Automation — Control Software",org:"Karlsruhe Institute of Technology · Jul 2022 – Jan 2023",icon:"⬡",ibg:"rgba(124,110,245,0.2)",ic:"#a89cf7",cats:["robotics","embedded","software"],rel:78,
+tags:["PLC","Robotics","Control software","Sensor integration","Hardware commissioning"],apex:["Robotics domain","Embedded systems","System integration"],
+sum:"Developed and validated control software for a PLC-based robotic automation system — programmed control logic, integrated sensor feedback, and performed software-hardware integration testing on real hardware.",
+bullets:{
+  what:["Developed and validated control software for a PLC-based robotic automation system — programmed control logic, integrated sensor feedback, and performed software-hardware integration testing on real hardware","Tested software performance against formal design requirements — structured software validation with acceptance testing on real embedded hardware"],
+  how:["PLC control program structured into function blocks — sensor reading, state machine evaluation, output generation","Main state machine: idle, detection, pick, transport, place, error/reset — state transitions explicitly defined with guard conditions","Sensor integration: inductive proximity sensors, photoelectric sensors, encoder feedback — all debounced in software","100-cycle acceptance test on real hardware — pass/fail against formal design requirements with structured documentation"],
+  why:["Analysed software test results and provided engineering recommendations to improve system robustness and software reliability","Supported root-cause analysis and corrective actions during software integration and system commissioning phases"],
+  outcome:"Fully commissioned robotic system accepted by KIT. Passed 100-cycle reliability test. Complete commissioning documentation delivered."
+},
+tech:["PLC programming","State machines","Sensor integration","Real-time control","Hardware commissioning","Control software","Software validation"]},
+
+{id:8,num:"08",title:"ADAS Sensor Technology Evaluation — Master Thesis",org:"Robert Bosch GmbH · Bühlertal · Apr 2024 – Nov 2024",icon:"◎",ibg:"rgba(46,196,166,0.15)",ic:"#2ec4a6",cats:["sensor","software"],rel:72,
+tags:["ADAS","Radar","LiDAR","Python","MATLAB","Sensor evaluation","Bosch"],apex:["Automotive domain","Python data analysis","Systems engineering"],
+sum:"Designed and executed controlled laboratory test setups for systematic evaluation of automotive sensor performance across approximately 13 technology categories — Python and MATLAB analysis on Linux.",
+bullets:{
+  what:["Designed and executed controlled laboratory test setups for systematic evaluation of automotive sensor performance across approximately 13 technology categories","Defined evaluation criteria and applied a Pugh-matrix approach for structured sensor technology selection — performance, integration, and signal quality assessment"],
+  how:["Performed quantitative data analysis using Python and MATLAB — assessed sensor accuracy, signal behaviour, and performance limitations across automotive operating conditions","Performed instrumentation-based measurements using oscilloscopes and data acquisition systems for hardware characterisation and signal validation","Python pipeline: NumPy/pandas for data ingestion, SciPy for statistical analysis, Matplotlib for visualisation — all executed on Linux analysis environment"],
+  why:["Delivered data-driven recommendations supporting system architecture and design decisions at Robert Bosch GmbH","Apex.AI's customers build systems with these exact sensor types — understanding sensor physics and performance limits makes me a better Application Engineer when supporting Apex.OS deployments"],
+  outcome:"M.Sc. grade 2.0. Architecture recommendations delivered to Bosch product teams. Evaluation methodology documented as reusable framework."
+},
+tech:["Python","NumPy","pandas","SciPy","MATLAB","Linux","Oscilloscopes","DAQ systems","Radar","LiDAR","Camera systems","Pugh matrix"]},
+
+{id:9,num:"09",title:"MCDA Software — Validation & Release Sign-off",org:"Karlsruhe Institute of Technology · Jul 2022 – Jan 2023",icon:"⊞",ibg:"rgba(94,201,126,0.15)",ic:"#5ec97e",cats:["software"],rel:65,
+tags:["Software testing","Client-server","Integration","Python","Documentation"],apex:["Software testing","System integration","Bug documentation"],
+sum:"Validated decision-making software for functional correctness and system integration — structured software testing with systematic bug identification, documentation, and formal release sign-off.",
+bullets:{
+  what:["Validated decision-making software for functional correctness and system integration — structured software testing with systematic bug identification and documentation","Verified client-server software behaviour and distributed interface interactions — debugging of middleware communication and software integration issues"],
+  how:["Created software test plans, validation reports, and release documentation supporting software integration readiness and deployment sign-off","Python reference implementation verified MCDA calculation correctness — same inputs run through both tool and reference, outputs compared systematically","Structured bug reports: reproduction steps, expected/actual behaviour, severity, root cause — written to be actionable without additional clarification"],
+  why:["Supported software issue analysis and tool qualification — contributed to software reliability improvement and developer workflow enhancement","Demonstrates structured approach to software testing and validation — core Application Engineer skill at Apex.AI"],
+  outcome:"Software released after all critical bugs resolved. Formal test report accepted. Test case library reused for regression testing in subsequent cycles."
+},
+tech:["Software testing","Python","API testing","Client-server","Test case design","Bug documentation","Test plans","Validation reports"]}
+];
+
+const skills=[
+{cat:"Software Deployment & Integration",icon:"⟩",col:"#7F77DD",items:[
+  {n:"Distributed embedded software deployment",v:88,l:"Proficient"},
+  {n:"Software-hardware integration testing",v:90,l:"Expert"},
+  {n:"Customer technical support & troubleshooting",v:85,l:"Proficient"},
+  {n:"Software validation & system integration",v:88,l:"Expert"},
+  {n:"Developer tooling & workflow improvement",v:85,l:"Proficient"}
+]},
+{cat:"Embedded Software & Middleware",icon:"⚙",col:"#2ec4a6",items:[
+  {n:"Embedded systems architecture",v:88,l:"Expert"},
+  {n:"Virtual ECU & middleware development",v:90,l:"Expert"},
+  {n:"ROS-adjacent distributed architectures",v:72,l:"Familiar"},
+  {n:"ISO 26262 ASIL awareness",v:80,l:"Proficient"},
+  {n:"FPGA real-time validation (VHDL)",v:75,l:"Proficient"}
+]},
+{cat:"Programming & Automation",icon:"◈",col:"#f5a623",items:[
+  {n:"Python (scripting & automation)",v:85,l:"Proficient"},
+  {n:"CAPL (C-syntax scripting)",v:90,l:"Expert"},
+  {n:"Flutter / Dart (engineering tools)",v:65,l:"Working"},
+  {n:"MATLAB / Simulink",v:78,l:"Proficient"},
+  {n:"CI/CD-adjacent pipelines",v:75,l:"Proficient"}
+]},
+{cat:"Protocols & Tools",icon:"✦",col:"#5ec97e",items:[
+  {n:"CAN · LIN · SENT · SPI · Ethernet",v:90,l:"Expert"},
+  {n:"UDS · J1939 diagnostic protocols",v:85,l:"Expert"},
+  {n:"Vector CANoe · CANalyzer · VT System",v:92,l:"Expert"},
+  {n:"Git · Jira · Confluence",v:85,l:"Proficient"},
+  {n:"Linux production environment",v:80,l:"Proficient"}
+]}
+];
+
+const TL=[
+{date:"Feb 2025 – Apr 2026",title:"Design Engineer – Automotive Interfaces",org:"TDK Sensors AG and Co. KG · Berlin, Germany",icon:"⚙",bg:"rgba(124,110,245,0.2)",
+desc:"Built distributed embedded software validation platforms on Linux production environment. CAPL C-syntax scripting, virtual ECU/sensor development, FPGA validation in VHDL, UDS/J1939 diagnostic verification, Python automation, Git/Jira documentation. ISO 26262 ASIL-compliant processes.",
+tags:["CAPL","C-syntax","FPGA/VHDL","LIN","SENT","SPI","CAN","UDS","Python","Git","Linux","ISO 26262"]},
+{date:"Apr 2024 – Nov 2024",title:"Master Thesis Student",org:"Robert Bosch GmbH · Bühlertal, Germany",icon:"◎",bg:"rgba(46,196,166,0.15)",
+desc:"Evaluation of Sensor Technologies for Level and Quality Measurements in Automotive ADAS Systems. Designed controlled test setups for ~13 sensor technology categories. Python and MATLAB data analysis on Linux. Pugh-matrix evaluation framework. Delivered architecture recommendations to Bosch product teams.",
+tags:["ADAS","Radar","LiDAR","Camera","Python","MATLAB","Linux","Sensor evaluation","Pugh matrix"]},
+{date:"Aug 2023 – Mar 2024",title:"Working Student (Werkstudent)",org:"ITK Engineering GmbH · Rülzheim, Germany",icon:"◇",bg:"rgba(94,201,126,0.15)",
+desc:"Flutter/Dart engineering tools for test execution workflows. Python test automation and log analysis tools. ECU firmware flashing and post-flash validation on Daimler production ECUs via Linux-hosted UDS workflow. Power BI and Git CI/CD-adjacent integration.",
+tags:["Flutter","Dart","Python","ECU flashing","UDS","Daimler","Linux","CI/CD","Power BI","Git"]},
+{date:"Jul 2022 – Jan 2023",title:"Research Assistant (HiWi)",org:"Karlsruhe Institute of Technology · Karlsruhe, Germany",icon:"⬡",bg:"rgba(124,110,245,0.15)",
+desc:"Two projects: (1) Validated MCDA decision-making software — client-server interface testing, Python-based calculation verification, structured bug documentation, formal release sign-off. (2) Developed and validated control software for PLC-based robotic automation system — state machines, sensor integration, 100-cycle acceptance testing on real hardware.",
+tags:["PLC","Robotics","Control software","Python","Software testing","Client-server","Documentation"]},
+{date:"Jul 2018 – Aug 2021",title:"Data Exchange Engineer",org:"Bosch Global Software Technologies Pvt. Ltd. · Coimbatore, India",icon:"⊞",bg:"rgba(46,196,166,0.1)",
+desc:"Technical SPOC for OEM projects — Daimler, VW Group, BMW, Ford, JLR, GM. Created and validated CAD data in NX and Creo. PDM/PLM data management. System integration reviews. Design-for-manufacturing guidelines. ECR/ECO implementation support.",
+tags:["NX","Creo","PDM/PLM","Daimler","VW Group","BMW","Ford","JLR","GM","System integration"]},
+{date:"Sept 2016 – Jun 2018",title:"ECR Engineer",org:"Bosch Global Software Technologies Pvt. Ltd. · Coimbatore, India",icon:"✦",bg:"rgba(245,166,35,0.1)",
+desc:"Engineering change management across automotive OEM programmes. Impact analysis, risk assessment, BOM validation, structured documentation, OEM compliance verification. Technical coordination interface between engineering, quality, and stakeholders.",
+tags:["ECR/ECO","Change management","PDM/PLM","OEM standards","Impact analysis","Risk assessment"]}
+];
+
+const DOCS=[
+{icon:"📋",ibg:"rgba(124,110,245,0.15)",title:"Zwischenzeugnis — TDK Sensors AG",sub:"Intermediate employment reference · Feb 2025 – Apr 2026 · Berlin",badge:"Available on request",bc:"rgba(124,110,245,0.2)",bt:"#a89cf7",
+note:"Formal employment reference from TDK Sensors AG und Co. KG documenting responsibilities: introduction of Vector hardware and software tools, building and virtualisation of CAN networks, modelling of sensor systems and subcomponents, conception, implementation, and verification of certification tests for automotive interfaces (LIN, SENT)."},
+{icon:"📝",ibg:"rgba(46,196,166,0.15)",title:"Reference Letter — Bert Hundertmark",sub:"Director of Electronic Development · TDK Sensors AG und Co. KG",badge:"Available on request",bc:"rgba(46,196,166,0.2)",bt:"#2ec4a6",
+note:"Personal signed reference letter from Bert Hundertmark. Describes candidate as someone who 'learns new topics remarkably quickly, creates robust solutions in very short time, and whose transparency regarding risks is always a reliable base for decisions.' Contact: Bert.Hundertmark@tdk.com"},
+{icon:"🎓",ibg:"rgba(94,201,126,0.15)",title:"M.Sc. Certificate — Sensor Systems Technology",sub:"Karlsruhe University of Applied Sciences · Grade 2.0 · Nov 2024",badge:"Available on request",bc:"rgba(94,201,126,0.2)",bt:"#5ec97e",
+note:"Master of Science in Sensor Systems Technology from Hochschule Karlsruhe (HKA). Final grade 2.0. Project: ECG signal classification using Continuous Wavelet Transform and Deep Neural Networks. Covers MEMS sensors, signal processing, measurement systems, embedded electronics, and sensor system design."},
+{icon:"🎓",ibg:"rgba(245,166,35,0.15)",title:"B.E. Certificate — Mechanical Engineering",sub:"Government College of Technology, Coimbatore, India · Grade 1.6 · Apr 2016",badge:"Available on request",bc:"rgba(245,166,35,0.2)",bt:"#f5a623",
+note:"Bachelor of Engineering in Mechanical Engineering from Government College of Technology, Coimbatore, India. Final grade 1.6. Thesis: Defect Elimination in Drum Support through Die Redesign. Covers mechanical design, manufacturing processes, materials science, and engineering analysis."},
+{icon:"📄",ibg:"rgba(124,110,245,0.15)",title:"ITK Engineering — Employment Certificate",sub:"Working Student · Aug 2023 – Mar 2024 · Rülzheim",badge:"Available on request",bc:"rgba(124,110,245,0.2)",bt:"#a89cf7",
+note:"Employment certificate from ITK Engineering GmbH (a Bosch subsidiary) documenting working student activities: Flutter/Dart tool development, Python test automation, ECU firmware flashing for Daimler series ECUs, Power BI and Git integration, test bench documentation."},
+{icon:"🌍",ibg:"rgba(46,196,166,0.15)",title:"EU Blue Card",sub:"Work authorisation · Germany · Valid to January 2029",badge:"Active",bc:"rgba(46,196,166,0.3)",bt:"#2ec4a6",
+note:"EU Blue Card authorising residence and employment in Germany valid to January 2029. Full work authorisation for Germany and within EU Blue Card framework. No sponsorship required."}
+];
+
+let cf='all', sid=null;
+
+function sp(p){
+  document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.nl').forEach(e=>e.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('.nl').forEach(e=>{if(e.getAttribute('onclick')&&e.getAttribute('onclick').includes("'"+p+"'"))e.classList.add('active')});
+  window.scrollTo(0,0);
+  if(p==='skills')rs();
+  if(p==='timeline')rt();
+  if(p==='projects')rp();
+  if(p==='docs')rd();
+}
+
+function fc2(cat,btn){
+  cf=cat;
+  document.querySelectorAll('.fc').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  rp();
+}
+
+function rp(){
+  const vis=P.filter(p=>cf==='all'||p.cats.includes(cf));
+  document.getElementById('pgrid').innerHTML=vis.map(p=>`
+    <div class="pc${sid===p.id?' sel':''}" onclick="op(${p.id})">
+      <div class="ph"><div class="pi" style="background:${p.ibg}"><span style="color:${p.ic}">${p.icon}</span></div>
+        <div style="flex:1;min-width:0"><div class="pnum">${p.num}</div><div class="ptit">${p.title}</div><div class="porg">${p.org}</div></div>
+      </div>
+      <div class="psum">${p.sum}</div>
+      <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}${p.apex.map(t=>`<span class="tag hi">${t}</span>`).join('')}</div>
+      <div class="rbar"><span class="rl">Apex.AI relevance</span><div class="rb"><div class="rf" style="width:${p.rel}%"></div></div><span class="rv">${p.rel}%</span></div>
+    </div>`).join('');
+}
+
+function op(id){
+  sid=id;
+  const p=P.find(x=>x.id===id);
+  const idx=P.findIndex(x=>x.id===id);
+  const prev=idx>0?P[idx-1]:null;
+  const next=idx<P.length-1?P[idx+1]:null;
+  const sec=(label,items)=>`<div class="ds"><div class="dsl">${label}</div><div class="dl">${items.map(t=>`<div class="dli"><div class="dld"><div class="dld-i"></div></div><div class="dlt">${t}</div></div>`).join('')}</div></div>`;
+  document.getElementById('det').innerHTML=`
+    <div class="dh"><div class="di">
+      <div class="bk" onclick="sp('projects')">← Back to projects</div>
+      <div class="dnum">${p.num} / ${P.length.toString().padStart(2,'0')}</div>
+      <div class="dtit">${p.title}</div>
+      <div class="dorg">${p.org}</div>
+      <div class="nprow">
+        ${prev?`<button class="npb" onclick="op(${prev.id})">← ${prev.num} ${prev.title.split('—')[0].trim().split(' ').slice(0,4).join(' ')}...</button>`:''}
+        ${next?`<button class="npb" onclick="op(${next.id})">${next.num} ${next.title.split('—')[0].trim().split(' ').slice(0,4).join(' ')}... →</button>`:''}
+      </div>
+    </div></div>
+    <div class="dbody">
+      <div class="dmain">
+        ${sec('What was done — directly from CV',p.bullets.what)}
+        ${sec('How it was done — technical detail',p.bullets.how)}
+        ${sec('Additional context from CV',p.bullets.why)}
+        <div class="ds"><div class="dsl">Outcome</div><div class="ob"><p>${p.bullets.outcome}</p></div></div>
+      </div>
+      <div class="dsb">
+        <div class="ds"><div class="dsl">Technologies</div><div class="tg">${p.tech.map(t=>`<span class="tp${['CAPL (C-syntax)','Python','Flutter','Dart','FPGA/VHDL','Linux (production)','Linux production environment','Linux'].includes(t)?' pr':''}">${t}</span>`).join('')}</div></div>
+        <div class="ds"><div class="dsl">Apex.AI relevance</div><div class="tg">${p.apex.map(t=>`<span class="ac-chip">${t}</span>`).join('')}</div></div>
+        <div class="ds"><div class="dsl">Match score</div><div style="display:flex;align-items:center;gap:10px"><div class="rbb" style="flex:1"><div class="rbf" style="width:${p.rel}%"></div></div><span style="font-family:'DM Mono',monospace;font-size:14px;color:var(--mu)">${p.rel}%</span></div></div>
+        <div class="ds"><div class="dsl">Categories</div><div class="tg">${p.cats.map(c=>`<span style="font-family:'DM Mono',monospace;font-size:12px;padding:4px 10px;border-radius:4px;background:var(--s3);color:var(--fa);border:1px solid var(--b1)">${c}</span>`).join('')}</div></div>
+      </div>
+    </div>`;
+  document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
+  document.getElementById('page-detail').classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function rs(){
+  const lc={Expert:'rgba(46,196,166,0.15)',Proficient:'rgba(124,110,245,0.12)',Working:'rgba(245,166,35,0.12)',Familiar:'rgba(94,201,126,0.12)'};
+  const lt={Expert:'#2ec4a6',Proficient:'#a89cf7',Working:'#f5a623',Familiar:'#5ec97e'};
+  document.getElementById('sgrid').innerHTML=skills.map(cat=>`
+    <div class="sc">
+      <div class="sct"><div style="width:30px;height:30px;border-radius:6px;background:${cat.col}22;display:flex;align-items:center;justify-content:center;color:${cat.col}">${cat.icon}</div>${cat.cat}</div>
+      ${cat.items.map(s=>`<div class="sr">
+        <div class="si"><span class="sn2">${s.n}</span><div style="display:flex;align-items:center;gap:8px"><span class="slb" style="background:${lc[s.l]};color:${lt[s.l]}">${s.l}</span><span class="sp">${s.v}%</span></div></div>
+        <div class="st"><div class="sf" style="width:${s.v}%;background:${cat.col}"></div></div>
+      </div>`).join('')}
+    </div>`).join('');
+}
+
+function rt(){
+  document.getElementById('tlwrap').innerHTML=TL.map(t=>`
+    <div class="tli">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div class="tld" style="background:${t.bg}">${t.icon}</div>
+      </div>
+      <div style="flex:1;padding-top:6px">
+        <div class="tldt">${t.date}</div>
+        <div class="tlti">${t.title}</div>
+        <div class="tlor">${t.org}</div>
+        <div class="tldesc">${t.desc}</div>
+        <div class="tltag">${t.tags.map(tag=>`<span class="tlta">${tag}</span>`).join('')}</div>
+      </div>
+    </div>`).join('');
+}
+
+function rd(){
+  document.getElementById('docgrid').innerHTML=DOCS.map(d=>`
+    <div class="doc-card">
+      <div style="display:flex;align-items:flex-start;gap:12px">
+        <div class="doc-icon" style="background:${d.ibg}">${d.icon}</div>
+        <div>
+          <div class="doc-title">${d.title}</div>
+          <div class="doc-sub">${d.sub}</div>
+        </div>
+      </div>
+      <div style="font-size:14px;color:var(--mu);line-height:1.65">${d.note}</div>
+      <div class="doc-badge" style="background:${d.bc};color:${d.bt}">${d.badge}</div>
+    </div>`).join('');
+}
+
+rp();
+</script>
+</body>
+</html>
