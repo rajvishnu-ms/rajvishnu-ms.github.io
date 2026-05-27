@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajvishnu Meenakshi Sundaram — System Application Engineer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--s1:#111118;--s2:#18181f;--s3:#1e1e28;--b1:rgba(255,255,255,0.08);--b2:rgba(255,255,255,0.14);--tx:#e8e8f0;--mu:#8888aa;--fa:#444466;--ac:#2ec4a6;--ac2:#5ddec6;--gl:rgba(46,196,166,0.15);--tl:#7c6ef5;--am:#f5a623;--gr:#5ec97e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.8;overflow-x:hidden}
+::selection{background:var(--ac);color:#fff}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--fa);border-radius:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b1);height:58px;display:flex;align-items:center;padding:0 2rem;gap:0}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--tx);margin-right:2rem;letter-spacing:-0.02em}.logo span{color:var(--ac)}
+.nav-links{display:flex;overflow-x:auto;flex:1}
+.nl{font-size:13px;font-family:'DM Mono',monospace;padding:0 16px;height:58px;display:flex;align-items:center;color:var(--mu);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.nl:hover{color:var(--tx)}.nl.active{color:var(--ac2);border-bottom-color:var(--ac)}
+.nbadge{margin-left:auto;font-size:12px;font-family:'DM Mono',monospace;padding:4px 12px;border-radius:20px;background:var(--gl);color:var(--ac2);border:1px solid rgba(46,196,166,0.3)}
+.page{display:none;padding-top:58px;min-height:100vh}.page.active{display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+.ew{font-family:'DM Mono',monospace;font-size:12px;color:var(--ac);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.ew::before{content:'';width:28px;height:1px;background:var(--ac)}
+h1.big{font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;color:var(--tx);margin-bottom:1rem}
+h1.big .d{color:var(--mu)}
+.pt{font-family:'Syne',sans-serif;font-size:34px;font-weight:700;color:var(--tx);letter-spacing:-0.02em;margin-bottom:.5rem}
+.ps{font-size:15px;color:var(--mu)}
+.hs{font-size:17px;color:var(--mu);max-width:640px;line-height:1.65;margin-bottom:2rem}
+.mrow{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:2.5rem}
+.mi{font-family:'DM Mono',monospace;font-size:13px;color:var(--mu);display:flex;align-items:center;gap:6px}
+.mi svg{width:14px;height:14px;stroke:var(--ac);fill:none;flex-shrink:0}
+.srow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px;overflow:hidden;margin-bottom:3rem}
+.sb{background:var(--s1);padding:1.25rem 1.5rem;transition:background .2s}.sb:hover{background:var(--s2)}
+.sn{font-family:'Syne',sans-serif;font-size:30px;font-weight:700;color:var(--tx)}
+.sl{font-size:13px;font-family:'DM Mono',monospace;color:var(--mu);margin-top:2px}
+.btn1{font-family:'DM Mono',monospace;font-size:13px;padding:11px 26px;border-radius:8px;background:var(--ac);color:#0a0a0f;border:none;cursor:pointer;transition:opacity .2s}.btn1:hover{opacity:.85}
+.btn2{font-family:'DM Mono',monospace;font-size:13px;padding:11px 26px;border-radius:8px;background:none;color:var(--ac2);border:1px solid rgba(46,196,166,0.4);cursor:pointer;transition:background .2s}.btn2:hover{background:var(--gl)}
+.frow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem}
+.fc{font-family:'DM Mono',monospace;font-size:12px;padding:6px 15px;border-radius:20px;border:1px solid var(--b2);background:none;color:var(--mu);cursor:pointer;transition:all .2s}.fc:hover{color:var(--tx);border-color:var(--fa)}.fc.active{background:var(--gl);color:var(--ac2);border-color:rgba(46,196,166,0.4)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px;overflow:hidden}
+.pc{background:var(--s1);padding:1.5rem;cursor:pointer;transition:background .2s;position:relative}.pc:hover{background:var(--s2)}.pc.sel{background:var(--s2)}.pc.sel::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ac),var(--tl))}
+.ph{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.pi{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.pnum{font-family:'DM Mono',monospace;font-size:12px;color:var(--fa)}
+.ptit{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--tx);line-height:1.3;margin-bottom:2px}
+.porg{font-size:13px;font-family:'DM Mono',monospace;color:var(--mu)}
+.psum{font-size:14px;color:var(--mu);line-height:1.65;margin-bottom:12px}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tag{font-size:12px;font-family:'DM Mono',monospace;padding:3px 8px;border-radius:4px;background:var(--s3);color:var(--fa);border:1px solid var(--b1)}
+.tag.hi{background:var(--gl);color:var(--ac2);border-color:rgba(46,196,166,0.3)}
+.rbar{display:flex;align-items:center;gap:8px}
+.rl{font-size:12px;font-family:'DM Mono',monospace;color:var(--fa)}.rb{flex:1;height:2px;background:var(--s3);border-radius:1px}.rf{height:100%;border-radius:1px;background:linear-gradient(90deg,var(--ac),var(--tl))}.rv{font-size:12px;font-family:'DM Mono',monospace;color:var(--mu);min-width:30px;text-align:right}
+.dh{background:var(--s1);border-bottom:1px solid var(--b1);padding:2.5rem 2rem}
+.di{max-width:1100px;margin:0 auto}
+.bk{font-family:'DM Mono',monospace;font-size:12px;color:var(--mu);cursor:pointer;display:flex;align-items:center;gap:6px;margin-bottom:16px;border:1px solid var(--b1);padding:6px 14px;border-radius:20px;width:fit-content;transition:all .2s}.bk:hover{color:var(--tx);border-color:var(--b2)}
+.dnum{font-family:'DM Mono',monospace;font-size:12px;color:var(--ac);margin-bottom:6px}
+.dtit{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:var(--tx);line-height:1.2;margin-bottom:6px;letter-spacing:-0.02em}
+.dorg{font-size:14px;font-family:'DM Mono',monospace;color:var(--mu)}
+.nprow{display:flex;gap:8px;margin-top:1rem}
+.npb{font-family:'DM Mono',monospace;font-size:12px;padding:6px 14px;border:1px solid var(--b2);border-radius:20px;background:none;color:var(--mu);cursor:pointer;transition:all .2s}.npb:hover{color:var(--tx);border-color:var(--fa)}
+.dbody{max-width:1100px;margin:0 auto;padding:2.5rem 2rem;display:grid;grid-template-columns:1fr 370px;gap:2rem}
+.dmain{display:flex;flex-direction:column;gap:1.75rem}
+.dsb{display:flex;flex-direction:column;gap:1.25rem}
+.ds{background:var(--s1);border:1px solid var(--b1);border-radius:12px;padding:1.5rem}
+.dsl{font-family:'DM Mono',monospace;font-size:11px;color:var(--ac);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:8px}.dsl::after{content:'';flex:1;height:1px;background:var(--b1)}
+.dl{display:flex;flex-direction:column;gap:12px}
+.dli{display:flex;gap:12px}
+.dld{width:20px;height:20px;border-radius:50%;background:var(--gl);border:1px solid rgba(46,196,166,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px}
+.dld-i{width:6px;height:6px;border-radius:50%;background:var(--ac)}
+.dlt{font-size:15px;color:var(--mu);line-height:1.75}.dlt strong{color:var(--tx);font-weight:500}
+.tg{display:flex;flex-wrap:wrap;gap:6px}
+.tp{font-family:'DM Mono',monospace;font-size:12px;padding:4px 10px;border-radius:6px;background:var(--s3);color:var(--mu);border:1px solid var(--b1)}
+.tp.pr{background:var(--gl);color:var(--ac2);border-color:rgba(46,196,166,0.3)}
+.ac-chip{font-size:12px;font-family:'DM Mono',monospace;padding:4px 10px;border-radius:6px;background:var(--gl);color:var(--ac2);border:1px solid rgba(46,196,166,0.25)}
+.ob{background:linear-gradient(135deg,rgba(46,196,166,0.06),rgba(124,110,245,0.06));border:1px solid rgba(46,196,166,0.2);border-radius:10px;padding:1.25rem}
+.ob p{font-size:15px;color:var(--tx);line-height:1.75}
+.rbb{height:6px;background:var(--s3);border-radius:3px;overflow:hidden;margin-top:8px}.rbf{height:100%;background:linear-gradient(90deg,var(--ac),var(--tl));border-radius:3px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px;overflow:hidden;max-width:1100px;margin:0 auto 2rem}
+.sc{background:var(--s1);padding:1.75rem}
+.sct{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--tx);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.sr{margin-bottom:14px}
+.si{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.sn2{font-size:14px;color:var(--tx)}
+.slb{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:4px}
+.sp{font-family:'DM Mono',monospace;font-size:12px;color:var(--mu)}
+.st{height:3px;background:var(--s3);border-radius:2px;overflow:hidden}.sf{height:100%;border-radius:2px}
+.tl-wrap{max-width:720px;margin:0 auto;padding:0 2rem 3rem}
+.tli{display:flex;gap:1.5rem;margin-bottom:2.5rem;position:relative}.tli::before{content:'';position:absolute;left:19px;top:42px;bottom:-2.5rem;width:1px;background:var(--b1)}.tli:last-child::before{display:none}
+.tld{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;border:1px solid var(--b2);flex-shrink:0}
+.tldt{font-family:'DM Mono',monospace;font-size:11px;color:var(--ac);letter-spacing:.08em;margin-bottom:4px}
+.tlti{font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.tlor{font-size:13px;color:var(--mu);margin-bottom:8px;font-family:'DM Mono',monospace}
+.tldesc{font-size:14px;color:var(--mu);line-height:1.7;margin-bottom:10px}
+.tltag{display:flex;flex-wrap:wrap;gap:5px}
+.tlta{font-family:'DM Mono',monospace;font-size:11px;padding:2px 7px;border-radius:4px;background:var(--s2);color:var(--fa);border:1px solid var(--b1)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px 12px 0 0;overflow:hidden}
+.cc{background:var(--s1);padding:1.25rem 1.5rem;display:flex;gap:12px;align-items:flex-start}
+.cic{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.clb{font-family:'DM Mono',monospace;font-size:11px;color:var(--fa);margin-bottom:3px}
+.cv2{font-size:14px;color:var(--tx)}
+.docgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:1.5rem}
+.doc-card{background:var(--s1);border:1px solid var(--b1);border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:10px}
+.doc-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.doc-sub{font-size:13px;color:var(--mu)}
+.doc-badge{font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:20px;width:fit-content}
+.cl-banner{background:linear-gradient(135deg,rgba(46,196,166,0.1),rgba(124,110,245,0.1));border:1px solid rgba(46,196,166,0.25);border-radius:12px;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.cl-banner-left{display:flex;flex-direction:column;gap:4px}
+.cl-banner-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--tx)}
+.cl-banner-sub{font-size:14px;color:var(--mu);font-family:'DM Mono',monospace}
+.cl-btn{font-family:'DM Mono',monospace;font-size:13px;padding:10px 22px;border-radius:8px;background:var(--ac);color:#0a0a0f;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:500;transition:opacity .2s;white-space:nowrap}.cl-btn:hover{opacity:.85}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">RMS<span>.</span></div>
+  <div class="nav-links">
+    <div class="nl active" onclick="sp('home')">Overview</div>
+    <div class="nl" onclick="sp('projects')">Projects</div>
+    <div class="nl" onclick="sp('skills')">Skills</div>
+    <div class="nl" onclick="sp('timeline')">Timeline</div>
+    <div class="nl" onclick="sp('docs')">Documents</div>
+    <div class="nl" onclick="sp('contact')">Contact</div>
+  </div>
+  <div class="nbadge">Available immediately</div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="wrap" style="padding-top:4rem">
+    <div class="ew">Engineering Portfolio · Infineon PSS Application · Innsbruck</div>
+    <h1 class="big">Rajvishnu<br><span class="d">Meenakshi Sundaram</span></h1>
+    <p class="hs">System Application Engineer — embedded systems engineering, microcontroller interface firmware in C and CAPL, motor drive control system commissioning, lab debug and performance measurement, Python test automation, cross-functional collaboration with hardware specialists. 7 years across automotive embedded systems. Applying for System Application Engineer, Humanoid Motor Drives at Infineon PSS — Job ID HRC1641309.</p>
+
+    <div class="cl-banner">
+      <div class="cl-banner-left">
+        <div class="cl-banner-title">Cover letter — Infineon PSS, Innsbruck</div>
+        <div class="cl-banner-sub">System Application Engineer · Humanoid Motor Drives · HRC1641309</div>
+      </div>
+      <a class="cl-btn" href="mailto:rajvishnumech@gmail.com?subject=Infineon PSS HRC1641309 Cover Letter Request">✉ Request cover letter</a>
+    </div>
+
+    <div class="mrow">
+      <div class="mi"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>Berlin, Germany · open to Innsbruck</div>
+      <div class="mi"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>rajvishnumech@gmail.com</div>
+      <div class="mi"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>M.Sc. Sensor Systems Technology · HKA Grade 2.0</div>
+      <div class="mi"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>EU Blue Card · January 2029</div>
+    </div>
+    <div class="srow">
+      <div class="sb"><div class="sn">9</div><div class="sl">// projects</div></div>
+      <div class="sb"><div class="sn">7</div><div class="sl">// years exp</div></div>
+      <div class="sb"><div class="sn">6</div><div class="sl">// companies</div></div>
+      <div class="sb"><div class="sn">C/CAPL</div><div class="sl">// firmware lang</div></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn1" onclick="sp('projects')">View all projects →</button>
+      <button class="btn2" onclick="sp('docs')">View documents →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="page-projects" class="page">
+  <div class="wrap">
+    <div class="ew">Embedded systems work</div>
+    <div class="pt">All projects</div>
+    <p class="ps" style="margin-bottom:1.75rem">All content taken directly from the Infineon PSS CV — click any card for the full technical breakdown.</p>
+    <div class="frow">
+      <button class="fc active" onclick="fc2('all',this)">All (9)</button>
+      <button class="fc" onclick="fc2('embedded',this)">Embedded systems</button>
+      <button class="fc" onclick="fc2('motor',this)">Motor drive</button>
+      <button class="fc" onclick="fc2('lab',this)">Lab debug</button>
+      <button class="fc" onclick="fc2('protocols',this)">Protocols</button>
+      <button class="fc" onclick="fc2('automation',this)">Test automation</button>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</div>
+
+<!-- DETAIL -->
+<div id="page-detail" class="page"><div id="det"></div></div>
+
+<!-- SKILLS -->
+<div id="page-skills" class="page">
+  <div class="wrap">
+    <div class="ew">Technical profile</div>
+    <div class="pt">Skills &amp; expertise</div>
+    <p class="ps" style="margin-bottom:2rem">Taken directly from the Areas of Expertise section of the Infineon PSS CV.</p>
+  </div>
+  <div class="sgrid" id="sgrid"></div>
+</div>
+
+<!-- TIMELINE -->
+<div id="page-timeline" class="page">
+  <div class="wrap" style="max-width:720px">
+    <div class="ew">Career history</div>
+    <div class="pt">Experience timeline</div>
+    <p class="ps" style="margin-bottom:2.5rem">Sept 2016 → Apr 2026 · 7 years · 6 organisations</p>
+  </div>
+  <div class="tl-wrap" id="tlwrap"></div>
+</div>
+
+<!-- DOCUMENTS -->
+<div id="page-docs" class="page">
+  <div class="wrap">
+    <div class="ew">Credentials &amp; references</div>
+    <div class="pt">Documents</div>
+    <p class="ps">All documents available on request — contact rajvishnumech@gmail.com</p>
+
+    <div class="cl-banner" style="margin-top:1.5rem">
+      <div class="cl-banner-left">
+        <div class="cl-banner-title">Cover letter — Infineon PSS Innsbruck</div>
+        <div class="cl-banner-sub">System Application Engineer · Humanoid Motor Drives · HRC1641309 · 27 May 2026</div>
+      </div>
+      <a class="cl-btn" href="mailto:rajvishnumech@gmail.com?subject=Infineon PSS HRC1641309 Cover Letter Request">✉ Request cover letter</a>
+    </div>
+
+    <div class="docgrid" id="docgrid"></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <div class="wrap" style="max-width:720px">
+    <div class="ew">Get in touch</div>
+    <div class="pt" style="margin-bottom:2rem">Contact</div>
+    <div class="cgrid">
+      <div class="cc"><div class="cic" style="background:rgba(46,196,166,0.15)">✉</div><div><div class="clb">EMAIL</div><div class="cv2">rajvishnumech@gmail.com</div></div></div>
+      <div class="cc"><div class="cic" style="background:rgba(124,110,245,0.15)">☎</div><div><div class="clb">PHONE</div><div class="cv2">+49 176 59311471</div></div></div>
+      <div class="cc"><div class="cic" style="background:rgba(245,166,35,0.15)">⌖</div><div><div class="clb">LOCATION</div><div class="cv2">Alt Lichtenrade 100B, 12309 Berlin, Germany</div></div></div>
+      <div class="cc"><div class="cic" style="background:rgba(94,201,126,0.15)">✓</div><div><div class="clb">WORK AUTHORISATION</div><div class="cv2">EU Blue Card · valid to January 2029</div></div></div>
+    </div>
+    <div style="background:var(--s1);border:1px solid var(--b1);border-radius:0 0 12px 12px;padding:1.5rem">
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--ac);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Reference</div>
+      <div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--tx);margin-bottom:4px">Bert Hundertmark</div>
+      <div style="font-size:14px;color:var(--mu);margin-bottom:4px">Director of Electronic Development · TDK Sensors AG und Co. KG</div>
+      <div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--ac2)">Bert.Hundertmark@tdk.com</div>
+      <div style="font-size:13px;color:var(--fa);margin-top:8px;font-style:italic">Signed reference letter and Zwischenzeugnis available on request</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const P=[
+{id:1,num:"01",title:"Microcontroller Interface Firmware — NBP8S SPI in C and CAPL",org:"TDK Sensors AG and Co. KG · Berlin · Feb 2025 – Apr 2026",icon:"⚙",ibg:"rgba(46,196,166,0.2)",ic:"#2ec4a6",cats:["embedded","protocols"],rel:96,
+tags:["C","CAPL","SPI","State machines","Microcontroller interface","Firmware"],apex:["C firmware development","Microcontroller interfaces","Gap analysis"],
+sum:"Implemented microcontroller-level interface firmware in C and CAPL — developed register-accurate virtual sensor models (NBP8S SPI sensor emulation), state machines, timing logic, and fault-handling for hardware-independent embedded interface verification.",
+what:["Modelled and virtualised sensor systems and subcomponents at the microcontroller interface level — implemented C and CAPL-based state machines to reproduce microcontroller register behaviour, timing, and fault-handling logic for embedded automotive systems","Implemented microcontroller-level interface firmware in CAPL and C — developed SPI stimulation logic, register-accurate virtual sensor models (NBP8S pressure sensor emulation), and protocol state machines running on Vector CANoe hardware platforms"],
+how:["<strong>C and CAPL firmware implementation:</strong> Virtual sensor model implemented as a software node — C functions managed register state, timing counters, and diagnostic flag logic. SPI read/write handlers decoded register addresses and returned protocol-compliant responses within spec timing.","<strong>Register-level SPI emulation:</strong> Full register map of NBP8S implemented — pressure data, diagnostic, and configuration registers. Each access decoded address, applied correct data logic, returned data within SPI clock timing.","<strong>State machine design:</strong> Embedded firmware states (power-up, measurement, diagnostics, fault, reset) implemented as explicit state machines with guard conditions — directly mirrors how production microcontroller firmware is structured.","<strong>Gap identification and reporting:</strong> Firmware gap analysis performed — timing deviations, edge-case handling gaps, and interface compliance issues reported to hardware teams before physical hardware availability."],
+why:["<strong>Infineon relevance:</strong> Core responsibility at Infineon is adapting existing software solutions to new motor control hardware and investigating/reporting gaps in motor control firmware. This project demonstrates exactly this — C-level firmware adaptation, register-level interface implementation, and systematic gap investigation."],
+outcome:"Hardware-independent embedded firmware verification enabled 6 weeks before physical hardware. Three timing deviations in ECU firmware identified and corrected before integration.",
+tech:["C","CAPL","SPI protocol","State machines","Register emulation","Fault injection","Vector CANoe","VT System","Oscilloscopes","Gap analysis"]},
+
+{id:2,num:"02",title:"Motor Drive Control Software — PLC Mechatronic System",org:"Karlsruhe Institute of Technology · Jul 2022 – Jan 2023",icon:"⬡",ibg:"rgba(124,110,245,0.2)",ic:"#a89cf7",cats:["motor","embedded"],rel:92,
+tags:["Motor drive","PLC","Control software","Actuator control","State machines","Real hardware","Mechatronics"],apex:["Motor drive firmware","Mechatronic system","Control loop commissioning"],
+sum:"Programmed and commissioned a PLC-based motor drive control system — developed control logic, motor actuation sequences, motion control parameters, and IO configurations. Debugged embedded control firmware and validated motor drive performance against formal design requirements on real mechatronic hardware.",
+what:["Developed and validated control software for a PLC-based mechatronic automation system — programmed controller logic, integrated sensor feedback, and performed software-hardware integration testing on real hardware","Implemented and debugged embedded motor drive control firmware — configured motion control parameters, validated actuator response, resolved control loop integration issues during bring-up on real mechatronic hardware"],
+how:["<strong>Motor drive control logic:</strong> PLC program structured into function blocks — sensor reading, state machine evaluation, actuator output generation. Control states: idle, detection, pick, transport, place, error/reset. Each state transition with explicit guard conditions.","<strong>Motion control parameter tuning:</strong> Motor actuation timing, velocity profiles, and deceleration parameters systematically varied. Effects on mechatronic system performance evaluated — simulated motor drive behaviour under different firmware configurations.","<strong>Embedded firmware debugging:</strong> IO connections, motor drive timing errors, and sensor threshold issues identified and resolved during bring-up. Logic analyser and oscilloscope used to verify motor control signal integrity.","<strong>Lab performance evaluation:</strong> 100-cycle reliability test on real mechatronic hardware — motor drive firmware validated against formal design requirements with structured acceptance test evidence."],
+why:["<strong>Infineon relevance:</strong> Infineon's role requires analysing motor control software at system level, working with hardware specialists to ensure first-time-right designs, and measuring/evaluating firmware performance in the lab. This project demonstrates all three — motor drive control implementation, hardware collaboration, and lab-based performance evaluation on real hardware."],
+outcome:"Fully commissioned mechatronic system accepted by KIT. Passed 100-cycle reliability test. Motor drive firmware validated against all formal design requirements.",
+tech:["PLC motor drive control","State machines","Motion control","Actuator integration","Sensor feedback","Logic analyser","Oscilloscopes","Acceptance testing","Real hardware commissioning"]},
+
+{id:3,num:"03",title:"SENT Interface Firmware — Timing Analysis & Performance Measurement",org:"TDK Sensors AG and Co. KG · Berlin · Feb 2025 – Apr 2026",icon:"✦",ibg:"rgba(245,166,35,0.15)",ic:"#f5a623",cats:["lab","protocols","embedded"],rel:90,
+tags:["SENT","Timing analysis","Oscilloscopes","Signal analysis","Performance measurement","Certification"],apex:["Lab debug equipment","Signal measurement","Performance evaluation"],
+sum:"Implemented SENT interface firmware and performed lab-based performance measurement — designed signal timing analysis routines, calibration stability verification, and oscilloscope-based signal characterisation for automotive sensor microcontroller interfaces.",
+what:["Executed SENT interface validation using Vector VT System — signal timing analysis, calibration stability assessment, and performance measurement of embedded sensor interfaces under automotive operating conditions","Measured and evaluated embedded system performance — quantitative timing analysis, signal integrity assessment, and calibration stability evaluation using laboratory instrumentation including oscilloscopes and logic analysers"],
+how:["<strong>SENT timing firmware:</strong> Python and CAPL scripts implemented timing analysis — captured SENT waveforms at nanosecond resolution via VT System, extracted tick period, CRC bytes, and diagnostic nibbles, evaluated against specification limits.","<strong>Oscilloscopes and lab debug:</strong> Oscilloscopes used for hardware-level signal verification — rise/fall times, voltage levels, timing relationships between firmware-generated signals and hardware responses. Logic analyser traces correlated software state with hardware signal transitions.","<strong>Performance measurement pipeline:</strong> Automated measurement routines ran systematic performance evaluation — swept operating conditions, tracked calibration drift, and quantified firmware performance margins.","<strong>Gap reporting:</strong> Timing tolerance gaps identified and reported to hardware teams — three parameters flagged with measurements beyond nominal spec, enabling firmware adjustment before certification."],
+why:["<strong>Infineon relevance:</strong> Infineon explicitly requires hands-on experience with lab debug equipment including oscilloscopes and logic analysers, and measuring/evaluating motor control firmware performance in the lab. This project demonstrates exactly this workflow applied to microcontroller interface firmware."],
+outcome:"SENT certification evidence delivered. Timing margins characterised. Calibration stability validated for series release.",
+tech:["SENT protocol","Python","CAPL","Vector VT System","Oscilloscopes","Logic analysers","Timing analysis","Signal integrity","Performance measurement","Gap reporting"]},
+
+{id:4,num:"04",title:"FPGA Motor Control Logic — OWI Real-Time Firmware in VHDL",org:"TDK Sensors AG and Co. KG · Berlin · Feb 2025 – Apr 2026",icon:"◇",ibg:"rgba(46,196,166,0.15)",ic:"#2ec4a6",cats:["embedded","motor"],rel:84,
+tags:["FPGA","VHDL","Real-time","OWI","Deterministic","Motor control logic"],apex:["Embedded firmware","Real-time systems","Motor control hardware"],
+sum:"Implemented FPGA-based real-time motor control logic in VHDL — deterministic OWI protocol state machine for cycle-accurate timing reproduction. Equivalent to implementing motor drive control firmware at the hardware level.",
+what:["Implemented FPGA-based real-time embedded control logic in VHDL — deterministic OWI protocol state machine on FPGA for cycle-accurate timing reproduction and systematic edge-case testing of embedded sensor interfaces","Built and commissioned embedded firmware development environment and test setup — configured hardware interfaces, FPGA toolchain, and test bench for systematic embedded logic verification"],
+how:["<strong>VHDL state machine — motor control equivalent:</strong> OWI protocol state machine implemented as synchronous FSM in VHDL — states for reset, detection, bit write/read, error/timeout. All timing parameters as VHDL generics for systematic variation. Equivalent discipline to implementing PMSM/BLDC motor drive control FSMs.","<strong>Why FPGA:</strong> Software on a general-purpose processor has interrupt latency jitter — microsecond-precision timing impossible. FPGA delivers deterministic cycle-accurate timing essential for motor drive control validation.","<strong>Development environment and toolchain:</strong> FPGA toolchain compiled and configured — synthesis, place-and-route, bitstream generation, and hardware-in-the-loop integration.","<strong>Performance evaluation:</strong> Systematically evaluated firmware timing effects — swept tolerance margins, edge cases, and boundary conditions deterministically reproducible for performance measurement."],
+why:["<strong>Infineon relevance:</strong> Infineon designs motor control microcontrollers. VHDL FSM design, cycle-level timing analysis, and deterministic control logic are directly applicable to analysing and evaluating motor control firmware in a semiconductor R&D environment."],
+outcome:"Sub-microsecond timing validation achieved. Two tolerance parameters identified outside nominal spec. Certification evidence accepted.",
+tech:["VHDL","FPGA","OWI protocol","Real-time systems","Deterministic control logic","Timing analysis","Vector VT System","GPIO integration"]},
+
+{id:5,num:"05",title:"LIN Interface Firmware — Adaptation to New Hardware Requirements",org:"TDK Sensors AG and Co. KG · Berlin · Feb 2025 – Apr 2026",icon:"◈",ibg:"rgba(94,201,126,0.15)",ic:"#5ec97e",cats:["embedded","protocols"],rel:86,
+tags:["LIN","Firmware adaptation","New hardware","Gap reporting","ISO 26262","Certification"],apex:["Adapt firmware to new hardware","Gap investigation","Firmware verification"],
+sum:"Adapted embedded LIN interface firmware to new hardware configurations — investigated firmware gaps, reported deviations, and verified firmware correctness against automotive interface specifications.",
+what:["Implemented embedded software for LIN interface certification — conceived, programmed, and verified certification test firmware for LIN automotive communication protocol covering operating modes, error handling, and protocol conformance","Performed LIN conformance and operating-mode testing — validated protocol compliance of embedded automotive electronics, identified deviations, and drove corrective actions for stable system operation"],
+how:["<strong>Firmware adaptation to hardware changes:</strong> Each new hardware variant required firmware timing and protocol parameter adjustment — adapted existing LIN firmware to new hardware by systematically identifying which parameters required modification.","<strong>Gap investigation and reporting:</strong> Each firmware/hardware mismatch documented — gap description, measured vs expected behaviour, recommended firmware fix. Reported to hardware and systems teams for resolution.","<strong>Operating mode coverage:</strong> Normal frame transmission, sleep mode entry/exit, wakeup pulse generation, error frame handling — all systematically verified across new hardware configurations.","<strong>Test firmware implementation:</strong> Each test case implemented as a CAPL function — executed protocol scenario, captured ECU response, evaluated pass/fail, logged structured result for audit trail."],
+why:["<strong>Infineon relevance:</strong> Infineon's core responsibility is adapting existing software solutions to new motor control hardware and investigating/reporting gaps. LIN firmware adaptation to new hardware is a direct analogue — same process, same discipline applied to automotive motor control protocols."],
+outcome:"Formal LIN certification sign-off achieved. Zero non-conformities in external review. Firmware adaptation process documented as template for future hardware variants.",
+tech:["LIN protocol","CAPL","Firmware adaptation","Gap reporting","New hardware integration","ISO 26262","ASPICE","Vector CANoe","Git","Jira"]},
+
+{id:6,num:"06",title:"ECU Firmware Deployment — Daimler Production Microcontrollers",org:"ITK Engineering GmbH · Rülzheim · Aug 2023 – Mar 2024",icon:"↯",ibg:"rgba(245,166,35,0.15)",ic:"#f5a623",cats:["embedded","protocols"],rel:80,
+tags:["Firmware","ECU","Daimler","UDS","Microcontroller","Production hardware"],apex:["Firmware deployment","Microcontroller hardware","Production systems"],
+sum:"Implemented and validated firmware updates on Daimler series production microcontrollers — ECU firmware flashing via UDS, post-deployment verification, and regression testing on real automotive microcontroller hardware.",
+what:["Implemented and validated software updates on embedded series control units — ECU firmware flashing, post-deployment software verification, and regression testing of embedded software on Daimler production hardware","Developed Python-based embedded test automation and log analysis tools — automated data processing scripts for embedded firmware validation"],
+how:["<strong>Firmware deployment on production microcontrollers:</strong> Firmware flashing via UDS over CAN — programming session management, security access (seed-key), memory write services. Full firmware update lifecycle on Daimler production microcontroller hardware.","<strong>Post-deployment performance evaluation:</strong> Automated validation suite ran after each firmware update — CAN communication health, diagnostic session verification, firmware version confirmation, functional regression checks.","<strong>Lab equipment:</strong> Vector CANoe and oscilloscopes used for firmware verification — communication waveform analysis, timing verification, and interface health checks on real microcontroller hardware."],
+why:["<strong>Infineon relevance:</strong> Direct experience deploying firmware to real automotive microcontroller hardware and evaluating performance in the lab — the exact discipline required for embedded firmware work in an R&D environment at a semiconductor company."],
+outcome:"Zero post-delivery defects. Formal validation documentation accepted by Daimler QA.",
+tech:["UDS protocol","CAN","ECU firmware","Microcontroller hardware","Python","Vector CANoe","CAPL","Jira","Daimler production ECUs"]},
+
+{id:7,num:"07",title:"Python Test Automation — Embedded Firmware Performance Pipeline",org:"TDK Sensors AG & ITK Engineering · 2023–2026",icon:"⟩",ibg:"rgba(94,201,126,0.15)",ic:"#5ec97e",cats:["automation","embedded"],rel:88,
+tags:["Python","Test automation","Performance measurement","Regression","CI/CD","Git"],apex:["Python automation","Performance evaluation","Firmware testing"],
+sum:"Developed Python-based embedded firmware performance measurement and test automation — regression test pipelines, systematic fault injection, and CI/CD-adjacent integration for embedded firmware release verification.",
+what:["Developed Python-based test automation for embedded firmware performance measurement — automated regression test pipelines, systematic fault injection, and structured log analysis for firmware release verification","Implemented Power BI and Git integration for automated firmware validation tracking — CI/CD-adjacent pipeline for quality KPI reporting and continuous firmware validation monitoring (ITK Engineering)"],
+how:["<strong>Python performance measurement pipeline:</strong> Scripts connected to embedded test bench output — parsed structured data, extracted measurement channels, ran statistical analysis against spec limits, flagged deviations automatically.","<strong>Regression testing with firmware version tracking:</strong> Automated suite ran on every firmware build — each run tagged with Git commit hash enabling direct correlation between firmware changes and performance outcomes.","<strong>Fault injection:</strong> Python orchestrated systematic fault injection sequences — out-of-range inputs, timing violations, communication errors — captured firmware responses for performance and robustness evaluation."],
+why:["<strong>Infineon relevance:</strong> Python is explicitly listed in the Infineon job description. This demonstrates production Python use for embedded firmware regression testing, performance measurement, and release verification in an automotive embedded environment."],
+outcome:"Automated pipeline reduced manual evaluation time. Regressions caught automatically before manual review. CI/CD principles applied in production automotive environment.",
+tech:["Python","CAPL","Git","CI/CD","Power BI","Test automation","Regression testing","Fault injection","Performance measurement"]},
+
+{id:8,num:"08",title:"ADAS Sensor Evaluation — PMSM/BLDC Sensing Technologies",org:"Robert Bosch GmbH · Bühlertal · Apr 2024 – Nov 2024",icon:"◎",ibg:"rgba(46,196,166,0.15)",ic:"#2ec4a6",cats:["lab","motor"],rel:74,
+tags:["Sensor evaluation","Python","MATLAB","Oscilloscopes","PMSM/BLDC","Position sensing"],apex:["PMSM/BLDC sensor evaluation","Python data analysis","Lab measurements"],
+sum:"Systematic lab-based evaluation of automotive sensor technologies including those directly relevant to PMSM and BLDC motor drive applications — speed, position, and quality sensing across ~13 technology categories. Python and MATLAB analysis, oscilloscope-based characterisation.",
+what:["Designed and executed controlled laboratory test setups for systematic evaluation of automotive sensor performance across approximately 13 technology categories — includes sensing technologies relevant to PMSM/BLDC motor drives","Performed quantitative data analysis using Python and MATLAB — assessed sensor accuracy, signal behaviour, and performance limitations across automotive operating conditions"],
+how:["<strong>PMSM/BLDC-relevant sensing:</strong> Evaluated inductive, capacitive, and optical sensing technologies used for motor speed and position measurement — the same sensing modalities used in humanoid motor drive applications.","<strong>Lab measurement methodology:</strong> Oscilloscopes and data acquisition systems used for hardware characterisation — signal timing, noise floor, resolution limits, and dynamic response across operating conditions.","<strong>Python and MATLAB analysis:</strong> Quantitative performance evaluation pipeline — statistical analysis, specification limit checking, and data-driven recommendations."],
+why:["<strong>Infineon relevance:</strong> Understanding of PMSM/BLDC machines is listed as a key qualification. Evaluating the sensor technologies that feed into motor drive control systems — speed, position, and quality sensing — provides direct technical grounding in PMSM/BLDC motor drive application engineering."],
+outcome:"M.Sc. grade 2.0. Architecture recommendations delivered to Bosch product teams. Evaluation methodology documented as reusable framework.",
+tech:["Python","MATLAB","Oscilloscopes","DAQ systems","PMSM/BLDC sensor evaluation","Position sensing","Speed sensing","Statistical analysis"]},
+
+{id:9,num:"09",title:"Embedded Software Test Specifications — MCDA Validation",org:"Karlsruhe Institute of Technology · Jul 2022 – Jan 2023",icon:"⊞",ibg:"rgba(94,201,126,0.15)",ic:"#5ec97e",cats:["automation","embedded"],rel:65,
+tags:["Test specifications","Python","Software testing","Documentation","Client-server"],apex:["Test specifications","System integration","Structured validation"],
+sum:"Validated decision-making software for functional correctness — structured embedded software test specifications, systematic gap identification, Python-based reference verification, and formal release sign-off.",
+what:["Validated decision-making software for functional correctness and system integration — structured embedded software test cases, systematic defect identification, and formal release documentation","Created test specifications, validation reports, and release documentation supporting software integration readiness"],
+how:["Python reference implementation verified calculation correctness — same inputs through tool and reference, outputs compared systematically","Structured gap reports: reproduction steps, expected/actual behaviour, severity classification, root cause — written to be actionable by developers","Test case library documented for regression reuse in subsequent software cycles"],
+why:["<strong>Infineon relevance:</strong> Structured test specification, gap identification and reporting, and formal validation documentation are core to the Infineon role. This demonstrates the methodology applied in a software integration context."],
+outcome:"Software released after all critical gaps resolved. Test report accepted. Test case library reused for regression in subsequent cycles.",
+tech:["Software testing","Python","Test specifications","Validation reports","API testing","Client-server","Gap documentation","Release sign-off"]}
+];
+
+const skills=[
+{cat:"Embedded Systems Engineering",icon:"⚙",col:"#2ec4a6",items:[
+  {n:"Microcontroller interface firmware (C and CAPL)",v:85,l:"Proficient"},
+  {n:"State machine implementation",v:90,l:"Expert"},
+  {n:"Firmware adaptation to new hardware",v:85,l:"Proficient"},
+  {n:"Gap investigation and reporting",v:88,l:"Expert"},
+  {n:"Development environment setup",v:85,l:"Proficient"}
+]},
+{cat:"Programming Languages",icon:"⟩",col:"#7c6ef5",items:[
+  {n:"C / CAPL (microcontroller interface firmware)",v:85,l:"Proficient"},
+  {n:"Python (test automation and data analysis)",v:85,l:"Proficient"},
+  {n:"VHDL (FPGA real-time control logic)",v:75,l:"Proficient"},
+  {n:"MATLAB / Simulink",v:78,l:"Proficient"},
+  {n:"PLC structured text (motor control)",v:72,l:"Working"}
+]},
+{cat:"Motor Drive & Lab Debug",icon:"◈",col:"#f5a623",items:[
+  {n:"Motor drive control software (PLC/embedded)",v:78,l:"Proficient"},
+  {n:"Oscilloscopes · logic analysers · protocol analysers",v:90,l:"Expert"},
+  {n:"PMSM/BLDC sensor technology evaluation",v:74,l:"Proficient"},
+  {n:"Signal integrity and timing analysis",v:88,l:"Expert"},
+  {n:"Performance measurement and evaluation",v:85,l:"Proficient"}
+]},
+{cat:"Protocols, Tools & Standards",icon:"✦",col:"#5ec97e",items:[
+  {n:"CAN · LIN · SPI · SENT · OWI · Ethernet",v:90,l:"Expert"},
+  {n:"Vector CANoe · CANalyzer · VT System",v:92,l:"Expert"},
+  {n:"ISO 26262 awareness · ASPICE",v:80,l:"Proficient"},
+  {n:"Git · Jira · Confluence",v:85,l:"Proficient"},
+  {n:"UDS · J1939 diagnostics",v:85,l:"Expert"}
+]}
+];
+
+const TL=[
+{date:"Feb 2025 – Apr 2026",title:"Design Engineer – Automotive Interfaces",org:"TDK Sensors AG and Co. KG · Berlin, Germany",icon:"⚙",bg:"rgba(46,196,166,0.2)",
+desc:"Developed microcontroller interface firmware in C and CAPL for NBP8S pressure sensor — SPI register emulation, state machines, fault injection. Implemented FPGA-based real-time control logic in VHDL. LIN and SENT interface firmware — adapted firmware to hardware changes, investigated and reported gaps. Lab performance measurement with oscilloscopes and logic analysers. ISO 26262 ASIL-compliant processes.",
+tags:["C","CAPL","FPGA/VHDL","LIN","SENT","SPI","Oscilloscopes","Gap analysis","ISO 26262"]},
+{date:"Apr 2024 – Nov 2024",title:"Master Thesis Student",org:"Robert Bosch GmbH · Bühlertal, Germany",icon:"◎",bg:"rgba(46,196,166,0.15)",
+desc:"Evaluation of Sensor Technologies for ADAS Systems — systematic lab evaluation across ~13 sensing technology categories including PMSM/BLDC-relevant speed and position sensing. Oscilloscope-based hardware characterisation. Python and MATLAB data analysis. Architecture recommendations delivered to Bosch product teams.",
+tags:["PMSM/BLDC sensing","Python","MATLAB","Oscilloscopes","Position sensing","Sensor evaluation"]},
+{date:"Aug 2023 – Mar 2024",title:"Working Student (Werkstudent)",org:"ITK Engineering GmbH · Rülzheim, Germany",icon:"◇",bg:"rgba(94,201,126,0.15)",
+desc:"Implemented and validated firmware updates on Daimler series production ECUs — firmware flashing via UDS, post-flash verification, regression testing on real microcontroller hardware. Python test automation pipeline. Power BI / Git CI/CD integration for firmware release tracking.",
+tags:["ECU firmware","Microcontroller hardware","UDS","CAN","Python","CI/CD","Daimler production"]},
+{date:"Jul 2022 – Jan 2023",title:"Research Assistant (HiWi)",org:"Karlsruhe Institute of Technology · Karlsruhe, Germany",icon:"⬡",bg:"rgba(124,110,245,0.15)",
+desc:"(1) Developed motor drive control software for PLC-based mechatronic automation system — controller logic, motor actuation sequences, motion control parameter tuning, development environment setup, hardware commissioning and 100-cycle acceptance testing. (2) Validated MCDA decision software — test specifications, Python-based verification, release sign-off.",
+tags:["PLC motor drive","Mechatronics","State machines","Motor actuation","Sensor integration","Python","Acceptance testing"]},
+{date:"Jul 2018 – Aug 2021",title:"Data Exchange Engineer",org:"Bosch Global Software Technologies · Coimbatore, India",icon:"⊞",bg:"rgba(46,196,166,0.1)",
+desc:"Technical SPOC for OEM projects across Daimler, VW Group, BMW, Ford, JLR, GM. CAD validation in NX and Creo. PDM/PLM data management. System integration coordination. ECR/ECO implementation support.",
+tags:["NX","Creo","PDM/PLM","System integration","Daimler","VW","BMW","Ford","JLR","GM"]},
+{date:"Sept 2016 – Jun 2018",title:"ECR Engineer",org:"Bosch Global Software Technologies · Coimbatore, India",icon:"✦",bg:"rgba(245,166,35,0.1)",
+desc:"Engineering change management. Impact analysis, risk assessment, BOM validation, OEM compliance verification. Technical coordination between engineering, QA, and stakeholders.",
+tags:["ECR/ECO","Change management","PDM/PLM","OEM standards","Risk analysis"]}
+];
+
+const DOCS=[
+{icon:"📋",ibg:"rgba(46,196,166,0.15)",title:"Zwischenzeugnis — TDK Sensors AG",sub:"Intermediate employment reference · Feb 2025 – Apr 2026 · Berlin",badge:"Available on request",bc:"rgba(46,196,166,0.2)",bt:"#2ec4a6",
+note:"Formal employment reference documenting: introduction of Vector hardware and software tools, building and virtualisation of CAN networks with sensors and ECUs, modelling of sensor systems and subcomponents, conception, implementation, and verification of certification tests for automotive interfaces (LIN, SENT)."},
+{icon:"📝",ibg:"rgba(46,196,166,0.15)",title:"Reference Letter — Bert Hundertmark",sub:"Director of Electronic Development · TDK Sensors AG und Co. KG",badge:"Available on request",bc:"rgba(46,196,166,0.2)",bt:"#2ec4a6",
+note:"Personal signed reference from Bert Hundertmark: 'learns new topics remarkably quickly, creates robust solutions in very short time, and whose transparency regarding risks is always a reliable base for decisions.' Contact: Bert.Hundertmark@tdk.com"},
+{icon:"🎓",ibg:"rgba(94,201,126,0.15)",title:"M.Sc. Certificate — Sensor Systems Technology",sub:"Karlsruhe University of Applied Sciences · Grade 2.0 · Nov 2024",badge:"Available on request",bc:"rgba(94,201,126,0.2)",bt:"#5ec97e",
+note:"Master of Science in Sensor Systems Technology. Grade 2.0. Covers MEMS sensors, embedded electronics, microcontroller interfaces, signal processing, and sensor system design — direct technical foundation for System Application Engineering in semiconductor motor drive applications."},
+{icon:"🎓",ibg:"rgba(245,166,35,0.15)",title:"B.E. Certificate — Mechanical Engineering",sub:"Government College of Technology, Coimbatore, India · Grade 1.6 · Apr 2016",badge:"Available on request",bc:"rgba(245,166,35,0.2)",bt:"#f5a623",
+note:"Bachelor of Engineering in Mechanical Engineering. Grade 1.6. Covers mechanical design, materials science, manufacturing, and engineering analysis — foundation for mechatronic project collaboration in humanoid robotics applications."},
+{icon:"📄",ibg:"rgba(124,110,245,0.15)",title:"ITK Engineering — Employment Certificate",sub:"Working Student · Aug 2023 – Mar 2024 · Rülzheim",badge:"Available on request",bc:"rgba(124,110,245,0.2)",bt:"#a89cf7",
+note:"Employment certificate from ITK Engineering GmbH (Bosch subsidiary) documenting: ECU firmware flashing on Daimler series production microcontrollers, Python test automation, Power BI and Git CI/CD integration."},
+{icon:"🌍",ibg:"rgba(46,196,166,0.15)",title:"EU Blue Card",sub:"Work authorisation · Germany · Valid to January 2029",badge:"Active",bc:"rgba(46,196,166,0.3)",bt:"#2ec4a6",
+note:"EU Blue Card authorising employment in Germany valid to January 2029. Full work authorisation — no sponsorship required. Open to relocating to Innsbruck, Austria for Infineon PSS role."}
+];
+
+let cf='all', sid=null;
+function sp(p){
+  document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.nl').forEach(e=>e.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('.nl').forEach(e=>{if(e.getAttribute('onclick')&&e.getAttribute('onclick').includes("'"+p+"'"))e.classList.add('active')});
+  window.scrollTo(0,0);
+  if(p==='skills')rs();if(p==='timeline')rt();if(p==='projects')rp();if(p==='docs')rd();
+}
+function fc2(cat,btn){cf=cat;document.querySelectorAll('.fc').forEach(b=>b.classList.remove('active'));btn.classList.add('active');rp();}
+function rp(){
+  const vis=P.filter(p=>cf==='all'||p.cats.includes(cf));
+  document.getElementById('pgrid').innerHTML=vis.map(p=>`
+    <div class="pc${sid===p.id?' sel':''}" onclick="op(${p.id})">
+      <div class="ph"><div class="pi" style="background:${p.ibg}"><span style="color:${p.ic}">${p.icon}</span></div>
+        <div style="flex:1;min-width:0"><div class="pnum">${p.num}</div><div class="ptit">${p.title}</div><div class="porg">${p.org}</div></div>
+      </div>
+      <div class="psum">${p.sum}</div>
+      <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}${p.apex.map(t=>`<span class="tag hi">${t}</span>`).join('')}</div>
+      <div class="rbar"><span class="rl">Infineon PSS relevance</span><div class="rb"><div class="rf" style="width:${p.rel}%"></div></div><span class="rv">${p.rel}%</span></div>
+    </div>`).join('');
+}
+function op(id){
+  sid=id;const p=P.find(x=>x.id===id);const idx=P.findIndex(x=>x.id===id);
+  const prev=idx>0?P[idx-1]:null;const next=idx<P.length-1?P[idx+1]:null;
+  const sec=(label,items)=>`<div class="ds"><div class="dsl">${label}</div><div class="dl">${items.map(t=>`<div class="dli"><div class="dld"><div class="dld-i"></div></div><div class="dlt">${t}</div></div>`).join('')}</div></div>`;
+  document.getElementById('det').innerHTML=`
+    <div class="dh"><div class="di">
+      <div class="bk" onclick="sp('projects')">← Back to projects</div>
+      <div class="dnum">${p.num} / ${P.length.toString().padStart(2,'0')}</div>
+      <div class="dtit">${p.title}</div><div class="dorg">${p.org}</div>
+      <div class="nprow">
+        ${prev?`<button class="npb" onclick="op(${prev.id})">← ${prev.num} ${prev.title.split('—')[0].trim().split(' ').slice(0,4).join(' ')}...</button>`:''}
+        ${next?`<button class="npb" onclick="op(${next.id})">${next.num} ${next.title.split('—')[0].trim().split(' ').slice(0,4).join(' ')}... →</button>`:''}
+      </div>
+    </div></div>
+    <div class="dbody">
+      <div class="dmain">
+        ${sec('What was done — from CV',p.what)}
+        ${sec('How it was done — technical detail',p.how)}
+        ${sec('Infineon PSS relevance',p.why)}
+        <div class="ds"><div class="dsl">Outcome</div><div class="ob"><p>${p.outcome}</p></div></div>
+      </div>
+      <div class="dsb">
+        <div class="ds"><div class="dsl">Technologies</div><div class="tg">${p.tech.map(t=>`<span class="tp${['C','CAPL','Python','VHDL','Motor drive control'].includes(t)?' pr':''}">${t}</span>`).join('')}</div></div>
+        <div class="ds"><div class="dsl">Infineon PSS relevance tags</div><div class="tg">${p.apex.map(t=>`<span class="ac-chip">${t}</span>`).join('')}</div></div>
+        <div class="ds"><div class="dsl">Match score</div><div style="display:flex;align-items:center;gap:10px"><div class="rbb" style="flex:1"><div class="rbf" style="width:${p.rel}%"></div></div><span style="font-family:'DM Mono',monospace;font-size:14px;color:var(--mu)">${p.rel}%</span></div></div>
+        <div class="ds"><div class="dsl">Categories</div><div class="tg">${p.cats.map(c=>`<span style="font-family:'DM Mono',monospace;font-size:12px;padding:4px 10px;border-radius:4px;background:var(--s3);color:var(--fa);border:1px solid var(--b1)">${c}</span>`).join('')}</div></div>
+      </div>
+    </div>`;
+  document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
+  document.getElementById('page-detail').classList.add('active');window.scrollTo(0,0);
+}
+function rs(){
+  const lc={Expert:'rgba(46,196,166,0.15)',Proficient:'rgba(124,110,245,0.12)',Working:'rgba(245,166,35,0.12)',Familiar:'rgba(94,201,126,0.12)'};
+  const lt={Expert:'#2ec4a6',Proficient:'#a89cf7',Working:'#f5a623',Familiar:'#5ec97e'};
+  document.getElementById('sgrid').innerHTML=skills.map(cat=>`
+    <div class="sc">
+      <div class="sct"><div style="width:30px;height:30px;border-radius:6px;background:${cat.col}22;display:flex;align-items:center;justify-content:center;color:${cat.col}">${cat.icon}</div>${cat.cat}</div>
+      ${cat.items.map(s=>`<div class="sr">
+        <div class="si"><span class="sn2">${s.n}</span><div style="display:flex;align-items:center;gap:8px"><span class="slb" style="background:${lc[s.l]};color:${lt[s.l]}">${s.l}</span><span class="sp">${s.v}%</span></div></div>
+        <div class="st"><div class="sf" style="width:${s.v}%;background:${cat.col}"></div></div>
+      </div>`).join('')}
+    </div>`).join('');
+}
+function rt(){
+  document.getElementById('tlwrap').innerHTML=TL.map(t=>`
+    <div class="tli">
+      <div style="display:flex;flex-direction:column;align-items:center"><div class="tld" style="background:${t.bg}">${t.icon}</div></div>
+      <div style="flex:1;padding-top:6px">
+        <div class="tldt">${t.date}</div><div class="tlti">${t.title}</div>
+        <div class="tlor">${t.org}</div><div class="tldesc">${t.desc}</div>
+        <div class="tltag">${t.tags.map(tag=>`<span class="tlta">${tag}</span>`).join('')}</div>
+      </div>
+    </div>`).join('');
+}
+function rd(){
+  document.getElementById('docgrid').innerHTML=DOCS.map(d=>`
+    <div class="doc-card">
+      <div style="display:flex;align-items:flex-start;gap:12px">
+        <div style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;background:${d.ibg};flex-shrink:0">${d.icon}</div>
+        <div><div class="doc-title">${d.title}</div><div class="doc-sub">${d.sub}</div></div>
+      </div>
+      <div style="font-size:14px;color:var(--mu);line-height:1.65">${d.note}</div>
+      <div class="doc-badge" style="background:${d.bc};color:${d.bt}">${d.badge}</div>
+    </div>`).join('');
+}
+rp();
+</script>
+</body>
+</html>
