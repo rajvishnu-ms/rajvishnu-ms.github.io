@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rajvishnu Meenakshi Sundaram — Test Engineering</title>
+<meta name="description" content="Test engineering portfolio of Rajvishnu Meenakshi Sundaram: test-rig design, hands-on hardware testing, automation and data analysis across automotive sensors, robotics and embedded systems." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#FBFAF6;--paper-2:#F3F1EA;--ink:#15191E;--muted:#666C74;--hair:#D9D5C9;--hair-2:#E7E3D8;--signal:#0E8C72;--signal-deep:#0A6353;--warn:#C2541F;--focus:#0E8C72}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--hair-2) 1px,transparent 1px),linear-gradient(90deg,var(--hair-2) 1px,transparent 1px);background-size:54px 54px;opacity:.5;mask-image:radial-gradient(ellipse 90% 55% at 50% 0%,#000 30%,transparent 82%);-webkit-mask-image:radial-gradient(ellipse 90% 55% at 50% 0%,#000 30%,transparent 82%)}
+  .layer{position:relative;z-index:1}
+  .bar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(251,250,246,.82);border-bottom:1px solid var(--hair)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .bar .id{font-family:"Space Grotesk";font-weight:600;letter-spacing:-.01em;font-size:15px}
+  .bar .id b{color:var(--signal-deep)}
+  .nav{display:flex;gap:20px}
+  .nav a{font-family:"IBM Plex Mono";font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.02em}
+  .nav a:hover{color:var(--signal-deep)}
+  .status{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--signal);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(14,140,114,.45)}70%{box-shadow:0 0 0 7px rgba(14,140,114,0)}100%{box-shadow:0 0 0 0 rgba(14,140,114,0)}}
+  .hero{padding:64px 0 40px}
+  .eyebrow{font-family:"IBM Plex Mono";font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal-deep);display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--signal)}
+  h1{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.025em;line-height:1.02;font-size:clamp(40px,7vw,76px);margin:18px 0 14px}
+  .lede{font-size:clamp(18px,2.4vw,22px);max-width:34ch;color:var(--ink)}
+  .lede .em{color:var(--signal-deep);font-weight:500}
+  .target{margin-top:16px;font-family:"IBM Plex Mono";font-size:13px;color:var(--muted)}
+  .target b{color:var(--ink);font-weight:500}
+  .scope{margin:30px 0 6px;border:1px solid var(--hair);border-radius:10px;background:linear-gradient(180deg,#fff,#FAF8F1);overflow:hidden}
+  .scope .scope-head{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid var(--hair-2);font-family:"IBM Plex Mono";font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+  canvas{display:block;width:100%;height:120px}
+  .readouts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:26px;background:var(--hair);border:1px solid var(--hair);border-radius:10px;overflow:hidden}
+  .ro{background:var(--paper);padding:16px 18px}
+  .ro .v{font-family:"Space Grotesk";font-weight:600;font-size:24px;letter-spacing:-.02em}
+  .ro .k{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  section{padding:52px 0;border-top:1px solid var(--hair)}
+  .sec-label{font-family:"IBM Plex Mono";font-size:12.5px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+  .sec-label b{color:var(--signal-deep);font-weight:600}
+  h2{font-family:"Space Grotesk";font-weight:600;letter-spacing:-.02em;font-size:clamp(24px,3.4vw,32px);margin-bottom:8px}
+  .sec-intro{max-width:66ch;color:var(--muted)}
+  .timeline{margin-top:24px;border-left:2px solid var(--hair)}
+  .tl{position:relative;padding:0 0 22px 26px}
+  .tl::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--signal)}
+  .tl:last-child{padding-bottom:0}
+  .tl .when{font-family:"IBM Plex Mono";font-size:12px;color:var(--signal-deep);letter-spacing:.02em}
+  .tl .role{font-family:"Space Grotesk";font-weight:600;font-size:17px;margin:3px 0 1px}
+  .tl .org{font-size:14.5px;color:var(--muted)}
+  .tl .desc{font-size:15px;margin-top:6px;max-width:70ch}
+  .proj{border:1px solid var(--hair);border-radius:12px;background:rgba(255,255,255,.6);margin-top:20px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+  .proj:hover{border-color:var(--signal);box-shadow:0 10px 34px -22px rgba(14,140,114,.55)}
+  .proj-head{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;user-select:none}
+  .pn{font-family:"IBM Plex Mono";font-size:13px;color:var(--signal-deep);padding-top:4px;min-width:30px}
+  .pt{flex:1}
+  .pt h3{font-family:"Space Grotesk";font-weight:600;font-size:19px;letter-spacing:-.01em;line-height:1.25}
+  .pt .meta{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted);margin-top:5px;letter-spacing:.02em}
+  .chev{width:22px;height:22px;flex:none;margin-top:3px;border:1px solid var(--hair);border-radius:50%;display:grid;place-items:center;transition:transform .3s,border-color .25s;color:var(--muted)}
+  .proj[open-state="1"] .chev{transform:rotate(180deg);border-color:var(--signal);color:var(--signal-deep)}
+  .proj-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+  .proj-inner{padding:2px 22px 22px}
+  .field{display:grid;grid-template-columns:104px 1fr;gap:14px;padding:9px 0;border-top:1px dashed var(--hair-2)}
+  .field .fl{font-family:"IBM Plex Mono";font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+  .field .fv{color:var(--ink)}
+  .field .fv ul{margin:0;padding-left:18px}
+  .field .fv li{margin-bottom:4px}
+  .tagrow{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-family:"IBM Plex Mono";font-size:11.5px;background:var(--paper-2);border:1px solid var(--hair-2);border-radius:999px;padding:3px 10px;color:var(--ink)}
+  .rivr{margin-top:14px;background:var(--paper-2);border-left:2px solid var(--signal);padding:11px 14px;border-radius:0 8px 8px 0;font-size:15px}
+  .rivr b{color:var(--signal-deep)}
+  .tools{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:22px;background:var(--hair);border:1px solid var(--hair);border-radius:12px;overflow:hidden}
+  .tg{background:var(--paper);padding:18px 20px}
+  .tg .tgh{font-family:"IBM Plex Mono";font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:10px}
+  .tg .tgl{display:flex;flex-wrap:wrap;gap:6px}
+  .caps{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:12px;overflow:hidden;margin-top:22px}
+  .cap{background:var(--paper);padding:18px 20px}
+  .cap .ct{font-family:"Space Grotesk";font-weight:600;font-size:15px;margin-bottom:4px}
+  .cap .cd{font-size:14.5px;color:var(--muted)}
+  .recog{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
+  .rec{border:1px solid var(--hair);border-radius:12px;padding:20px;background:rgba(255,255,255,.6)}
+  .rec .quote{font-size:16px;line-height:1.5}
+  .rec .src{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted);margin-top:10px}
+  .rec.metric .v{font-family:"Space Grotesk";font-weight:600;font-size:30px;letter-spacing:-.02em;color:var(--signal-deep)}
+  .rec.metric .l{font-size:14.5px;color:var(--muted);margin-top:4px}
+  .rec ul{margin:0;padding-left:18px}
+  .rec li{margin-bottom:6px;font-size:15px}
+  .edu{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .edu .row{padding-bottom:12px;border-bottom:1px dashed var(--hair-2)}
+  .edu .deg{font-weight:600}
+  .edu .det{color:var(--muted);font-size:15px}
+  .edu .extra{font-size:14.5px;color:var(--muted);margin-top:3px}
+  footer{border-top:1px solid var(--hair);padding:48px 0 70px}
+  .cta{font-family:"Space Grotesk";font-weight:600;font-size:clamp(22px,3vw,30px);letter-spacing:-.02em}
+  .cta a{color:var(--signal-deep);text-decoration:none;border-bottom:2px solid var(--signal)}
+  .cta a:hover{background:var(--signal);color:#fff}
+  .foot-meta{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted);margin-top:22px;display:flex;gap:18px;flex-wrap:wrap}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  a:focus-visible,.proj-head:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
+  @media(max-width:760px){.nav{display:none}.readouts{grid-template-columns:repeat(2,1fr)}.tools,.caps,.recog{grid-template-columns:1fr}.field{grid-template-columns:1fr;gap:3px}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap">
+  <div class="id">RM<b>S</b></div>
+  <nav class="nav"><a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#toolbox">Toolbox</a><a href="#contact">Contact</a></nav>
+  <div class="status"><span class="dot"></span><span class="mono">Available now</span></div>
+</div></div>
+
+<div class="layer">
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Test Engineer · Full testing lifecycle</div>
+  <h1>Rajvishnu<br>Meenakshi Sundaram</h1>
+  <p class="lede">I build <span class="em">physical test setups</span>, run <span class="em">hands-on tests</span>, and write code that <span class="em">automates and measures</span> them.</p>
+  <p class="target"><b>8+ years</b> across automotive sensors, robotics &amp; embedded systems · Berlin · EU Blue Card · open to relocation</p>
+  <div class="scope reveal">
+    <div class="scope-head"><span>SIGNAL · test bench trace</span><span>CH1 · live</span></div>
+    <canvas id="scope" width="1040" height="120" aria-hidden="true"></canvas>
+  </div>
+  <div class="readouts reveal">
+    <div class="ro"><div class="v">8+ yrs</div><div class="k">Engineering</div></div>
+    <div class="ro"><div class="v">Rig &#8594; code</div><div class="k">Full lifecycle</div></div>
+    <div class="ro"><div class="v">M.Sc · B.E.</div><div class="k">Sensors · Mech</div></div>
+    <div class="ro"><div class="v">Python</div><div class="k">Automation · DAQ</div></div>
+  </div>
+</div></header>
+
+<section id="profile"><div class="wrap">
+  <div class="sec-label">// <b>00</b> — Profile</div>
+  <h2>From test rig to test data, end to end</h2>
+  <p class="sec-intro">I design and build test rigs for mechanical and mechatronic components, run functional, thermal, durability and reliability tests on real hardware, automate the procedures in code to control test hardware and log data, then analyse the results to find failure modes and feed improvements back into design. My background spans automotive interface validation at TDK Sensors, a hands-on sensor-evaluation thesis at Bosch, robotic system testing and software validation at KIT, and product and engineering-change work across global OEM programmes at Bosch in India. I hold a master&#8217;s in Sensor Systems Technology and a bachelor&#8217;s in Mechanical Engineering, and I have built robots since my undergraduate years.</p>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="sec-label">// <b>Career</b> — experience timeline</div>
+  <h2>Experience</h2>
+  <div class="timeline reveal">
+    <div class="tl"><div class="when">Feb 2025 – Apr 2026</div><div class="role">Design Engineer, Automotive Interfaces</div><div class="org">TDK Sensors AG &amp; Co. KG · Berlin, Germany</div><div class="desc">Built the automated test infrastructure from scratch with Vector tools, virtualised CAN networks with sensors and control units, modelled sensor systems and subcomponents, and conceived, implemented and verified conformance tests for LIN and SENT interfaces, adopted site-wide.</div></div>
+    <div class="tl"><div class="when">Apr 2024 – Nov 2024</div><div class="role">Master&#8217;s Thesis Student</div><div class="org">Robert Bosch GmbH · Buhlertal, Germany</div><div class="desc">Designed and built a laboratory test rig to evaluate sensor technologies for level and quality measurement in an automotive tank, characterising performance across tilt, temperature and fluid conditions and delivering a data-driven recommendation.</div></div>
+    <div class="tl"><div class="when">Aug 2023 – Mar 2024</div><div class="role">Working Student</div><div class="org">ITK Engineering GmbH (Bosch Group) · Rülzheim, Germany</div><div class="desc">Built an automated test-data pipeline integrating MS Power BI with Git, supported EAC test-bench documentation, performed software updates on series control units, and contributed to a user interface in Flutter and Dart.</div></div>
+    <div class="tl"><div class="when">Jul 2022 – Jan 2023</div><div class="role">Research Assistant (HiWi)</div><div class="org">Karlsruhe Institute of Technology · Karlsruhe, Germany</div><div class="desc">Developed and tested PLC automation control software for a pick-and-place robot on real hardware, and performed functional and integration validation of an MCDA engineering-software tool with structured defect tracking.</div></div>
+    <div class="tl"><div class="when">Jul 2018 – Aug 2021</div><div class="role">Data Exchange Engineer</div><div class="org">Bosch Global Software Technologies · Coimbatore, India</div><div class="desc">Created and validated engineering data in NX and Creo across global OEM programmes, led CAD migration, managed PDM/PLM data and processed roughly 3,000 orders over the period, coordinating integration reviews between OEMs and engineering teams.</div></div>
+    <div class="tl"><div class="when">Sep 2016 – Jun 2018</div><div class="role">ECR Engineer</div><div class="org">Bosch Global Software Technologies · Coimbatore, India</div><div class="desc">Led cross-functional engineering-change activities, managed changes in PDM/PLM tools, validated drawings and BOMs, and performed impact, dependency and risk analysis for safe implementation of design changes.</div></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="sec-label">// <b>Selected work</b> — five projects in depth</div>
+  <h2>Projects</h2>
+
+  <div class="proj reveal" open-state="0"><div class="proj-head" role="button" tabindex="0" aria-expanded="false">
+    <div class="pn">01</div><div class="pt"><h3>Sensor technology evaluation for automotive level &amp; quality measurement</h3><div class="meta">Master&#8217;s thesis · Robert Bosch GmbH · 2024</div></div><div class="chev" aria-hidden="true">&#9662;</div></div>
+    <div class="proj-body"><div class="proj-inner">
+      <div class="field"><div class="fl">Goal</div><div class="fv">Determine which sensor technologies best measure liquid level and quality in an automotive tank under realistic operating conditions, and recommend one for development.</div></div>
+      <div class="field"><div class="fl">Test rig</div><div class="fv">Designed and built a custom laboratory rig around a fluid tank (~143 × 93 × 300 mm, up to 4 L), instrumented for repeatable, controlled measurement.</div></div>
+      <div class="field"><div class="fl">Test matrix</div><div class="fv"><ul><li>Tilt angles: 0°, 5°, 10° to simulate vehicle attitude</li><li>Temperature: room temperature and 60 °C for thermal performance</li><li>Fluid composition: pure water through to a 50% ethanol mix</li><li>Ultrasonic sensing benchmarked against a calibrated reference sensor</li><li>Targeted radar and LiDAR scoping experiments to confirm the assessment</li></ul></div></div>
+      <div class="field"><div class="fl">Method</div><div class="fv">Applied a Pugh-matrix approach for structured technology comparison and selection; processed and evaluated all measurement data in Python.</div></div>
+      <div class="field"><div class="fl">Outcome</div><div class="fv">Delivered a data-driven technology recommendation to engineering and management, backed by a full characterisation dataset across every test condition.</div></div>
+      <div class="field"><div class="fl">Stack</div><div class="fv"><div class="tagrow"><span class="tag">Ultrasonic</span><span class="tag">Reference sensor</span><span class="tag">Oscilloscope</span><span class="tag">DAQ</span><span class="tag">Python</span><span class="tag">Pugh matrix</span></div></div></div>
+      <div class="rivr"><b>Relevance to RIVR &#8594;</b> physical test-rig design, thermal performance characterisation, durability-style testing across conditions, DAQ &amp; instrumentation, and Python-based analysis.</div>
+    </div></div>
+  </div>
+
+  <div class="proj reveal" open-state="0"><div class="proj-head" role="button" tabindex="0" aria-expanded="false">
+    <div class="pn">02</div><div class="pt"><h3>Automotive interface test infrastructure &amp; conformance testing</h3><div class="meta">Design Engineer · TDK Sensors AG &amp; Co. KG · 2025–2026</div></div><div class="chev" aria-hidden="true">&#9662;</div></div>
+    <div class="proj-body"><div class="proj-inner">
+      <div class="field"><div class="fl">Goal</div><div class="fv">Establish the capability to validate new automotive sensor-interface products against customer requirements, where no automated test infrastructure existed before.</div></div>
+      <div class="field"><div class="fl">What I did</div><div class="fv"><ul><li>Introduced Vector test hardware and software and built the automated test infrastructure from the ground up</li><li>Built and virtualised CAN networks integrating sensors and control units for early testing before hardware availability</li><li>Modelled complete sensor systems and individual subcomponents in the development environment</li><li>Conceived, implemented and verified conformance tests for LIN and SENT interfaces</li><li>Wrote automated test procedures in CAPL to control test hardware and log measurement data</li></ul></div></div>
+      <div class="field"><div class="fl">Method</div><div class="fv">Analysed test results to identify failure modes and fed findings back into design; documented every procedure and setup for repeatability.</div></div>
+      <div class="field"><div class="fl">Outcome</div><div class="fv">Conformance tests were adopted site-wide and confirmed that new products&#8217; output signals met customer requirements.</div></div>
+      <div class="field"><div class="fl">Stack</div><div class="fv"><div class="tagrow"><span class="tag">Vector CANoe</span><span class="tag">VT System</span><span class="tag">CAPL</span><span class="tag">CAN</span><span class="tag">LIN</span><span class="tag">SENT</span><span class="tag">Oscilloscope</span></div></div></div>
+      <div class="rivr"><b>Relevance to RIVR &#8594;</b> building test setups &amp; infrastructure, automating tests in code to control hardware and log data, failure-mode analysis, rigorous documentation.</div>
+    </div></div>
+  </div>
+
+  <div class="proj reveal" open-state="0"><div class="proj-head" role="button" tabindex="0" aria-expanded="false">
+    <div class="pn">03</div><div class="pt"><h3>Pick-and-place robot automation &amp; testing</h3><div class="meta">Research Assistant · Karlsruhe Institute of Technology · 2022–2023</div></div><div class="chev" aria-hidden="true">&#9662;</div></div>
+    <div class="proj-body"><div class="proj-inner">
+      <div class="field"><div class="fl">Goal</div><div class="fv">Automate and validate the control software of a pick-and-place robot on real robotic hardware.</div></div>
+      <div class="field"><div class="fl">What I did</div><div class="fv"><ul><li>Developed and tested PLC automation control software directly on the physical robotic system</li><li>Executed hands-on system tests against formal design requirements on real hardware</li><li>Analysed results and recommended robustness and reliability improvements</li><li>Supported defect analysis and corrective actions during integration</li></ul></div></div>
+      <div class="field"><div class="fl">Outcome</div><div class="fv">Validated robotic control performance against requirements and identified concrete reliability improvements.</div></div>
+      <div class="field"><div class="fl">Stack</div><div class="fv"><div class="tagrow"><span class="tag">PLC</span><span class="tag">Real-time hardware</span><span class="tag">System testing</span></div></div></div>
+      <div class="rivr"><b>Relevance to RIVR &#8594;</b> hands-on testing of physical robotic hardware, system-level validation, reliability-focused analysis.</div>
+    </div></div>
+  </div>
+
+  <div class="proj reveal" open-state="0"><div class="proj-head" role="button" tabindex="0" aria-expanded="false">
+    <div class="pn">04</div><div class="pt"><h3>Automated test data pipeline</h3><div class="meta">Working Student · ITK Engineering GmbH (Bosch Group) · 2023–2024</div></div><div class="chev" aria-hidden="true">&#9662;</div></div>
+    <div class="proj-body"><div class="proj-inner">
+      <div class="field"><div class="fl">Goal</div><div class="fv">Make test data analysis faster, repeatable and version-controlled for an embedded software team.</div></div>
+      <div class="field"><div class="fl">What I did</div><div class="fv"><ul><li>Built an automated data pipeline integrating MS Power BI with Git version control</li><li>Connected test repositories to automated reporting for quality and trend visibility</li><li>Supported EAC test-bench documentation and improved reproducibility</li><li>Performed software updates on series control units with post-update validation</li></ul></div></div>
+      <div class="field"><div class="fl">Outcome</div><div class="fv">Repeatable, version-controlled test reporting and improved test-bench reproducibility.</div></div>
+      <div class="field"><div class="fl">Stack</div><div class="fv"><div class="tagrow"><span class="tag">MS Power BI</span><span class="tag">Git</span><span class="tag">Embedded ECUs</span><span class="tag">Flutter/Dart</span></div></div></div>
+      <div class="rivr"><b>Relevance to RIVR &#8594;</b> automating test data logging &amp; analysis, keeping test work reproducible and documented.</div>
+    </div></div>
+  </div>
+
+  <div class="proj reveal" open-state="0"><div class="proj-head" role="button" tabindex="0" aria-expanded="false">
+    <div class="pn">05</div><div class="pt"><h3>Competitive robotics — autonomous line-follower robot</h3><div class="meta">Indo-US Robo League · national round, IIT Bombay · 2013</div></div><div class="chev" aria-hidden="true">&#9662;</div></div>
+    <div class="proj-body"><div class="proj-inner">
+      <div class="field"><div class="fl">Goal</div><div class="fv">Design and build an autonomous line-follower robot for a national robotics competition.</div></div>
+      <div class="field"><div class="fl">What I did</div><div class="fv">Built a line-follower robot able to identify and fulfil specific instructions, working hands-on with mechanical assembly, sensors and electronics. Separately designed a spray-fuelled rocket launching system.</div></div>
+      <div class="field"><div class="fl">Outcome</div><div class="fv">Reached the national round at IIT Bombay of the Indo-US Robo League, a qualifier for RoboGames-USA.</div></div>
+      <div class="field"><div class="fl">Stack</div><div class="fv"><div class="tagrow"><span class="tag">Mechanical assembly</span><span class="tag">Sensors</span><span class="tag">Electronics</span><span class="tag">Embedded control</span></div></div></div>
+      <div class="rivr"><b>Relevance to RIVR &#8594;</b> early, genuine hands-on robot building, mechanical assembly, and a love of tinkering with hardware.</div>
+    </div></div>
+  </div>
+
+</div></section>
+
+<section id="toolbox"><div class="wrap">
+  <div class="sec-label">// <b>Stack</b> — technical toolbox</div>
+  <h2>Technical toolbox</h2>
+  <div class="tools reveal">
+    <div class="tg"><div class="tgh">Test &amp; Measurement</div><div class="tgl"><span class="tag">Test rig &amp; fixture design</span><span class="tag">Functional testing</span><span class="tag">Thermal characterisation</span><span class="tag">Durability / reliability</span><span class="tag">Oscilloscope</span><span class="tag">Signal generator</span><span class="tag">Multimeter</span><span class="tag">Data acquisition (DAQ)</span><span class="tag">HiL test platforms</span></div></div>
+    <div class="tg"><div class="tgh">Automation &amp; Languages</div><div class="tgl"><span class="tag">Python</span><span class="tag">CAPL</span><span class="tag">Bash / CLI</span><span class="tag">Test automation</span><span class="tag">Device control</span><span class="tag">Data logging</span><span class="tag">Automated regression</span></div></div>
+    <div class="tg"><div class="tgh">Mechanical &amp; CAD</div><div class="tgl"><span class="tag">NX</span><span class="tag">Creo</span><span class="tag">Design-for-manufacturing</span><span class="tag">Electro-mechanical assembly</span><span class="tag">Mechatronic systems</span></div></div>
+    <div class="tg"><div class="tgh">Protocols &amp; Embedded</div><div class="tgl"><span class="tag">CAN</span><span class="tag">LIN</span><span class="tag">SENT</span><span class="tag">SPI</span><span class="tag">UDS</span><span class="tag">J1939</span><span class="tag">Embedded control units</span></div></div>
+    <div class="tg"><div class="tgh">Data &amp; Tooling</div><div class="tgl"><span class="tag">Git</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">MS Power BI</span><span class="tag">MATLAB/Simulink</span><span class="tag">Vector CANoe</span><span class="tag">VT System</span><span class="tag">Linux</span></div></div>
+    <div class="tg"><div class="tgh">Methods &amp; Standards</div><div class="tgl"><span class="tag">Root-cause analysis</span><span class="tag">Pugh matrix</span><span class="tag">8D / FMEA-style</span><span class="tag">Engineering change (ECR/ECO)</span><span class="tag">Requirements traceability</span><span class="tag">ISO 26262 awareness</span><span class="tag">ASPICE</span></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-label">// <b>What I bring</b> — core capabilities</div>
+  <h2>Capabilities</h2>
+  <div class="caps reveal">
+    <div class="cap"><div class="ct">Test setup &amp; rig design</div><div class="cd">Physical test rigs, jigs and fixtures for mechanical and mechatronic components.</div></div>
+    <div class="cap"><div class="ct">Hands-on testing</div><div class="cd">Functional, thermal, durability and reliability testing on real hardware.</div></div>
+    <div class="cap"><div class="ct">Automation &amp; code</div><div class="cd">Python for test automation, device control and data analysis; CAPL for hardware control and logging.</div></div>
+    <div class="cap"><div class="ct">Data &amp; failure analysis</div><div class="cd">Data acquisition, instrumentation, identifying failure modes and performance bottlenecks.</div></div>
+    <div class="cap"><div class="ct">Mechanical &amp; robotics</div><div class="cd">B.E. Mechanical, NX &amp; Creo CAD, robotic system testing, electro-mechanical assembly.</div></div>
+    <div class="cap"><div class="ct">Collaboration &amp; docs</div><div class="cd">Close work with mechanical &amp; electronics engineers, meticulous documentation for repeatability.</div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-label">// <b>Signal</b> — recognition &amp; record</div>
+  <h2>Recognition</h2>
+  <div class="recog reveal">
+    <div class="rec"><div class="quote">Recognised by the Director of Electronic Design at TDK for learning new domains remarkably quickly, building robust solutions in a short time by connecting the right internal and external experts, and staying transparent about advantages, risks and trade-offs.</div><div class="src">— Letter of recommendation, TDK Sensors AG &amp; Co. KG</div></div>
+    <div class="rec metric"><div class="v">~3,000</div><div class="l">OEM data-exchange orders processed over 3+ years at Bosch (oneDESC recognition).</div></div>
+    <div class="rec"><ul><li>TDK work certificate graded in the top tier (&#8222;sehr gut&#8220;)</li><li>M.Sc. Sensor Systems Technology · grade 2.0</li><li>B.E. Mechanical Engineering · First Class with Distinction (1.6)</li></ul></div>
+    <div class="rec"><ul><li>National round, Indo-US Robo League (IIT Bombay), RoboGames-USA qualifier</li><li>EU Blue Card holder, valid through January 2029</li><li>Immediately available, open to relocation</li></ul></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-label">// <b>Background</b> — education &amp; languages</div>
+  <h2>Education</h2>
+  <div class="edu">
+    <div class="row"><div class="deg">M.Sc. Sensor Systems Technology</div><div class="det">Karlsruhe University of Applied Sciences · 2022–2024 · Grade 2.0</div><div class="extra">Relevant coursework: System Integration, Automotive Sensors, Sensor Actor Networks, Real-time Data Processing, Computer Aided Sensorics. Thesis project: ECG signal classification using Continuous Wavelet Transform and deep neural networks.</div></div>
+    <div class="row"><div class="deg">B.E. Mechanical Engineering</div><div class="det">Government College of Technology, Coimbatore · 2012–2016 · First Class with Distinction (1.6)</div><div class="extra">Robotics, industrial robotics, mechatronics and CAD/CAM coursework; active in competitive robotics.</div></div>
+    <div class="row"><div class="deg">Languages</div><div class="det">English C2 (business fluent) · German B1 (actively improving) · Tamil (native)</div></div>
+  </div>
+</div></section>
+</div>
+
+<footer class="layer" id="contact"><div class="wrap">
+  <div class="sec-label">// Let&#8217;s talk</div>
+  <div class="cta">Ready to build and break things at <a href="mailto:rajvishnumech@gmail.com">rajvishnumech@gmail.com</a></div>
+  <div class="foot-meta"><span>Berlin, Germany</span><span>+49 176 59311471</span><span>Available immediately</span><span>EU Blue Card · to 2029</span></div>
+</div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.proj-head').forEach(function(h){
+    function toggle(){var card=h.closest('.proj'),body=card.querySelector('.proj-body'),open=card.getAttribute('open-state')==='1';card.setAttribute('open-state',open?'0':'1');h.setAttribute('aria-expanded',open?'false':'true');body.style.maxHeight=open?'0':(body.scrollHeight+40)+'px';}
+    h.addEventListener('click',toggle);
+    h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+  });
+  var first=document.querySelector('.proj');
+  if(first){first.setAttribute('open-state','1');first.querySelector('.proj-head').setAttribute('aria-expanded','true');var b=first.querySelector('.proj-body');setTimeout(function(){b.style.maxHeight=(b.scrollHeight+40)+'px';},120);}
+  if('IntersectionObserver' in window && !reduce){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}
+  else {document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+  var cv=document.getElementById('scope');
+  if(cv){var ctx=cv.getContext('2d');
+    function size(){var r=cv.getBoundingClientRect();cv.width=r.width*devicePixelRatio;cv.height=120*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);}
+    size();window.addEventListener('resize',size);
+    var W=function(){return cv.width/devicePixelRatio;},H=120,t=0;
+    function trace(){var w=W();ctx.clearRect(0,0,w,H);ctx.strokeStyle='rgba(217,213,201,.7)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,H/2);ctx.lineTo(w,H/2);ctx.stroke();ctx.beginPath();for(var x=0;x<=w;x++){var p=x/w;var sine=Math.sin(p*Math.PI*6+t)*16;var pulse=(Math.sin(p*Math.PI*2-t*0.6)>0.6?12:0);var noise=reduce?0:(Math.sin(p*120+t*3)*1.4);var y=H/2-sine-pulse+noise;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.strokeStyle='#0E8C72';ctx.lineWidth=2;ctx.shadowColor='rgba(14,140,114,.35)';ctx.shadowBlur=6;ctx.stroke();ctx.shadowBlur=0;var cx=((Math.sin(t*0.4)+1)/2)*w;ctx.strokeStyle='rgba(194,84,31,.6)';ctx.beginPath();ctx.moveTo(cx,6);ctx.lineTo(cx,H-6);ctx.stroke();}
+    if(reduce){t=1.2;trace();}else{(function loop(){t+=0.03;trace();requestAnimationFrame(loop);})();}
+  }
+})();
+</script>
+</body>
+</html>
