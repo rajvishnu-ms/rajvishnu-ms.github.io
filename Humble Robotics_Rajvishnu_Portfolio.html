@@ -126,6 +126,16 @@
   .clinks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
   footer{padding:34px 0;text-align:center;color:var(--dim);font-size:13px;border-top:1px solid var(--line);font-family:"SF Mono",monospace}
 
+  .letter{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:40px 44px;max-width:820px;position:relative;overflow:hidden}
+  .letter::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--teal),var(--blue))}
+  .letter-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .letter-head .lh-name{font-size:17px;font-weight:600}
+  .letter-head .lh-sub{font-size:12.5px;color:var(--mut);margin-top:4px;font-family:"SF Mono",monospace}
+  .letter-head .lh-date{font-size:12.5px;color:var(--dim);font-family:"SF Mono",monospace;white-space:nowrap}
+  .letter p{font-size:15px;color:var(--txt);margin-bottom:15px;line-height:1.75}
+  .letter p:first-of-type{color:var(--txt)}
+  @media(max-width:600px){.letter{padding:28px 24px}}
+
   .ic-blue{background:rgba(59,130,246,.13);color:var(--blue)}
   .ic-teal{background:rgba(45,212,191,.13);color:var(--teal)}
   .ic-amber{background:rgba(245,177,76,.13);color:var(--amber)}
@@ -138,6 +148,7 @@
   <div class="wrap">
     <div class="brand">Rajvishnu Meenakshi Sundaram</div>
     <div class="links">
+      <a href="#letter">Cover Letter</a>
       <a href="#about">About</a>
       <a href="#value">Contribute</a>
       <a href="#experience">Experience</a>
@@ -168,6 +179,28 @@
     </div>
   </div>
 </header>
+
+<section id="letter">
+  <div class="wrap reveal">
+    <div class="eyebrow">Cover Letter</div>
+    <h2>Application for Vehicle Systems Engineer</h2>
+    <div class="letter">
+      <div class="letter-head">
+        <div>
+          <div class="lh-name">Rajvishnu Meenakshi Sundaram</div>
+          <div class="lh-sub">Berlin, Germany &middot; rajvishnumech@gmail.com &middot; +49 176 59311471</div>
+        </div>
+        <div class="lh-date">22 June 2026</div>
+      </div>
+      <p>Dear Hiring Team,</p>
+      <p>I am applying for the Vehicle Systems Engineer position at Humble Robotics. Building an autonomous, zero-emissions hauler means making complex mechanical, electrical and software subsystems work as one reliable platform, and that system-level integration and validation is exactly what I have done for the past 8+ years.</p>
+      <p>At TDK Sensors AG I led the integration of cross-discipline subsystems across mechanical, electrical and software domains, defining system architectures and interface definitions and managing the interfaces between sensor, control-unit and software subsystems. I planned and executed system-level and HIL validation, building hardware-in-the-loop benches that combined real control units with virtual subsystem models to verify behaviour against product requirements and safety goals. I performed system-level analysis of performance, reliability and fault tolerance, identified integration risks and implemented mitigations, supported design reviews to keep subsystem teams aligned, and drove root-cause analysis of system-level issues using oscilloscopes, logic analysers and protocol decoders.</p>
+      <p>I work fluently with vehicle communication protocols including CAN and Ethernet, use MATLAB/Simulink for system modelling, and apply functional-safety practices (ISO 26262) and requirements traceability as a matter of course. My earlier work reinforces the cross-disciplinary core of this role: at KIT I developed and tested control software on a robotic electromechanical platform, and at Bosch I specified and coordinated critical components with suppliers and led engineering-change impact analysis across assemblies and processes.</p>
+      <p>I have a strong drive to quickly learn complex new systems, I am comfortable in a fast-moving startup environment, and I take ownership early. I would welcome the opportunity to discuss how my systems integration and validation experience can help Humble Robotics bring its platform from concept to reliable deployment.</p>
+      <p style="margin-top:22px">Sincerely,<br><span style="color:var(--teal);font-weight:500">Rajvishnu Meenakshi Sundaram</span></p>
+    </div>
+  </div>
+</section>
 
 <section id="about">
   <div class="wrap reveal">
