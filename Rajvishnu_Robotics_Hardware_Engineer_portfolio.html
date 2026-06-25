@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajvishnu Meenakshi Sundaram, Sensor &amp; Embedded Hardware Engineer</title>
+<style>
+  :root{
+    --ink:#0d1b14;--panel:#10241a;--paper:#f3f0e7;--paper-2:#e9e4d6;
+    --trace:#39d98a;--trace-dim:#1f7a52;--amber:#e6a23c;
+    --grid:rgba(57,217,138,.10);--rule:#cdc6b4;
+    --mono:"SFMono-Regular",ui-monospace,"Menlo","Consolas",monospace;
+    --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--trace);color:var(--ink)}
+  a{color:inherit}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+  svg{display:block}
+
+  .hero{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;border-bottom:3px solid var(--trace)}
+  .scope{position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:42px 42px;opacity:.9;mask-image:radial-gradient(circle at 50% 45%,#000 60%,transparent 100%)}
+  .sweep{position:absolute;top:0;bottom:0;width:2px;background:linear-gradient(var(--trace),transparent);opacity:.5;animation:sweep 6s linear infinite}
+  @keyframes sweep{0%{left:-2%}100%{left:102%}}
+  .hero-inner{position:relative;padding:76px 0 64px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--trace);display:flex;align-items:center;gap:12px;margin-bottom:26px}
+  .eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--trace);box-shadow:0 0 10px var(--trace);animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  h1{font-size:clamp(34px,6vw,60px);line-height:1.04;font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
+  h1 .em{color:var(--trace)}
+  .lede{font-size:clamp(16px,2.1vw,20px);max-width:62ch;color:var(--paper-2);font-weight:400;text-align:justify}
+  .trace-svg{width:100%;height:70px;margin-top:30px;opacity:.92}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;font-family:var(--mono);font-size:13px;color:var(--paper-2)}
+  .meta-row span{display:flex;gap:8px;align-items:center}
+  .meta-row b{color:var(--trace);font-weight:500}
+  .cta{display:inline-flex;align-items:center;gap:10px;margin-top:34px;background:var(--trace);color:var(--ink);font-family:var(--mono);font-size:14px;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:2px;transition:transform .15s ease,box-shadow .15s ease}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(57,217,138,.3)}
+
+  section{padding:66px 0;border-bottom:1px solid var(--rule)}
+  .sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--trace-dim);display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .sec-label .n{color:var(--ink);font-weight:700}
+  .sec-label .line{flex:1;height:1px;background:var(--rule)}
+  h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.015em;line-height:1.12;margin-bottom:16px}
+  h3{font-size:18px;font-weight:700;margin-bottom:6px}
+  p.body{font-size:16.5px;max-width:70ch;margin-bottom:16px;color:#22312a;text-align:justify}
+
+  .icon{width:22px;height:22px;flex:none}
+  .icon-lg{width:30px;height:30px;flex:none}
+
+  /* TDK signature */
+  .signature{background:var(--panel);color:var(--paper);border-bottom:3px solid var(--amber)}
+  .signature .sec-label{color:var(--amber)}
+  .signature .sec-label .n{color:var(--paper)}
+  .signature .sec-label .line{background:rgba(255,255,255,.18)}
+  .signature h2{color:var(--paper)}
+  .sig-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+  .sig-grid p{color:var(--paper-2);font-size:16.5px;margin-bottom:14px;max-width:54ch;text-align:justify}
+  .chipcard{border:1px solid rgba(230,162,60,.4);border-radius:4px;padding:22px;background:rgba(230,162,60,.06);font-family:var(--mono);font-size:13px}
+  .chipcard .k{color:var(--amber);letter-spacing:.08em;text-transform:uppercase;font-size:11px}
+  .chipcard .v{color:var(--paper);margin:3px 0 16px;font-size:14px;line-height:1.45}
+  .chipcard .v:last-child{margin-bottom:0}
+  .stack{display:grid;gap:14px;margin-top:8px}
+  .layer{display:grid;grid-template-columns:34px 180px 1fr;gap:18px;border:1px solid var(--rule);border-radius:4px;padding:16px 18px;background:#fff;align-items:start}
+  .layer .tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--trace-dim);font-weight:700;padding-top:3px}
+  .layer .desc{font-size:15px;color:#22312a;text-align:justify}
+  .layer .desc b{color:var(--ink)}
+  .layer .ic{padding-top:1px}
+
+  /* project cards for other roles */
+  .proj{display:grid;gap:22px}
+  .pcard{display:grid;grid-template-columns:96px 1fr;gap:24px;border:1px solid var(--rule);border-radius:6px;background:#fff;padding:24px;align-items:start}
+  .pcard .art{width:96px;height:96px;border-radius:4px;background:var(--ink);display:flex;align-items:center;justify-content:center}
+  .pcard .ptop{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px}
+  .pcard h3{font-size:19px}
+  .pcard .co{font-family:var(--mono);font-size:12.5px;color:#6b7771}
+  .pcard .role-rel{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);font-weight:700;margin:8px 0 8px}
+  .pcard p{font-size:15.5px;color:#22312a;text-align:justify;margin-bottom:10px;max-width:72ch}
+  .pcard ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+  .pcard ul li{font-family:var(--mono);font-size:11.5px;padding:5px 9px;border:1px solid var(--rule);border-radius:2px;background:var(--paper-2)}
+
+  .map{display:grid;gap:0;border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+  .map-row{display:grid;grid-template-columns:1fr 1.5fr;border-top:1px solid var(--rule)}
+  .map-row:first-child{border-top:none}
+  .map-row>div{padding:15px 18px}
+  .map-row .req{background:var(--paper-2);font-family:var(--mono);font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px}
+  .map-row .ev{font-size:15px;color:#22312a;text-align:justify}
+  .map-row .ev b{color:var(--trace-dim)}
+
+  .belief{background:var(--paper-2)}
+  .qa{max-width:76ch}
+  .qa .q{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--trace-dim);text-transform:uppercase;margin-bottom:10px}
+  .pull{border-left:3px solid var(--amber);padding:4px 0 4px 20px;margin:8px 0 22px;font-size:19px;font-weight:600;line-height:1.4;color:var(--ink);max-width:62ch}
+
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .skills .group h3{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--trace-dim);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag2{font-family:var(--mono);font-size:12.5px;padding:6px 11px;border:1px solid var(--rule);border-radius:2px;background:#fff;color:var(--ink)}
+
+  footer{background:var(--ink);color:var(--paper);padding:54px 0}
+  footer h2{color:var(--paper)}
+  footer a.link{color:var(--trace);font-family:var(--mono);font-size:15px;text-decoration:none;border-bottom:1px solid var(--trace-dim);padding-bottom:2px;display:inline-flex;align-items:center;gap:8px}
+  footer a.link:hover{border-color:var(--trace)}
+  .foot-row{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:22px}
+  .foot-note{font-family:var(--mono);font-size:12px;color:#7d8a83;margin-top:30px;text-align:justify}
+
+  @media(max-width:760px){
+    .sig-grid{grid-template-columns:1fr;gap:24px}
+    .map-row{grid-template-columns:1fr}
+    .map-row .req{border-bottom:1px solid var(--rule)}
+    .skills{grid-template-columns:1fr}
+    .layer{grid-template-columns:28px 1fr;gap:12px}
+    .layer .tag{grid-column:2}
+    .pcard{grid-template-columns:1fr;gap:16px}
+    .pcard .art{width:64px;height:64px}
+  }
+  @media(prefers-reduced-motion:reduce){.eyebrow::before,.sweep{animation:none}*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="scope" aria-hidden="true"></div>
+  <div class="sweep" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Sensor &amp; Embedded Hardware Engineer, Berlin</div>
+    <h1>Where sensors meet compute on a machine that<br><span class="em">takes a beating</span>, that is my home turf.</h1>
+    <p class="lede">Eight years building the foundational layer that autonomy actually runs on, from raw sensor signal to validated hardware on a real machine. Written for the team building Physical AI for the world's largest off highway equipment.</p>
+    <svg class="trace-svg" viewBox="0 0 1000 70" preserveAspectRatio="none" aria-hidden="true">
+      <polyline fill="none" stroke="#39d98a" stroke-width="2" points="0,35 90,35 110,12 130,58 150,35 250,35 270,35 290,15 310,15 330,55 350,55 370,35 520,35 540,10 560,60 580,35 700,35 720,35 740,20 760,50 780,35 1000,35"/>
+    </svg>
+    <div class="meta-row">
+      <span><b>M.Sc.</b> Sensor Systems Technology</span>
+      <span><b>8+ yrs</b> embedded, sensor &amp; mechanical</span>
+      <span><b>EU</b> work authorised, Berlin</span>
+    </div>
+    <a class="cta" href="#contact">Get in touch &nbsp;&rarr;</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-label"><span class="n">01</span> Why me, for this role <span class="line"></span></div>
+    <h2>Sensor integration on a real machine is not plumbing. It is the intelligence problem.</h2>
+    <p class="body">sensmore is building Physical AI for heavy machines, wheel loaders that adapt to dynamic environments in real time. That only works if the sensor data feeding the model stays clean and trustworthy while the hardware is shaken, heated and electrically noisy for years. The boundary where multiple sensors meet compute on a machine that takes a beating is exactly where I have spent my career.</p>
+    <p class="body">I select and integrate sensors, bridge hardware with software, build and recreate communication networks at the protocol level, and prove out designs before they ship. I bring the swiss knife range your role asks for: hands on at the bench one day, system architecture the next, and a mechanical engineering foundation underneath all of it.</p>
+  </div>
+</section>
+
+<section class="signature">
+  <div class="wrap">
+    <div class="sec-label"><span class="n">02</span> What I built at TDK, from scratch <span class="line"></span></div>
+    <div class="sig-grid">
+      <div>
+        <h2 style="margin-bottom:18px">A full sensor validation platform, stood up end to end.</h2>
+        <p>At TDK I did not inherit a test setup. I built one. I introduced the Vector toolchain at the site, constructed and virtualised the CAN networks, modelled the sensor systems and their subcomponents, wrote the embedded firmware, and recreated the sensor itself in two forms: in software and on silicon.</p>
+        <p>The result was a platform where sensor behaviour, communication and faults could all be reproduced on demand, the kind of controllable, trustworthy test environment that real machine autonomy depends on.</p>
+      </div>
+      <div class="chipcard">
+        <div class="k">Scope</div>
+        <div class="v">Built the sensor interface validation capability end to end</div>
+        <div class="k">Hardware to silicon</div>
+        <div class="v">Embedded C/C++ on the NBP8S, plus OWI protocol recreated in VHDL on FPGA</div>
+        <div class="k">Two virtual twins</div>
+        <div class="v">NBP8S recreated virtually in the Vector environment via CAPL, OWI emulated in real time on FPGA</div>
+        <div class="k">Process</div>
+        <div class="v">ASPICE and ISO 26262 throughout</div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="layer">
+        <div class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18M15 3v18"/></svg></div>
+        <div class="tag">Toolchain, from zero</div>
+        <div class="desc">Introduced and commissioned the <b>Vector VT System HiL infrastructure</b> across the site, from bare hardware to operational readiness. A capability nobody else had taken on.</div>
+      </div>
+      <div class="layer">
+        <div class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><circle cx="5" cy="12" r="2.4"/><circle cx="19" cy="5" r="2.4"/><circle cx="19" cy="19" r="2.4"/><path d="M7.2 11l9.6-5M7.2 13l9.6 5"/></svg></div>
+        <div class="tag">Networks</div>
+        <div class="desc">Constructed and <b>virtualised CAN networks</b> integrating sensors and control units, then modelled the sensor systems and subcomponents inside the development environment.</div>
+      </div>
+      <div class="layer">
+        <div class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg></div>
+        <div class="tag">Firmware</div>
+        <div class="desc">Developed and validated <b>embedded C/C++ on the NBP8S</b> battery management sensor module, tuning timing critical behaviour and reliability on a resource constrained target.</div>
+      </div>
+      <div class="layer">
+        <div class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 11l2.5 2.5L7 16M12 16h5"/></svg></div>
+        <div class="tag">Virtual twin, software</div>
+        <div class="desc">Recreated the <b>NBP8S virtually in the Vector environment using CAPL</b>, so the sensor could be exercised without the physical part in the loop.</div>
+      </div>
+      <div class="layer">
+        <div class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/><path d="M11 4v4M13 4v4M11 16v4M13 16v4M4 11h4M4 13h4M16 11h4M16 13h4"/></svg></div>
+        <div class="tag">Virtual twin, silicon</div>
+        <div class="desc">Rebuilt the <b>OWI protocol on an FPGA in VHDL</b>, taking a research concept to a working real time hardware emulation that reproduces deterministic timing, edge cases and faults on demand.</div>
+      </div>
+      <div class="layer">
+        <div class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
+        <div class="tag">Verification</div>
+        <div class="desc">Designed and ran <b>conformance and certification tests for LIN, SENT and OWI</b> on real hardware, automated with CAPL and Python for repeatable development and type tests.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER PROJECTS, explained like TDK -->
+<section>
+  <div class="wrap">
+    <div class="sec-label"><span class="n">03</span> Projects that map to this role <span class="line"></span></div>
+    <h2 style="margin-bottom:28px">Robotics, sensor selection, and the mechanical layer.</h2>
+    <div class="proj">
+
+      <div class="pcard">
+        <div class="art">
+          <svg class="icon-lg" viewBox="0 0 48 48" fill="none" stroke="#39d98a" stroke-width="2">
+            <rect x="6" y="34" width="36" height="8" rx="1"/>
+            <path d="M24 34V20M24 20l10-8M34 12a3 3 0 1 0 0-1z" stroke-linecap="round"/>
+            <circle cx="24" cy="20" r="2.5" fill="#39d98a" stroke="none"/>
+            <rect x="32" y="9" width="8" height="6" rx="1"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ptop"><h3>Pick and place robot, embedded control on real hardware</h3><span class="co">KIT, 2022 to 2023</span></div>
+          <div class="role-rel">Direct match: integrate sensors and compute on a real machine</div>
+          <p>I developed and tested the control software for a pick and place robot directly on real embedded hardware. I implemented the motion sequences, the sensor triggered actions that drive each pick, and the safety interlocks that keep the cell safe, then ran structured system and function tests against the design requirements to find failure modes and tune behaviour. This is hands on robotics integration: sensors, actuators, control and safety working together on a physical machine, which is the core of your role.</p>
+          <ul><li>Embedded control</li><li>Motion sequencing</li><li>Sensor triggered actions</li><li>Safety interlocks</li><li>System &amp; function test</li></ul>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="art">
+          <svg class="icon-lg" viewBox="0 0 48 48" fill="none" stroke="#39d98a" stroke-width="2">
+            <circle cx="18" cy="24" r="6"/>
+            <path d="M24 24h6M30 18c4 2 4 10 0 12M34 14c7 4 7 16 0 20" stroke-linecap="round"/>
+            <path d="M6 24h6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ptop"><h3>Sensor technology selection, 30+ technologies evaluated</h3><span class="co">Robert Bosch, 2024</span></div>
+          <div class="role-rel">Direct match: choosing and integrating robotic sensors</div>
+          <p>My master's thesis was a structured study of which sensor to trust for a real world measurement job. I evaluated more than 30 sensor technologies, including Radar, LiDAR and ultrasonic, against accuracy, integration effort, cost and feasibility using a weighted Pugh matrix, then built a controlled laboratory rig and characterised the chosen ultrasonic reference across tilt angles, temperatures and medium concentrations with data acquisition logging and Python analysis. The recommendation was adopted for series production. Selecting the right sensor for autonomy, and proving it under real conditions, is exactly this work.</p>
+          <ul><li>Radar, LiDAR, ultrasonic</li><li>Pugh matrix selection</li><li>Lab characterisation</li><li>DAQ logging</li><li>Python analysis</li></ul>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="art">
+          <svg class="icon-lg" viewBox="0 0 48 48" fill="none" stroke="#39d98a" stroke-width="2">
+            <circle cx="24" cy="24" r="6"/>
+            <path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M37 11l-4 4M15 33l-4 4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ptop"><h3>Mechanical design and CAD, component geometry to release</h3><span class="co">Bosch, 2016 to 2021</span></div>
+          <div class="role-rel">Direct match: mechanical integration and CAD for the machine</div>
+          <p>Across four years and a mechanical engineering degree, I created and validated component geometry in Siemens NX and PTC Creo, checked interface correctness across global programmes, and led CAD migration activities that preserved geometry integrity and release consistency. I coordinated interface reviews between teams before release and produced the documentation that carried designs into volume production. This is the mechanical and CAD grounding to design how multiple sensors and compute physically mount, route and survive on the machine.</p>
+          <ul><li>Siemens NX</li><li>PTC Creo</li><li>Geometry integrity</li><li>Interface reviews</li><li>Release to production</li></ul>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="art">
+          <svg class="icon-lg" viewBox="0 0 48 48" fill="none" stroke="#39d98a" stroke-width="2">
+            <path d="M8 14h32M8 24h32M8 34h20" stroke-linecap="round"/>
+            <circle cx="38" cy="34" r="4"/><path d="M38 31v6M35 34h6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ptop"><h3>Verification and CI automation for control units</h3><span class="co">ITK Engineering, 2023 to 2024</span></div>
+          <div class="role-rel">Supports: reliable, scalable, repeatable validation</div>
+          <p>I carried out post update verification of series control units, validating the integrated hardware and software behaviour against requirements, and built a Python based test pipeline with continuous integration on GitHub Actions so that evaluation of test data was automated and traceable. Reliable hardware on a scalable machine needs exactly this discipline: repeatable, automated checks that catch regressions before they reach the field.</p>
+          <ul><li>HW/SW verification</li><li>Python pipeline</li><li>CI on GitHub Actions</li><li>Traceable evaluation</li></ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-label"><span class="n">04</span> Mapped to your requirements <span class="line"></span></div>
+    <h2 style="margin-bottom:26px">What you asked for, and where I have done it.</h2>
+    <div class="map">
+      <div class="map-row">
+        <div class="req"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><circle cx="9" cy="12" r="4"/><path d="M13 12h4M17 8c2 2 2 6 0 8" stroke-linecap="round"/></svg>Integrate robotic sensors</div>
+        <div class="ev">Thesis at Bosch: evaluated <b>30+ sensor technologies including Radar, LiDAR and ultrasonic</b>, then characterised the chosen sensor in a controlled lab rig with instrumentation and Python analysis.</div>
+      </div>
+      <div class="map-row">
+        <div class="req"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9l2 3-2 3M13 15h3"/></svg>Bridge hardware with software</div>
+        <div class="ev">At TDK: <b>embedded C/C++ on the NBP8S</b> plus a virtual twin in Vector via CAPL, securing the data path between sensors, control units and the test environment.</div>
+      </div>
+      <div class="map-row">
+        <div class="req"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><rect x="6" y="32" width="2" height="2"/><path d="M4 20h16v-8M24 24V20" transform="scale(.8) translate(2 -4)"/><rect x="5" y="5" width="14" height="9" rx="1"/><path d="M12 14v4M8 18h8"/></svg>Sensors + compute on a real machine</div>
+        <div class="ev">At KIT: <b>control software on real embedded hardware for a pick and place robot</b>, with motion sequences, sensor triggered actions and safety interlocks.</div>
+      </div>
+      <div class="map-row">
+        <div class="req"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg>Embedded, CAN, I2C, SPI</div>
+        <div class="ev">Daily work across <b>CAN, LIN, SENT and SPI</b> on embedded targets, with protocol conformance and certification testing on real hardware.</div>
+      </div>
+      <div class="map-row">
+        <div class="req"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>Mechanical integration &amp; CAD</div>
+        <div class="ev">B.E. Mechanical plus four years at Bosch in <b>Siemens NX and PTC Creo</b>: component geometry, CAD migration, mechanical interface reviews.</div>
+      </div>
+      <div class="map-row">
+        <div class="req"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><path d="M3 12h3l2 6 4-14 2 8h7"/></svg>Signal integrity &amp; fault analysis</div>
+        <div class="ev">Built HiL infrastructure for <b>reproducible fault diagnosis</b> and used FPGA emulation to reproduce timing edge cases and faults deterministically before they reach the field.</div>
+      </div>
+      <div class="map-row">
+        <div class="req"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg>Python, C++, firmware, agile</div>
+        <div class="ev"><b>Python, C/C++, VHDL and CAPL</b>, plus a Python CI pipeline on GitHub Actions, delivered inside agile, international project teams.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="belief">
+  <div class="wrap qa">
+    <div class="sec-label"><span class="n">05</span> A belief I will defend <span class="line"></span></div>
+    <div class="q">An uncommon view on the future of robotics and autonomy</div>
+    <p class="pull">The field over invests in perception and under invests in the boring physical layer, and that is where real world autonomy will be won or lost.</p>
+    <p class="body">The popular narrative says intelligence is the bottleneck: bigger models, more data, smarter end to end learning. My contrarian view, shaped by years validating sensors in harsh conditions, is that the limiting factor on real machines is not the algorithm. It is whether the sensor data stays clean and trustworthy when the hardware is shaken, heated and electrically noisy for years.</p>
+    <p class="body">A brilliant Vision Language Action model fed by a sensor with a drifting calibration or a marginal connector is worse than a simpler system on rock solid hardware, because it fails in ways nobody can predict. The companies that win in heavy industry will treat physical sensor integration as a first class intelligence problem, not as plumbing. That is exactly why a Physical AI company that owns the hardware software boundary has the right idea.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-label"><span class="n">06</span> Toolbox <span class="line"></span></div>
+    <div class="skills">
+      <div class="group">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><circle cx="9" cy="12" r="4"/><path d="M13 12h4M17 8c2 2 2 6 0 8"/></svg>Sensors &amp; Integration</h3>
+        <div class="tags">
+          <span class="tag2">Radar, LiDAR, Ultrasonic (eval)</span>
+          <span class="tag2">Sensor validation</span>
+          <span class="tag2">Hardware to software integration</span>
+          <span class="tag2">Data acquisition</span>
+          <span class="tag2">Signal integrity</span>
+        </div>
+      </div>
+      <div class="group">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg>Embedded &amp; Buses</h3>
+        <div class="tags">
+          <span class="tag2">Embedded C / C++</span><span class="tag2">FPGA / VHDL</span><span class="tag2">CAN</span><span class="tag2">SPI</span><span class="tag2">I2C</span><span class="tag2">LIN / SENT</span><span class="tag2">Microcontrollers</span>
+        </div>
+      </div>
+      <div class="group">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>Mechanical &amp; CAD</h3>
+        <div class="tags">
+          <span class="tag2">Siemens NX</span><span class="tag2">PTC Creo</span><span class="tag2">Geometry &amp; tolerances</span><span class="tag2">Teamcenter PDM/PLM</span>
+        </div>
+      </div>
+      <div class="group">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a52" stroke-width="1.8"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg>Software &amp; Tooling</h3>
+        <div class="tags">
+          <span class="tag2">Python</span><span class="tag2">MATLAB / Simulink</span><span class="tag2">CAPL</span><span class="tag2">LTSpice</span><span class="tag2">Git, CI on GitHub Actions</span><span class="tag2">Vector VT System / CANoe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="sec-label" style="color:var(--trace)"><span class="n" style="color:var(--paper)">07</span> Contact <span class="line" style="background:rgba(255,255,255,.18)"></span></div>
+    <h2>Let us talk about the hardware your autonomy runs on.</h2>
+    <div class="foot-row">
+      <a class="link" href="mailto:rajvishnumech@gmail.com"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#39d98a" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>rajvishnumech@gmail.com</a>
+      <a class="link" href="tel:+4917659311471"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#39d98a" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>+49 176 59311471</a>
+      <a class="link" href="https://www.linkedin.com/in/rajvishnu-meenakshi-sundaram-22861b105" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#39d98a" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg>LinkedIn</a>
+    </div>
+    <p class="foot-note">Rajvishnu Meenakshi Sundaram, Berlin, Germany. Available immediately. English C2, German B1 and improving.</p>
+  </div>
+</footer>
+
+</body>
+</html>
