@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rajvishnu | Elektromobilität & nachhaltige Verkehrssysteme</title>
+<style>
+:root{--bg:#f4f7f3;--panel:#ffffff;--panel2:#eef3ef;--text:#17231f;--muted:#52655e;--line:#cad7d0;--a:#0f766e;--b:#4f46e5;--warn:#c77800;--deep:#10352f;--soft:#e3f2ee}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Verdana,sans-serif;background:linear-gradient(180deg,#edf5f1 0%,#f8faf8 42%,#eef2ff 100%);color:var(--text);line-height:1.6}
+body:before,body:after{content:"";position:fixed;border-radius:50%;filter:blur(30px);opacity:.16;z-index:-1}body:before{width:360px;height:360px;background:var(--a);left:-180px;top:18%;animation:float 13s ease-in-out infinite alternate}body:after{width:420px;height:420px;background:var(--b);right:-210px;top:52%;animation:float2 17s ease-in-out infinite alternate}
+@keyframes float{to{transform:translate(60px,-35px) scale(1.1)}}@keyframes float2{to{transform:translate(-55px,35px) rotate(12deg)}}@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}@keyframes pulse{50%{box-shadow:0 0 0 12px transparent}}@keyframes flow{to{stroke-dashoffset:-40}}@keyframes rotate{to{transform:rotate(360deg)}}
+.wrap{max-width:1220px;margin:auto;padding:22px}.top{position:sticky;top:12px;z-index:50;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 16px;border:1px solid var(--line);background:#ffffffec;backdrop-filter:blur(14px);border-radius:18px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a,.btn{padding:8px 11px;border:1px solid var(--line);border-radius:11px;background:var(--panel2);font-size:12px;color:var(--text);text-decoration:none}.hero{min-height:78vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:28px;padding:65px 0}.ey{color:var(--a);letter-spacing:1.8px;font-size:11px;font-weight:700;text-transform:uppercase}.hero h1{font-size:clamp(39px,6.5vw,75px);line-height:1.04;margin:12px 0 18px;letter-spacing:-2px}.grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;color:transparent}.lead{font-size:17px;color:var(--muted);text-align:justify}.card{background:linear-gradient(160deg,#ffffff,#f4f8f5);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 18px 44px rgba(26,60,49,.12);transition:.35s;position:relative;overflow:hidden}.card:hover{transform:translateY(-7px);border-color:var(--a)}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{background:var(--panel2);padding:17px;border:1px solid var(--line);border-radius:15px}.metric strong{display:block;font-size:27px;color:var(--a)}section{padding:35px 0}.head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:20px}.head h2{margin:0;font-size:32px}.head p{max-width:610px;color:var(--muted);text-align:justify}.tag{display:inline-block;padding:6px 9px;border:1px solid var(--line);border-radius:999px;margin:3px;font-size:11px;background:var(--panel2)}.case p,.case li,.card p,.card li{text-align:justify;color:var(--muted)}.case h3{margin-top:7px}.badge{font-size:10px;color:var(--a);letter-spacing:1.3px}.mobility-map{height:320px;position:relative;border-radius:20px;background:linear-gradient(#0b1f31,#0b1f31),repeating-linear-gradient(0deg,transparent 0 34px,#17354c 35px),repeating-linear-gradient(90deg,transparent 0 34px,#17354c 35px);overflow:hidden}.road{position:absolute;left:5%;right:5%;top:50%;height:74px;background:#233849;transform:translateY(-50%);border-top:2px dashed #7d91a1;border-bottom:2px dashed #7d91a1}.vehicle{position:absolute;width:72px;height:34px;border-radius:9px;background:linear-gradient(90deg,var(--a),var(--b));top:143px;left:8%;animation:drive 8s linear infinite}.vehicle:before,.vehicle:after{content:"";position:absolute;width:13px;height:13px;background:#041019;border-radius:50%;bottom:-6px}.vehicle:before{left:10px}.vehicle:after{right:10px}@keyframes drive{to{left:87%}}.charger{position:absolute;right:12%;top:58px;width:45px;height:88px;border:2px solid var(--a);border-radius:8px}.charger:after{content:"⚡";position:absolute;inset:0;display:grid;place-items:center;font-size:25px;color:var(--warn)}.nodes{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.node{padding:16px;border:1px solid var(--line);border-radius:15px;background:var(--panel2);min-height:125px}.node strong{color:var(--a);display:block;margin-bottom:6px}.research-cycle{display:grid;grid-template-columns:repeat(6,1fr);gap:11px}.step{position:relative;padding:15px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);min-height:125px}.step:after{content:"→";position:absolute;right:-17px;top:45%;color:var(--a);font-size:21px}.step:last-child:after{display:none}.sim{display:grid;grid-template-columns:1fr 1fr;gap:18px}.chart{height:240px;background:#f8fbf9;border:1px solid var(--line);border-radius:16px;position:relative;overflow:hidden}.bars{position:absolute;inset:25px;display:flex;align-items:end;gap:14px}.bar{flex:1;background:linear-gradient(var(--b),var(--a));border-radius:8px 8px 0 0;height:var(--h);animation:grow 1.5s ease both}@keyframes grow{from{height:0}}.controls button{margin:5px;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--text);cursor:pointer}.controls button.active{background:linear-gradient(90deg,var(--a),var(--b));color:#041019}.reveal{opacity:0;transform:translateY(18px);transition:.65s}.reveal.show{opacity:1;transform:none}.pitch{font-size:17px;border-left:5px solid var(--a)}details{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:15px;margin:10px 0}summary{cursor:pointer;font-weight:700}.footer{text-align:center;color:var(--muted);font-size:11px;padding:45px 0}
+@media(max-width:900px){.hero,.grid2,.grid3,.sim{grid-template-columns:1fr}.nodes{grid-template-columns:repeat(2,1fr)}.research-cycle{grid-template-columns:1fr}.step:after{content:"↓";right:auto;left:50%;top:auto;bottom:-24px}.nav{display:none}}
+@media print{.top,.btn{display:none}.reveal{opacity:1;transform:none}body{background:white;color:#111}.card,.metric,.node,.step{box-shadow:none;background:white;color:#111}.card p,.card li,.head p,.lead{color:#444}}
+
+/* Enhanced research portfolio v2 */
+body{color:var(--text)}
+.top strong{color:var(--deep)}
+.nav a,.btn{color:var(--text);background:#f7faf8}
+.hero .card,.card{color:var(--text)}
+.card p,.card li,.head p,.lead{color:var(--muted)}
+.metric{background:linear-gradient(145deg,#eef8f5,#f4f3ff)}
+.metric strong{color:var(--a)}
+.ey{color:var(--a)}
+.grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;color:transparent}
+.tag{background:#f6faf8;color:var(--deep)}
+.badge{color:var(--b)}
+.node,.step{background:linear-gradient(145deg,#f4faf7,#f4f3ff)}
+.mobility-map{background:linear-gradient(#dfece7,#e9edf9),repeating-linear-gradient(0deg,transparent 0 34px,#c9d9d2 35px),repeating-linear-gradient(90deg,transparent 0 34px,#c9d9d2 35px)}
+.road{background:#61717e}
+.chart{background:linear-gradient(180deg,#fbfdfc,#eff5f2)}
+.pitch{background:linear-gradient(90deg,#e6f5f1,#f0efff)}
+details{background:#ffffff}
+.controls button{background:#f6faf8;color:var(--text)}
+.controls button.active{color:#fff}
+.kpi-chart{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}
+.chart-shell{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 14px 35px rgba(26,60,49,.08)}
+.chart-title{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:18px}
+.chart-title h3{margin:0}
+.chart-title p{margin:4px 0 0;color:var(--muted);font-size:12px;text-align:left}
+.chart-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+.kpi-bars{display:grid;gap:14px}
+.kpi-row{display:grid;grid-template-columns:170px 1fr 78px;gap:14px;align-items:center}
+.kpi-label strong{display:block;font-size:13px}
+.kpi-label small{color:var(--muted)}
+.kpi-track{height:18px;background:#e8efeb;border-radius:999px;overflow:hidden;border:1px solid #d6e1dc}
+.kpi-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--a),var(--b));transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.kpi-value{text-align:right;font-weight:700;color:var(--deep)}
+.scenario-summary{display:grid;gap:12px}
+.summary-box{padding:15px;border-radius:15px;border:1px solid var(--line);background:linear-gradient(145deg,#f4faf7,#f6f5ff)}
+.summary-box strong{display:block;color:var(--a);margin-bottom:4px}
+.summary-box p{margin:0;font-size:12px}
+.metric-note{font-size:11px;color:var(--muted);margin-top:14px;text-align:justify}
+.work-timeline{position:relative;padding-left:28px;border-left:3px solid #c6d8d0}
+.work-item{position:relative;margin-bottom:20px}
+.work-item:before{content:"";position:absolute;left:-38px;top:7px;width:15px;height:15px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 0 0 6px #e7f1ed}
+.work-item h3{margin:0 0 3px}
+.work-meta{font-size:11px;color:var(--b);font-weight:700}
+.work-item ul{margin-top:8px}
+.evidence-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.evidence-card{padding:16px;border-radius:15px;border:1px solid var(--line);background:#fff}
+.evidence-card strong{display:block;color:var(--a);font-size:20px}
+.evidence-card span{font-size:11px;color:var(--muted)}
+.research-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden}
+.research-table th,.research-table td{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.research-table th{background:#e9f3ef;color:var(--deep)}
+.research-table td{color:var(--muted)}
+@media(max-width:900px){.kpi-chart{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr}.kpi-value{text-align:left}.evidence-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.evidence-grid{grid-template-columns:1fr}}
+
+
+/* Remove gimmicky transport animation and use a research architecture view */
+.mobility-map,.road,.vehicle,.charger{display:none !important}
+
+.systems-architecture{
+  position:relative;
+  min-height:520px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#fbfdfc,#f1f6f3 62%,#f6f5ff 100%);
+}
+
+.arch-center{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  pointer-events:none;
+}
+
+.arch-core{
+  width:270px;
+  height:270px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:28px;
+  background:radial-gradient(circle at 30% 30%,#ffffff,#e8f3ef 58%,#e8eaff 100%);
+  border:1px solid #d8e5df;
+  box-shadow:0 18px 44px rgba(26,60,49,.10);
+  animation:corePulse 4.4s ease-in-out infinite;
+}
+
+.arch-core strong{
+  display:block;
+  font-size:22px;
+  line-height:1.25;
+  color:var(--deep);
+  margin-bottom:8px;
+}
+
+.arch-core span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.arch-grid{
+  position:relative;
+  min-height:520px;
+}
+
+.arch-node{
+  position:absolute;
+  width:250px;
+  padding:18px 18px 16px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:#ffffff;
+  box-shadow:0 14px 35px rgba(26,60,49,.07);
+  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  z-index:2;
+}
+
+.arch-node:hover{
+  transform:translateY(-6px);
+  border-color:#b2ccc1;
+  box-shadow:0 20px 42px rgba(26,60,49,.12);
+}
+
+.arch-node h3{
+  margin:0 0 8px;
+  color:var(--deep);
+  font-size:16px;
+}
+
+.arch-node p{
+  margin:0;
+  color:var(--muted);
+  font-size:12.2px;
+  text-align:justify;
+}
+
+.arch-node:before{
+  content:"";
+  position:absolute;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  box-shadow:0 0 0 8px rgba(15,118,110,.08);
+}
+
+.n1{left:40px;top:42px}
+.n1:before{right:-34px;top:50%;transform:translateY(-50%)}
+
+.n2{right:40px;top:42px}
+.n2:before{left:-34px;top:50%;transform:translateY(-50%)}
+
+.n3{left:40px;bottom:42px}
+.n3:before{right:-34px;top:50%;transform:translateY(-50%)}
+
+.n4{right:40px;bottom:42px}
+.n4:before{left:-34px;top:50%;transform:translateY(-50%)}
+
+.n5{
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  width:300px;
+}
+.n5:hover{transform:translateX(-50%) translateY(-6px)}
+.n5:before{
+  left:50%;
+  top:-34px;
+  transform:translateX(-50%);
+}
+
+.arch-svg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  pointer-events:none;
+}
+
+.arch-svg path{
+  fill:none;
+  stroke:rgba(79,70,229,.35);
+  stroke-width:3;
+  stroke-dasharray:10 10;
+  animation:lineFlow 10s linear infinite;
+}
+
+@keyframes corePulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.025)}
+}
+@keyframes lineFlow{
+  to{stroke-dashoffset:-80}
+}
+
+@media(max-width:980px){
+  .systems-architecture{min-height:auto;padding:20px}
+  .arch-center{position:relative;inset:auto;margin-bottom:22px}
+  .arch-grid{
+    min-height:auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .arch-node,.n1,.n2,.n3,.n4,.n5{
+    position:relative;
+    left:auto;right:auto;top:auto;bottom:auto;
+    width:100%;
+    transform:none !important;
+  }
+  .arch-node:before,.arch-svg{display:none}
+}
+
+
+.section-label{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;border:1px solid var(--line);background:#fff;color:var(--deep)}
+.section-label.completed:before{content:"●";color:var(--a)}.section-label.proposed:before{content:"◆";color:var(--b)}.section-label.illustrative:before{content:"▲";color:var(--warn)}
+.research-thesis{padding:28px;border-radius:22px;background:linear-gradient(135deg,#0f766e,#3730a3);color:#fff;box-shadow:0 22px 55px rgba(38,55,111,.18)}
+.research-thesis h2{margin:0 0 10px;font-size:30px}.research-thesis p{margin:0;font-size:17px;line-height:1.7;color:#f2f8ff;text-align:justify}
+.project-dossier{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.project-main,.project-side{display:grid;gap:16px}.project-block{padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff}.project-block h3{margin:0 0 9px;color:var(--deep)}.project-block p,.project-block li{color:var(--muted);text-align:justify}.project-block ul{margin:8px 0 0;padding-left:20px}
+.question-box{padding:22px;border-radius:18px;background:linear-gradient(135deg,#e6f5f1,#efefff);border:1px solid #cddbd5}.question-box strong{display:block;color:var(--a);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}.question-box p{margin:0;font-size:18px;color:var(--deep);font-weight:700}
+.output-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.output-card{padding:16px;border-radius:16px;background:#fff;border:1px solid var(--line);min-height:130px}.output-card b{display:block;color:var(--a);margin-bottom:7px}.output-card p{margin:0;font-size:12px;color:var(--muted)}
+.flowline{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}.flowstep{position:relative;padding:14px 10px;border-radius:14px;background:#fff;border:1px solid var(--line);min-height:105px}.flowstep strong{display:block;color:var(--deep);font-size:12px;margin-bottom:6px}.flowstep p{font-size:10.5px;color:var(--muted);margin:0}.flowstep:after{content:"→";position:absolute;right:-14px;top:42%;font-weight:700;color:var(--a)}.flowstep:last-child:after{display:none}
+.year-plan{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.plan-card{padding:19px;border-radius:18px;background:#fff;border:1px solid var(--line)}.plan-card .phase{font-size:11px;color:var(--b);font-weight:700;text-transform:uppercase;letter-spacing:.8px}.plan-card h3{margin:5px 0 10px}.plan-card ul{padding-left:18px;margin:0}.plan-card li{color:var(--muted);font-size:12px;margin:6px 0}
+.skill-proof{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.proof-row{display:grid;grid-template-columns:180px 1fr;gap:14px;padding:14px 16px;border-radius:15px;border:1px solid var(--line);background:#fff}.proof-row strong{color:var(--deep)}.proof-row span{color:var(--muted);font-size:12px}
+.kpi-method-table{width:100%;border-collapse:collapse}.kpi-method-table th,.kpi-method-table td{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.kpi-method-table th{background:#e8f2ee;color:var(--deep)}.kpi-method-table td{color:var(--muted);font-size:12px}
+.case-label{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}.case-label .type{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:4px 7px;border-radius:999px;background:#e8f3ef;color:var(--a)}.case-label .impact{font-size:10px;color:var(--muted)}
+.architecture-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.arch-box{position:relative;padding:16px 12px;border-radius:15px;background:#fff;border:1px solid var(--line);min-height:120px}.arch-box strong{display:block;color:var(--deep);margin-bottom:7px}.arch-box span{font-size:11px;color:var(--muted)}.arch-box:after{content:"→";position:absolute;right:-17px;top:44%;color:var(--b);font-weight:700}.arch-box:last-child:after{display:none}
+.final-contribution{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contribution-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.contribution-item{padding:14px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:12px;color:var(--deep);font-weight:700}.close-statement{padding:25px;border-radius:20px;background:linear-gradient(135deg,#10352f,#3730a3);color:#fff}.close-statement h3{margin-top:0}.close-statement p{color:#f2f8ff;text-align:justify}
+@media(max-width:1000px){.project-dossier,.final-contribution{grid-template-columns:1fr}.flowline,.architecture-flow{grid-template-columns:repeat(2,1fr)}.flowstep:after,.arch-box:after{display:none}.output-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.year-plan,.skill-proof,.output-grid,.contribution-list{grid-template-columns:1fr}.proof-row{grid-template-columns:1fr}.flowline,.architecture-flow{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body><div class="wrap">
+<div class="top"><strong>RAJVISHNU · ELECTROMOBILITY RESEARCH</strong><div class="nav"><a href="#fit">Profil</a><a href="#focus">Fokus</a><a href="#proposal">THD-Projekt</a><a href="#experience">Erfahrung</a><a href="#projects">Projekte</a><a href="#plan">12 Monate</a><a href="#pitch">Pitch</a></div><button class="btn" onclick="window.print()">PDF exportieren</button></div>
+<header class="hero">
+<div><div class="ey">THD · Technologie Campus Wörth-Wiesent</div><h1>Applied research for <span class="grad">electromobility, transport systems and data-driven mobility.</span></h1><p class="lead">Automotive engineer and applied researcher combining sensor systems, vehicle technology, experimental design, Python/MATLAB analytics, industrial project coordination and research-to-industry transfer.</p><p><span class="tag">Electromobility</span><span class="tag">Vehicle Systems</span><span class="tag">Python</span><span class="tag">MATLAB</span><span class="tag">HiL</span><span class="tag">MCDA</span><span class="tag">Project Management</span></p></div>
+<div class="card"><div class="metrics"><div class="metric"><strong>8+</strong><span>Jahre Engineering</span></div><div class="metric"><strong>6</strong><span>OEM-Programme</span></div><div class="metric"><strong>30+</strong><span>bewertete Technologien</span></div><div class="metric"><strong>1</strong><span>Serienempfehlung übernommen</span></div></div></div>
+</header><section id="focus" class="reveal"><div class="research-thesis"><div class="section-label completed">Research identity</div><h2>My research focus</h2><p>I combine vehicle-system data, sensor technology, experimental validation and multi-criteria decision methods to improve the planning, operation and technical evaluation of electric and sustainable mobility systems.</p></div></section>
+
+
+<section class="reveal">
+  <div class="head">
+    <div>
+      <div class="ey">System Perspective</div>
+      <h2>Electromobility as an integrated research system</h2>
+    </div>
+    <p>Instead of a decorative animation, this section shows the actual technical structure of the research field: vehicle technology, charging infrastructure, traffic demand, data analytics and sustainability objectives must be evaluated together.</p>
+  </div>
+
+  <div class="card systems-architecture">
+    <div class="arch-center">
+      <div class="arch-core">
+        <strong>Integrated Electromobility Research</strong>
+        <span>Technical systems · data · operations · impact</span>
+      </div>
+    </div>
+
+    <div class="arch-grid">
+      <article class="arch-node n1">
+        <h3>Vehicle Systems</h3>
+        <p>Electric-drive behavior, sensor systems, energy consumption, duty cycles and technical performance.</p>
+      </article>
+
+      <article class="arch-node n2">
+        <h3>Charging Infrastructure</h3>
+        <p>Availability, utilization, power levels, grid interaction, charging strategy and operational constraints.</p>
+      </article>
+
+      <article class="arch-node n3">
+        <h3>Transport Demand</h3>
+        <p>Trip patterns, accessibility, multimodal mobility, regional/urban demand and service quality.</p>
+      </article>
+
+      <article class="arch-node n4">
+        <h3>Data & Simulation</h3>
+        <p>Python/MATLAB workflows, scenario analysis, multicriteria assessment, KPI evaluation and validation.</p>
+      </article>
+
+      <article class="arch-node n5">
+        <h3>Sustainability Impact</h3>
+        <p>Energy efficiency, emissions, cost, resilience and implementation relevance for partners and society.</p>
+      </article>
+    </div>
+
+    <svg class="arch-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M500 260 L250 120" />
+      <path d="M500 260 L760 120" />
+      <path d="M500 260 L180 400" />
+      <path d="M500 260 L820 400" />
+      <path d="M500 260 L500 455" />
+    </svg>
+  </div>
+</section>
+
+
+<section id="proposal" class="reveal"><div class="head"><div><div class="ey">Proposed THD Research Project</div><h2>Data-driven optimization of regional electromobility and charging infrastructure</h2></div><p>This proposed research concept is built from my existing automotive, sensor, data-analysis and project-coordination experience and is clearly separated from completed professional work.</p></div><div class="question-box"><strong>Main research question</strong><p>How can vehicle, infrastructure and mobility-demand data be combined to identify technically, economically and environmentally robust electromobility strategies for regional transport systems?</p></div><div class="project-dossier" style="margin-top:18px"><div class="project-main"><div class="project-block"><div class="section-label proposed">Proposed research</div><h3>Research problem</h3><p>Regional electromobility systems must balance vehicle energy demand, charging availability, infrastructure cost, grid constraints, accessibility and user requirements. These factors interact strongly and can lead to conflicting decisions.</p></div><div class="project-block"><h3>Sub-questions</h3><ul><li>Which vehicle, route and operating characteristics have the greatest influence on energy demand?</li><li>How does charging location influence availability, utilization and service reliability?</li><li>Which charging concepts provide the best balance between cost, grid impact and user needs?</li><li>How can private EVs, public transport and shared mobility be compared transparently?</li><li>How sensitive are recommendations to electricity mix, demand profiles and regional constraints?</li></ul></div><div class="project-block"><h3>Methodology</h3><ul><li>Literature and technology review</li><li>Python/MATLAB-based data preparation and modelling</li><li>Scenario analysis and multicriteria decision analysis</li><li>Sensitivity and uncertainty analysis</li><li>Design of experiments and KPI development</li><li>Validation using measured, public or synthetic datasets</li><li>Stakeholder workshops and industry feedback</li></ul></div></div><div class="project-side"><div class="project-block"><h3>Required datasets</h3><ul><li>Vehicle energy consumption and duty cycles</li><li>Route, trip-demand and utilization profiles</li><li>Charging events and station availability</li><li>Electricity tariffs and grid constraints</li><li>Public-transport schedules and accessibility</li><li>Emission factors and infrastructure cost</li></ul></div><div class="project-block"><h3>Potential partners</h3><ul><li>Municipalities and regional transport authorities</li><li>Charging-infrastructure operators</li><li>Automotive and sensor companies</li><li>Energy utilities and grid operators</li><li>Public transport and fleet operators</li></ul></div><div class="project-block"><h3>Potential funding routes</h3><ul><li>German federal mobility research</li><li>Bavarian applied-research programmes</li><li>Horizon Europe and Interreg</li><li>Industry-funded cooperation</li><li>Regional digitalization and sustainability initiatives</li></ul></div></div></div><div class="head" style="margin-top:28px"><div><div class="ey">Expected Research Outputs</div><h2>From method to measurable impact</h2></div></div><div class="output-grid"><div class="output-card"><b>Python analysis framework</b><p>Reusable workflow for vehicle, charging and mobility datasets.</p></div><div class="output-card"><b>Decision-support model</b><p>Transparent comparison of technical, economic, environmental and service indicators.</p></div><div class="output-card"><b>Research publications</b><p>Conference contribution, journal manuscript and documented methodology.</p></div><div class="output-card"><b>Industry guideline</b><p>Implementation-oriented recommendations for regional partners.</p></div><div class="output-card"><b>Student theses</b><p>Topics in charging, energy demand, data modelling and simulation.</p></div><div class="output-card"><b>Open dataset concept</b><p>Structured anonymized or synthetic research dataset with documentation.</p></div><div class="output-card"><b>Scenario dashboard</b><p>Interactive visualization of alternatives and sensitivity results.</p></div><div class="output-card"><b>Transfer workshop</b><p>Partner-oriented presentation of findings and implementation pathways.</p></div></div></section><section id="fit" class="reveal"><div class="head"><div><div class="ey">Role Fit</div><h2>Direct contribution to THD</h2></div><p>Evidence mapped to research projects, third-party collaboration, teaching support and scientific communication.</p></div>
+<div class="grid3">
+<div class="card"><h3>Applied research</h3><p>Experimental design, technology screening, MCDA, controlled laboratory testing and data-backed technical decisions.</p></div>
+<div class="card"><h3>Automotive systems</h3><p>Sensor systems, embedded interfaces, HiL, ECU environments, OEM programs and vehicle-related engineering.</p></div>
+<div class="card"><h3>Data & simulation</h3><p>Python, MATLAB, Power BI, virtual sensors, regression analysis and reproducible technical workflows.</p></div>
+<div class="card"><h3>Project coordination</h3><p>Cross-functional ownership across development, quality, production, suppliers and international OEM stakeholders.</p></div>
+<div class="card"><h3>Science-industry transfer</h3><p>Translation of research findings into test methods, product decisions, standards and industrial implementation.</p></div>
+<div class="card"><h3>Teaching & supervision</h3><p>Structured explanation, technical documentation, qualification support and experience working in an academic environment.</p></div>
+</div></section>
+
+
+<section class="reveal" id="experience">
+  <div class="head">
+    <div>
+      <div class="ey">Complete Relevant Experience</div>
+      <h2>Research, automotive and project-management evidence</h2>
+    </div>
+    <p>All relevant work experience is included below to show how my research, engineering, project, data and stakeholder capabilities support the THD position.</p>
+  </div>
+
+  <div class="evidence-grid">
+    <div class="evidence-card"><strong>8+</strong><span>Years of engineering experience</span></div>
+    <div class="evidence-card"><strong>6</strong><span>International automotive OEM programs</span></div>
+    <div class="evidence-card"><strong>3,000</strong><span>Approx. engineering orders processed</span></div>
+    <div class="evidence-card"><strong>30+</strong><span>Sensor technologies evaluated</span></div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="work-timeline">
+      <article class="work-item">
+        <div class="work-meta">02/2025–04/2026 · TDK Sensors AG & Co. KG, Berlin</div>
+        <h3>Development Engineer – Automotive Interfaces</h3>
+        <ul>
+          <li>Independently designed, built and introduced a Vector-based validation platform using CANoe, CANalyzer and VT System for new automotive sensors.</li>
+          <li>Integrated physical sensors, virtual sensor models, ECU configurations and CAN networks into closed-loop HiL and virtual environments.</li>
+          <li>Developed Python and CAPL automation for data acquisition, stimulation, regression execution, log analysis and reproducible evidence generation.</li>
+          <li>Validated LIN, SENT, SPI and OWI interfaces for timing, robustness, calibration stability, communication behavior and fault response.</li>
+          <li>Derived test concepts, specifications and procedures from product and customer requirements in an ASPICE-compliant and ISO 26262-oriented environment.</li>
+          <li>Coordinated development, production, quality and external experts and prepared risks and technical evidence for quality and release gates.</li>
+        </ul>
+      </article>
+
+      <article class="work-item">
+        <div class="work-meta">04/2024–11/2024 · Robert Bosch GmbH</div>
+        <h3>Master Thesis – Evaluation of Sensor Technologies for an ADAS Vehicle System</h3>
+        <ul>
+          <li>Evaluated more than 30 sensor technologies using ten weighted technical, economic and integration criteria through Pugh/MCDA methods.</li>
+          <li>Designed and executed controlled experiments using a 143 × 93 × 300 mm test tank across 0–50% ethanol, 0–60°C temperature and 0–10° inclination.</li>
+          <li>Used Python and MATLAB for measurement-data processing, comparison and engineering interpretation.</li>
+          <li>Produced a recommendation for ultrasound sensing that was accepted for continued series development.</li>
+        </ul>
+      </article>
+
+      <article class="work-item">
+        <div class="work-meta">08/2023–03/2024 · ITK Engineering GmbH (Bosch Group)</div>
+        <h3>Working Student – Digital Tools, Test Support and Process Improvement</h3>
+        <ul>
+          <li>Designed and implemented a Flutter/Dart PDF report-generation feature for a laboratory test application from specification to delivery.</li>
+          <li>Supported ECU flashing, software updates and rework on series control units.</li>
+          <li>Documented EAC test benches and developed structured technical knowledge and training content.</li>
+          <li>Created Power BI reporting workflows with Git-based version control.</li>
+        </ul>
+      </article>
+
+      <article class="work-item">
+        <div class="work-meta">07/2022–01/2023 · Karlsruhe Institute of Technology</div>
+        <h3>Research Assistant – Automation and Validation</h3>
+        <ul>
+          <li>Supported PLC automation, commissioning and requirements-based functional and acceptance testing of a pick-and-place robot.</li>
+          <li>Validated a multicriteria decision-support tool through functional, integration and end-to-end testing.</li>
+          <li>Standardized workflows and technical documentation to improve reproducibility and knowledge transfer.</li>
+        </ul>
+      </article>
+
+      
+      <article class="work-item">
+        <div class="work-meta">07/2018–08/2021 · Bosch Global Software Technologies, Coimbatore, Indien</div>
+        <h3>Engineer Data Exchange</h3>
+        <ul>
+          <li>Verantwortete globale OEM-Datenaustauschprozesse für <strong>Daimler, Volkswagen, BMW, Ford, Jaguar Land Rover und General Motors</strong> und stellte die vollständige, korrekte und termingerechte Bereitstellung technischer Daten für nachgelagerte Engineering-Teams sicher.</li>
+          <li>Bearbeitete rund <strong>3.000 Aufträge</strong> und schloss mehr als <strong>1.000 Aufgaben innerhalb eines Jahres ohne externe Fehler</strong> ab; gewährleistete dabei Datenqualität, Rückverfolgbarkeit und Freigabereife.</li>
+          <li>Verwaltete Zeichnungen, 3D-Modelle, Baugruppen, Revisionen und Freigabestände in <strong>Teamcenter (PDM/PLM)</strong> und arbeitete mit <strong>CATIA, Siemens NX und Creo</strong> an technischen Produkt- und Fertigungsdaten.</li>
+        </ul>
+      </article>
+
+
+      
+      <article class="work-item">
+        <div class="work-meta">09/2016–06/2018 · Bosch Global Software Technologies, Coimbatore, Indien</div>
+        <h3>Engineer Change Request</h3>
+        <ul>
+          <li>Steuerte <strong>Engineering Change Requests</strong> von der technischen Initiierung über Impact- und Risikoanalyse sowie funktionsübergreifende Bewertung bis zur kontrollierten Freigabe für Produktion und Einkauf.</li>
+          <li>Bewertete technische Abhängigkeiten in <strong>Zeichnungen, Baugruppen, Stücklisten und Bauteildaten</strong>, pflegte relevante Informationen in <strong>SAP</strong> und stellte Vollständigkeit, Konsistenz und Produktionsreife sicher.</li>
+          <li>Entwickelte eine <strong>Common Material Database</strong> und bearbeitete technische Probleme mit <strong>8D, Ishikawa und 5-Why</strong>, darunter eine vollständige Ursachenanalyse zu einem Produktionsstillstand bei <strong>Volkswagen Mexiko</strong>.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal"><div class="head"><div><div class="ey">Selected Evidence</div><h2>Technical research case studies</h2></div><p>Five projects demonstrating the full path from research question and measurement strategy to implementation and stakeholder decision.</p></div>
+<div class="grid2">
+
+<article class="card case">
+  <div class="case-label"><span class="type">Completed professional work</span><span class="impact">6 OEM programmes</span></div>
+  <div class="badge">CASE 03 · BOSCH INDIA</div>
+  <h3>Global OEM Data Exchange and Engineering Change Management</h3>
+  <p><b>Engineer Data Exchange:</b> Global technical-data delivery, Teamcenter/PDM/PLM, CAD data, release readiness and coordination across six OEM programmes.</p>
+  <ul>
+    <li>Approximately 3,000 orders processed and more than 1,000 tasks completed within one year without external errors.</li>
+    <li>Managed drawings, 3D models, assemblies, revisions and release states in Teamcenter.</li>
+    <li>Worked with CATIA, Siemens NX and Creo on technical product and manufacturing data.</li>
+  </ul>
+  <p><b>Engineer Change Request:</b> Engineering change requests, impact/risk analysis, SAP/BOM data, controlled release and structured problem solving.</p>
+  <ul>
+    <li>Developed a Common Material Database to improve standardization and reuse.</li>
+    <li>Applied 8D, Ishikawa and 5-Why to technical problems.</li>
+    <li>Completed a full root-cause analysis for a production stoppage at Volkswagen Mexico.</li>
+  </ul>
+</article>
+
+<article class="card case"><div class="case-label"><span class="type">Completed academic work</span><span class="impact">Automation & validation</span></div><div class="badge">CASE 04 · KIT</div><h3>Automation and requirement-based validation</h3><p><b>Challenge:</b> Commission and verify a PLC-controlled pick-and-place system.</p><ul><li>Supported automation and real-system integration.</li><li>Executed functional, integration and acceptance tests.</li><li>Validated a multicriteria decision tool end to end.</li><li>Standardized documentation and reproducibility.</li></ul></article>
+</div></section><section class="reveal"><div class="head"><div><div class="ey">Completed Professional Project</div><h2>TDK validation-platform architecture</h2></div><p>A concise technical view of how requirements, physical and virtual systems, automation and release evidence were connected.</p></div><div class="architecture-flow"><div class="arch-box"><strong>Requirements</strong><span>Product, customer and system requirements</span></div><div class="arch-box"><strong>Real & virtual sensors</strong><span>Physical devices, virtual sensor models and stimulation</span></div><div class="arch-box"><strong>ECU & network</strong><span>CAN configuration, restbus and virtual ECU behavior</span></div><div class="arch-box"><strong>Vector environment</strong><span>CANoe, CANalyzer and VT System</span></div><div class="arch-box"><strong>Automation</strong><span>Python and CAPL for execution, logging and analysis</span></div><div class="arch-box"><strong>Evidence</strong><span>KPIs, regression results, fault analysis and release decisions</span></div></div></section>
+<section id="research" class="reveal"><div class="head"><div><div class="ey">Research Development</div><h2>My project-development cycle</h2></div><p>A structured workflow for building fundable, measurable and transferable research projects.</p></div>
+<div class="research-cycle"><div class="step"><b>1. Trend map</b><p>Identify scientific, industrial and policy drivers.</p></div><div class="step"><b>2. Research gap</b><p>Define measurable questions and target users.</p></div><div class="step"><b>3. Consortium</b><p>Align industry, academia and public partners.</p></div><div class="step"><b>4. Method</b><p>Design models, datasets, tests and KPIs.</p></div><div class="step"><b>5. Validation</b><p>Compare scenarios and quantify uncertainty.</p></div><div class="step"><b>6. Transfer</b><p>Publish, teach and implement with partners.</p></div></div></section>
+
+
+<section class="reveal" id="scenario-lab">
+  <div class="head">
+    <div>
+      <div class="ey">Interactive Scenario Lab</div>
+      <h2>Evaluation of sustainable mobility scenarios</h2>
+    </div>
+    <p>The chart now compares five clearly defined indicators. Values are illustrative normalized research scores from 0 to 100, where a higher value indicates better performance for the selected scenario.</p>
+  </div>
+
+  <div class="kpi-chart">
+    <div class="chart-shell">
+      <div class="chart-title">
+        <div>
+          <h3 id="scenarioTitle">Urban electric fleet</h3>
+          <p id="scenarioSubtitle">Illustrative multi-criteria assessment for an urban electric-vehicle fleet.</p>
+        </div>
+        <div class="chart-legend">
+          <span><i class="legend-dot" style="background:var(--a)"></i>Lower to higher performance</span>
+          <span><i class="legend-dot" style="background:var(--b)"></i>Normalized score / 100</span>
+        </div>
+      </div>
+
+      <div class="kpi-bars" id="kpiBars">
+        <div class="kpi-row" data-key="energy">
+          <div class="kpi-label"><strong>Energy efficiency</strong><small>Vehicle and operational energy use</small></div>
+          <div class="kpi-track"><div class="kpi-fill"></div></div>
+          <div class="kpi-value">82 / 100</div>
+        </div>
+        <div class="kpi-row" data-key="emissions">
+          <div class="kpi-label"><strong>Emission reduction</strong><small>Lifecycle and operating emissions</small></div>
+          <div class="kpi-track"><div class="kpi-fill"></div></div>
+          <div class="kpi-value">76 / 100</div>
+        </div>
+        <div class="kpi-row" data-key="infrastructure">
+          <div class="kpi-label"><strong>Infrastructure readiness</strong><small>Charging availability and grid support</small></div>
+          <div class="kpi-track"><div class="kpi-fill"></div></div>
+          <div class="kpi-value">58 / 100</div>
+        </div>
+        <div class="kpi-row" data-key="cost">
+          <div class="kpi-label"><strong>Economic viability</strong><small>TCO, utilization and operating cost</small></div>
+          <div class="kpi-track"><div class="kpi-fill"></div></div>
+          <div class="kpi-value">69 / 100</div>
+        </div>
+        <div class="kpi-row" data-key="service">
+          <div class="kpi-label"><strong>Mobility service quality</strong><small>Availability, accessibility and reliability</small></div>
+          <div class="kpi-track"><div class="kpi-fill"></div></div>
+          <div class="kpi-value">85 / 100</div>
+        </div>
+      </div>
+      <p class="metric-note">These values are not claimed project results. They demonstrate how a THD research project could combine technical, environmental, infrastructure, economic and user-oriented indicators within a transparent multi-criteria evaluation framework.</p>
+    </div>
+
+    <div class="card scenario-summary">
+      <div>
+        <h3>Choose a research scenario</h3>
+        <div class="controls">
+          <button class="active" data-s="urban">Urban EV fleet</button>
+          <button data-s="regional">Regional mobility</button>
+          <button data-s="charging">Charging strategy</button>
+          <button data-s="drive">Electric-drive optimization</button>
+        </div>
+      </div>
+      <div class="summary-box">
+        <strong>Research question</strong>
+        <p id="researchQuestion">How can an urban electric fleet balance energy efficiency, charging availability, operating cost and service quality?</p>
+      </div>
+      <div class="summary-box">
+        <strong>Required data</strong>
+        <p id="requiredData">Vehicle energy consumption, route profiles, charging events, utilization, electricity mix, downtime and user demand.</p>
+      </div>
+      <div class="summary-box">
+        <strong>Suggested methods</strong>
+        <p id="methods">Python/MATLAB analysis, scenario modelling, MCDA, sensitivity analysis, validation using real or synthetic operational data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="reveal"><div class="head"><div><div class="ey">Evidence-Based Capability Matrix</div><h2>Skills supported by real work</h2></div><p>No self-rating bars. Each capability is connected to completed project evidence.</p></div><div class="skill-proof"><div class="proof-row"><strong>Python data analysis</strong><span>Bosch thesis data processing; TDK automation and log evaluation.</span></div><div class="proof-row"><strong>MATLAB</strong><span>Experimental sensor-data processing and technical comparison.</span></div><div class="proof-row"><strong>Experimental design</strong><span>Controlled Bosch tests across fluid, temperature and installation conditions.</span></div><div class="proof-row"><strong>Automotive systems</strong><span>TDK sensors, Bosch vehicle components and six OEM programmes.</span></div><div class="proof-row"><strong>HiL & virtual validation</strong><span>Vector platform with physical/virtual sensors, ECUs and networks.</span></div><div class="proof-row"><strong>Project coordination</strong><span>Cross-functional ownership at TDK and six OEM programmes.</span></div><div class="proof-row"><strong>MCDA/Pugh</strong><span>Bosch technology evaluation and KIT decision-tool validation.</span></div><div class="proof-row"><strong>Scientific documentation</strong><span>Master thesis, KIT validation documents and TDK release evidence.</span></div><div class="proof-row"><strong>Root-cause analysis</strong><span>8D, Ishikawa, 5-Why and CAPA in Bosch programmes.</span></div><div class="proof-row"><strong>Digital engineering tools</strong><span>Flutter/Dart, Power BI, Git, Docker and reporting workflows.</span></div></div></section><section class="reveal">
+  <div class="head">
+    <div>
+      <div class="ey">THD Requirement Matrix</div>
+      <h2>How my experience supports the role</h2>
+    </div>
+    <p>A direct mapping from the advertised research responsibilities to concrete evidence from my work and academic background.</p>
+  </div>
+  <div class="card" style="padding:0;overflow:auto">
+    <table class="research-table">
+      <thead>
+        <tr><th>THD responsibility</th><th>Relevant evidence</th><th>Contribution</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Independent research projects</td><td>Bosch thesis, TDK validation-platform ownership, KIT research work</td><td>Define research questions, design methods, collect data and produce decision-ready results.</td></tr>
+        <tr><td>Electromobility and electric-drive systems</td><td>Automotive systems, sensors, vehicle interfaces, mechanical engineering and energy-system knowledge</td><td>Connect component behavior with vehicle operation, efficiency and mobility-system performance.</td></tr>
+        <tr><td>Transport planning and sustainable systems</td><td>System evaluation, scenario thinking, MCDA, OEM coordination and mobility research interest</td><td>Develop transparent scenario models and multi-criteria assessments for regional and urban mobility.</td></tr>
+        <tr><td>Large datasets and analysis</td><td>Python, MATLAB, Power BI, automated logs, measurement data and regression workflows</td><td>Prepare, analyze, visualize and interpret technical and operational datasets.</td></tr>
+        <tr><td>Project acquisition and funding</td><td>Cross-functional project ownership, requirements definition and stakeholder coordination</td><td>Translate research gaps into objectives, work packages, KPIs, partner roles and proposal content.</td></tr>
+        <tr><td>Industry interface</td><td>TDK, Bosch, ITK and six international OEM programs</td><td>Coordinate research partners and convert scientific findings into practical industrial value.</td></tr>
+        <tr><td>Teaching and supervision</td><td>Technical documentation, process training, research-assistant experience and structured explanation</td><td>Support lectures, practical exercises, student projects and applied theses.</td></tr>
+        <tr><td>Scientific publications</td><td>Thesis research, experimental evidence, formal documentation and presentations</td><td>Develop publishable methods, results, limitations and implications for journals and conferences.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section><section class="reveal"><div class="head"><div><div class="ey">Illustrative Research Framework</div><h2>Transparent mobility KPI methodology</h2></div><p>The interactive scores above demonstrate a possible normalized comparison. A real study would document units, direction, weighting and data source for every indicator.</p></div><div class="card" style="padding:0;overflow:auto"><table class="kpi-method-table"><thead><tr><th>Indicator</th><th>Example unit</th><th>Objective</th><th>Possible data source</th></tr></thead><tbody><tr><td>Vehicle energy demand</td><td>kWh/100 km</td><td>Lower is better</td><td>Vehicle logs, test cycles, fleet data</td></tr><tr><td>Charging utilization</td><td>%</td><td>Higher is better</td><td>Charging-session data</td></tr><tr><td>Service availability</td><td>%</td><td>Higher is better</td><td>Fleet and timetable data</td></tr><tr><td>Infrastructure cost</td><td>€/vehicle/year</td><td>Lower is better</td><td>Operator and investment data</td></tr><tr><td>Lifecycle emissions</td><td>g CO₂e/km</td><td>Lower is better</td><td>Energy mix and lifecycle factors</td></tr><tr><td>Grid impact</td><td>kW peak / feeder</td><td>Lower is better</td><td>Grid and charging profiles</td></tr><tr><td>Accessibility</td><td>Population within reach</td><td>Higher is better</td><td>GIS and transport-demand data</td></tr><tr><td>Implementation feasibility</td><td>Normalized score</td><td>Higher is better</td><td>Stakeholder and risk assessment</td></tr></tbody></table></div></section><section class="reveal"><div class="head"><div><div class="ey">Doctoral Direction</div><h2>Potential doctoral direction</h2></div></div>
+<div class="question-box" style="margin-bottom:18px"><strong>Potential doctoral topic</strong><p>Data-Driven Decision Support for Regional Electromobility Systems</p></div><div class="grid3"><div class="card"><h3>Data-driven EV operation</h3><p>Energy-demand prediction, vehicle/sensor data and operational optimization across real mobility profiles.</p></div><div class="card"><h3>Charging and grid interaction</h3><p>Scenario-based charging strategies, infrastructure utilization and resilience of regional mobility systems.</p></div><div class="card"><h3>Digital twins for mobility</h3><p>Integration of vehicle, infrastructure and traffic data for validation, forecasting and decision support.</p></div></div></section>
+
+<section class="reveal"><div class="head"><div><div class="ey">Project Acquisition</div><h2>How I would develop a fundable research project</h2></div><p>A structured process connecting research need, partners, methods, funding requirements and measurable exploitation.</p></div><div class="flowline"><div class="flowstep"><strong>1. Challenge</strong><p>Define scientific and regional mobility problem.</p></div><div class="flowstep"><strong>2. Call fit</strong><p>Review programme objectives and eligibility.</p></div><div class="flowstep"><strong>3. Objectives</strong><p>Set measurable research questions and KPIs.</p></div><div class="flowstep"><strong>4. Consortium</strong><p>Identify academic, industry and public partners.</p></div><div class="flowstep"><strong>5. Work packages</strong><p>Structure methods, responsibilities and milestones.</p></div><div class="flowstep"><strong>6. Validation</strong><p>Define data, models, experiments and risks.</p></div><div class="flowstep"><strong>7. Proposal</strong><p>Prepare technical narrative and budget inputs.</p></div><div class="flowstep"><strong>8. Transfer</strong><p>Publish, teach and implement results.</p></div></div></section><section id="plan" class="reveal"><div class="head"><div><div class="ey">First-Year Contribution</div><h2>What I would contribute in the first 12 months</h2></div><p>A practical ramp-up plan covering research mapping, partner development, pilot work, funding and first publications.</p></div><div class="year-plan"><div class="plan-card"><div class="phase">First 100 days</div><h3>Understand and structure</h3><ul><li>Review current THD projects and research infrastructure</li><li>Build an electromobility technology and research map</li><li>Identify partners, datasets and funding routes</li><li>Define one pilot research question</li><li>Create an initial Python/MATLAB workflow</li></ul></div><div class="plan-card"><div class="phase">Months 4–8</div><h3>Develop and collaborate</h3><ul><li>Develop methodology, KPIs and work packages</li><li>Start partner and stakeholder discussions</li><li>Run first scenario and sensitivity analyses</li><li>Support teaching and student project definition</li><li>Draft a funding concept</li></ul></div><div class="plan-card"><div class="phase">Months 9–12</div><h3>Deliver and transfer</h3><ul><li>Contribute to or submit one funding proposal</li><li>Produce first validated research results</li><li>Prepare a conference abstract</li><li>Define doctoral research scope</li><li>Run an industry-transfer workshop</li></ul></div></div></section><section id="pitch" class="reveal"><div class="head"><div><div class="ey">Interview Pitch</div><h2>90-second introduction</h2></div></div><div class="card pitch">I am an automotive systems and applied research engineer with more than eight years of experience across vehicle technology, sensor systems, data analysis and international project coordination. At TDK Sensors I built a physical and virtual validation platform for automotive sensor products and used Python, CAPL and Vector tools to generate reproducible evidence from complex hardware-software systems. In my Bosch master thesis I independently evaluated more than 30 sensor technologies, designed a controlled experimental campaign and converted Python/MATLAB results into a recommendation accepted for series development. I also bring academic experience from KIT and approximately five years coordinating technical work across six global OEM programs. For THD, I can combine this industrial depth with structured research methods to develop projects in electromobility, sustainable transport, electric-drive systems and digital mobility, coordinate partners, prepare fundable work packages, publish results and support students. My goal is to build applied research that is scientifically rigorous and directly usable by industry and regional mobility stakeholders.</div></section>
+
+<section class="reveal"><div class="head"><div><div class="ey">Deep Dive</div><h2>Research discussion topics</h2></div></div>
+<details open><summary>How would you develop a new research proposal?</summary><p>I would begin with a trend and stakeholder map, identify a measurable research gap, define impact-oriented objectives and KPIs, structure work packages, identify data and validation needs, establish partner responsibilities and align the proposal with the target funding program.</p></details>
+<details><summary>How does automotive validation transfer to transport research?</summary><p>Both require clear assumptions, traceable requirements, representative scenarios, controlled data collection, uncertainty assessment and reproducible evidence. My experience adds discipline in turning complex system behavior into measurable and decision-ready results.</p></details>
+<details><summary>What can you contribute to teaching?</summary><p>Hands-on examples in automotive sensors, data analysis, validation, project coordination, MCDA, root-cause methods and industry product development, supported by structured exercises and reproducible datasets.</p></details>
+</section>
+<section class="reveal"><div class="head"><div><div class="ey">Final Contribution</div><h2>What I bring to THD</h2></div></div><div class="final-contribution"><div class="contribution-list"><div class="contribution-item">Automotive industry depth</div><div class="contribution-item">Applied research experience</div><div class="contribution-item">Experimental and analytical competence</div><div class="contribution-item">Python and MATLAB capability</div><div class="contribution-item">Project ownership</div><div class="contribution-item">International OEM coordination</div><div class="contribution-item">Technical communication</div><div class="contribution-item">Industry-transfer mindset</div><div class="contribution-item">Doctoral motivation</div><div class="contribution-item">Sustainable-mobility focus</div></div><div class="close-statement"><h3>Research with implementation value</h3><p>My contribution would be to connect technically rigorous research with measurable mobility impact and practical implementation for industry, public-sector and regional partners.</p></div></div></section><div class="footer">Rajvishnu Meenakshi Sundaram · Technical Research Portfolio for THD – Electromobility and Sustainable Transport Systems</div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+
+const scenarioData={
+  urban:{
+    title:"Urban electric fleet",
+    subtitle:"Illustrative multi-criteria assessment for an urban electric-vehicle fleet.",
+    values:{energy:82,emissions:76,infrastructure:58,cost:69,service:85},
+    question:"How can an urban electric fleet balance energy efficiency, charging availability, operating cost and service quality?",
+    data:"Vehicle energy consumption, route profiles, charging events, utilization, electricity mix, downtime and user demand.",
+    methods:"Python/MATLAB analysis, scenario modelling, MCDA, sensitivity analysis and validation using operational data."
+  },
+  regional:{
+    title:"Regional sustainable mobility",
+    subtitle:"Comparison of private EVs, public transport, shared mobility and multimodal connections.",
+    values:{energy:67,emissions:72,infrastructure:49,cost:63,service:70},
+    question:"Which combination of electric vehicles, public transport and shared mobility provides the best regional accessibility and environmental performance?",
+    data:"Origin-destination demand, trip lengths, public-transport schedules, vehicle occupancy, charging access, demographic and cost data.",
+    methods:"Transport scenario modelling, accessibility analysis, clustering, MCDA and sensitivity analysis."
+  },
+  charging:{
+    title:"Charging infrastructure strategy",
+    subtitle:"Assessment of depot, workplace, public and opportunity-charging concepts.",
+    values:{energy:74,emissions:68,infrastructure:86,cost:57,service:73},
+    question:"How should charging infrastructure be positioned and operated to maximize availability while limiting grid and cost impacts?",
+    data:"Charging demand, dwell time, power levels, grid constraints, electricity tariffs, station availability and queueing behavior.",
+    methods:"Load-profile analysis, optimization, time-series simulation, utilization modelling and cost-benefit assessment."
+  },
+  drive:{
+    title:"Electric-drive system optimization",
+    subtitle:"Technical comparison of drive efficiency, thermal behavior and operational robustness.",
+    values:{energy:91,emissions:80,infrastructure:62,cost:66,service:78},
+    question:"How can electric-drive control and component selection improve efficiency, durability and real-world vehicle performance?",
+    data:"Torque-speed profiles, motor/inverter efficiency, thermal data, duty cycles, battery power, losses and operating conditions.",
+    methods:"MATLAB/Python modelling, efficiency maps, sensitivity analysis, test-data validation and design-of-experiments."
+  }
+};
+
+const labels={
+  energy:"Energy efficiency",
+  emissions:"Emission reduction",
+  infrastructure:"Infrastructure readiness",
+  cost:"Economic viability",
+  service:"Mobility service quality"
+};
+
+function updateScenario(key){
+  const d=scenarioData[key];
+  document.getElementById('scenarioTitle').textContent=d.title;
+  document.getElementById('scenarioSubtitle').textContent=d.subtitle;
+  document.getElementById('researchQuestion').textContent=d.question;
+  document.getElementById('requiredData').textContent=d.data;
+  document.getElementById('methods').textContent=d.methods;
+  document.querySelectorAll('.kpi-row').forEach(row=>{
+    const metric=row.dataset.key;
+    const value=d.values[metric];
+    row.querySelector('.kpi-fill').style.width=value+'%';
+    row.querySelector('.kpi-value').textContent=value+' / 100';
+  });
+}
+
+document.querySelectorAll('[data-s]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-s]').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');
+    updateScenario(btn.dataset.s);
+  });
+});
+
+setTimeout(()=>updateScenario('urban'),450);
+</script>
+
+</body></html>
