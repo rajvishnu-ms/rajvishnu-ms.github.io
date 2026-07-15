@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Rajvishnu | Embedded Software Portfolio for Vay</title>
+<style>
+:root{--bg:#07101c;--panel:#101d2e;--panel2:#14263a;--text:#eef7ff;--muted:#aebdd0;--line:#2a435d;--cyan:#3ed5ff;--blue:#5b8cff;--green:#55dda2;--amber:#ffca62;--shadow:0 20px 60px rgba(0,0,0,.32)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;color:var(--text);line-height:1.62;background:radial-gradient(circle at 10% 0%,rgba(62,213,255,.14),transparent 32%),radial-gradient(circle at 90% 12%,rgba(91,140,255,.13),transparent 30%),var(--bg)}
+a{color:inherit;text-decoration:none}.page{max-width:1220px;margin:auto;padding:24px}.top{position:sticky;top:12px;z-index:20;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:rgba(16,29,46,.9);backdrop-filter:blur(14px);box-shadow:var(--shadow)}.brand{font-size:13px;font-weight:700}.nav{display:flex;gap:7px;flex-wrap:wrap}.nav a,.btn{padding:8px 11px;border:1px solid var(--line);border-radius:11px;background:var(--panel2);font-size:11px}.hero{min-height:76vh;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:65px 0}.eyebrow{font-size:11px;color:var(--cyan);letter-spacing:1.8px;text-transform:uppercase;font-weight:700}h1{font-size:clamp(42px,7vw,76px);line-height:1.04;letter-spacing:-2.7px;margin:12px 0 18px}.grad{background:linear-gradient(90deg,var(--cyan),var(--blue));background-size:200%;-webkit-background-clip:text;color:transparent;animation:grad 7s ease infinite}.lead{font-size:17px;color:var(--muted);max-width:760px;text-align:justify}.card{position:relative;overflow:hidden;padding:23px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(20,38,58,.93),var(--panel));box-shadow:var(--shadow);transition:.35s}.card:hover{transform:translateY(-6px);border-color:var(--cyan)}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:11px}.metric{padding:17px;border:1px solid var(--line);border-radius:15px;background:var(--panel2)}.metric strong{display:block;color:var(--cyan);font-size:25px}.metric span{font-size:11px;color:var(--muted)}section{padding:35px 0}.head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:21px}.head h2{margin:0;font-size:32px}.head p{max-width:610px;color:var(--muted);margin:0;text-align:justify}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:19px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.tag{display:inline-flex;padding:6px 9px;margin:3px;border:1px solid var(--line);border-radius:999px;font-size:10px;background:var(--panel2)}.stack{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.layer{padding:15px 10px;text-align:center;border:1px solid var(--line);border-radius:14px;background:var(--panel2);font-size:11px}.layer strong{display:block;color:var(--cyan);margin-bottom:4px}.case .num{font-size:11px;color:var(--cyan);letter-spacing:1.4px}.case p,.case li,.card p,.card li{text-align:justify;color:var(--muted)}.case h3{font-size:19px}.evidence{display:grid;gap:10px}.ev{display:grid;grid-template-columns:39px 1fr auto;gap:13px;padding:13px 0;border-top:1px solid var(--line)}.ev:first-child{border-top:0}.icon{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));font-size:11px;font-weight:700}.ev h4{margin:0 0 3px;font-size:13px}.ev p{margin:0;font-size:12px}.badge{font-size:9px;border:1px solid var(--line);padding:5px 8px;border-radius:999px;white-space:nowrap}.direct{color:var(--green)}.ramp{color:var(--amber)}.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}.node{padding:13px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);min-width:128px;text-align:center;font-size:11px}.arrow{color:var(--cyan);font-size:22px}.pitch{border-left:5px solid var(--cyan);font-size:17px;text-align:justify}.reveal{opacity:0;transform:translateY(18px);transition:.65s}.reveal.on{opacity:1;transform:none}.footer{text-align:center;color:var(--muted);font-size:11px;padding:45px 0}@keyframes grad{0%,100%{background-position:0%}50%{background-position:100%}}@media(max-width:900px){.hero,.grid2,.grid3{grid-template-columns:1fr}.stack{grid-template-columns:1fr 1fr}.nav{display:none}}@media(max-width:600px){.metrics,.stack{grid-template-columns:1fr}.ev{grid-template-columns:36px 1fr}.badge{grid-column:2;justify-self:start}.lead,.head p,.case p,.case li,.card p,.card li{text-align:left}}@media print{body{background:white;color:#142033}.top,.btn{display:none}.page{max-width:none;padding:0}.hero{min-height:auto;padding:12mm 0}.card{box-shadow:none;break-inside:avoid;background:white}.reveal{opacity:1;transform:none}section{break-inside:avoid}.lead,.head p,.case p,.case li,.card p,.card li{color:#40506a}}
+
+  /* ===== Advanced Vay Interaction System ===== */
+  @keyframes driftA{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(45px,-25px,0) scale(1.08)}}
+  @keyframes driftB{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(-35px,30px,0) rotate(9deg)}}
+  @keyframes glowPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 28%,transparent)}50%{box-shadow:0 0 0 14px transparent}}
+  @keyframes slideSignal{from{stroke-dashoffset:120}to{stroke-dashoffset:0}}
+  @keyframes riseIn{from{opacity:0;transform:translateY(28px) scale(.98)}to{opacity:1;transform:none}}
+  @keyframes shimmerMove{from{transform:translateX(-140%)}to{transform:translateX(180%)}}
+  @keyframes rotateSlow{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+
+  body::before,body::after{
+    content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(22px);opacity:.17;pointer-events:none
+  }
+  body::before{width:360px;height:360px;left:-130px;top:12%;background:radial-gradient(circle,var(--accent),transparent 68%);animation:driftA 16s ease-in-out infinite alternate}
+  body::after{width:420px;height:420px;right:-170px;top:50%;background:radial-gradient(circle,var(--accent-2),transparent 68%);animation:driftB 19s ease-in-out infinite alternate}
+
+  .hero-copy{animation:riseIn .85s cubic-bezier(.2,.8,.2,1) both}
+  .hero-visual{animation:riseIn 1s .12s cubic-bezier(.2,.8,.2,1) both}
+  .card,.metric,.stack-node,.scenario-card,.case-card{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease}
+  .card:hover,.scenario-card:hover,.case-card:hover{transform:translateY(-8px);border-color:color-mix(in srgb,var(--accent) 65%,var(--line));box-shadow:0 22px 60px rgba(0,0,0,.28)}
+  .card::after,.scenario-card::after,.case-card::after{content:"";position:absolute;inset:0 auto 0 -55%;width:38%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);pointer-events:none}
+  .card:hover::after,.scenario-card:hover::after,.case-card:hover::after{animation:shimmerMove .9s ease}
+
+  .teleop-ring{width:250px;height:250px;border-radius:50%;position:relative;margin:auto;border:1px dashed var(--line);animation:rotateSlow 24s linear infinite}
+  .teleop-core{position:absolute;inset:72px;border-radius:50%;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:700;font-size:13px;animation:rotateSlow 24s linear infinite reverse}
+  .teleop-node{position:absolute;width:72px;height:72px;border-radius:18px;display:grid;place-items:center;text-align:center;background:var(--panel-2);border:1px solid var(--line);font-size:10px;animation:rotateSlow 24s linear infinite reverse}
+  .tn1{top:-10px;left:89px}.tn2{right:-14px;top:88px}.tn3{bottom:-10px;left:89px}.tn4{left:-14px;top:88px}
+
+  .stack-map{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  .stack-node{padding:18px;border-radius:16px;border:1px solid var(--line);background:var(--panel-2);min-height:130px}
+  .stack-node strong{display:block;color:var(--accent);margin-bottom:8px}
+  .stack-node small{color:var(--muted)}
+  .stack-node.active{animation:breathe 2.8s ease-in-out infinite}
+
+  .signal-lab{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+  .oscilloscope{background:#081018;border:1px solid #1f3548;border-radius:18px;padding:16px;box-shadow:inset 0 0 35px rgba(0,255,200,.05)}
+  .scope-grid{width:100%;height:250px;border-radius:12px;background:linear-gradient(rgba(82,255,210,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(82,255,210,.08) 1px,transparent 1px);background-size:25px 25px;position:relative;overflow:hidden}
+  .scope-grid svg{width:100%;height:100%}
+  .signal-path{fill:none;stroke:#63f6c4;stroke-width:3;stroke-dasharray:120;stroke-dashoffset:120;filter:drop-shadow(0 0 5px rgba(99,246,196,.7))}
+  .signal-path.animate{animation:slideSignal 2.2s ease forwards}
+  .fault-path{stroke:#ff758f}
+  .scope-status{display:flex;justify-content:space-between;gap:10px;margin-top:12px;font-size:11px;color:#91a4b8}
+  .scope-status strong{color:#63f6c4}
+
+  .scenario-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .scenario-tab{padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--panel-2);color:var(--text);cursor:pointer;font-size:12px}
+  .scenario-tab.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border-color:transparent}
+  .scenario-display{border:1px solid var(--line);border-radius:18px;padding:20px;background:var(--panel)}
+  .scenario-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .scenario-stage{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--panel-2);min-height:130px}
+  .scenario-stage strong{display:block;color:var(--accent);font-size:12px;margin-bottom:6px}
+  .scenario-stage p{font-size:12px;color:var(--muted);margin:0}
+  .scenario-stage.current{animation:glowPulse 2s ease-in-out infinite;border-color:var(--accent)}
+
+  .state-machine{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:center}
+  .state{position:relative;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel-2);text-align:center}
+  .state::after{content:"→";position:absolute;right:-18px;top:50%;transform:translateY(-50%);color:var(--accent);font-size:22px}
+  .state:last-child::after{display:none}
+  .state.active{border-color:var(--accent);animation:glowPulse 2.3s ease-in-out infinite}
+  .state strong{display:block;margin-bottom:6px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:.6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal .card,.reveal .case-card,.reveal .scenario-card{opacity:0;transform:translateY(18px);transition:.55s ease}
+  .reveal.visible .card,.reveal.visible .case-card,.reveal.visible .scenario-card{opacity:1;transform:none}
+
+  .tech-accordion details{transition:.3s ease}
+  .tech-accordion details:hover{transform:translateX(5px);border-color:var(--accent)}
+  .tech-accordion summary{display:flex;justify-content:space-between;align-items:center}
+  .tech-accordion summary::after{content:"+";font-size:20px;color:var(--accent)}
+  .tech-accordion details[open] summary::after{content:"–"}
+
+  @media(max-width:960px){
+    .stack-map{grid-template-columns:repeat(2,1fr)}
+    .signal-lab{grid-template-columns:1fr}
+    .scenario-grid,.state-machine{grid-template-columns:1fr}
+    .state::after{content:"↓";right:auto;left:50%;top:auto;bottom:-24px;transform:translateX(-50%)}
+  }
+  @media(max-width:640px){.stack-map{grid-template-columns:1fr}.teleop-ring{transform:scale(.88)}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  @media print{body::before,body::after{display:none}.teleop-ring,.teleop-core,.teleop-node{animation:none!important}.scenario-tabs{display:none}.signal-path{stroke-dashoffset:0!important}}
+
+</style>
+</head>
+<body><div class="page">
+<div class="top"><div class="brand">RAJVISHNU · VAY EMBEDDED SOFTWARE PORTFOLIO</div><div class="nav"><a href="#vay">Vay</a><a href="#fit">Role Fit</a><a href="#cases">Evidence</a><a href="#architecture">System View</a><a href="#pitch">Pitch</a></div><button class="btn" onclick="window.print()">Export PDF</button></div>
+<header class="hero"><div><div class="eyebrow">Embedded Software Engineer · Berlin</div><h1>From automotive interface behaviour to <span class="grad">safety-critical vehicle software.</span></h1><p class="lead">Automotive embedded-systems engineer with more than eight years of engineering experience across sensor interfaces, HiL, hardware-software integration, automation, laboratory debugging and traceable validation. The next step is direct implementation ownership for software that moves real vehicles safely.</p><div style="margin-top:22px"><span class="tag">C/C++</span><span class="tag">Python</span><span class="tag">CAPL</span><span class="tag">CAN / LIN</span><span class="tag">CANoe / CANalyzer</span><span class="tag">VT System</span><span class="tag">FPGA / VHDL</span><span class="tag">Oscilloscope</span></div></div><div class="card"><div class="metrics"><div class="metric"><strong>8+</strong><span>Years engineering experience</span></div><div class="metric"><strong>4</strong><span>Embedded interfaces validated</span></div><div class="metric"><strong>1</strong><span>Vector HiL platform owned end-to-end</span></div><div class="metric"><strong>Berlin</strong><span>Already based near Vay HQ</span></div></div></div></header>
+<section id="vay" class="reveal"><div class="head"><div><div class="eyebrow">Company understanding</div><h2>Why Vay is technically compelling</h2></div><p>Remote driving links vehicle actuation, communication, operator input, monitoring and emergency behaviour into one real-time safety chain. Reliability depends not only on code correctness but also on hardware behaviour, timing, observability and deterministic fault response.</p></div><div class="grid3"><div class="card"><h3>Real vehicle control</h3><p>Embedded software directly influences steering, braking, acceleration and emergency reactions. Testability and physical-system understanding are essential.</p></div><div class="card"><h3>Remote-driving system</h3><p>The vehicle, communication path and driving centre form a distributed control system whose latency, state transitions and failure handling must remain predictable.</p></div><div class="card"><h3>Public-road evidence</h3><p>Operating real vehicles creates a high bar for traceability, robust degradation, diagnostics and release confidence across hardware and software teams.</p></div></div></section>
+<section id="fit" class="reveal"><div class="head"><div><div class="eyebrow">Role alignment</div><h2>Requirement-to-evidence mapping</h2></div><p>The application is built around direct evidence while distinguishing areas that require a focused ramp-up.</p></div><div class="grid2"><div class="card"><div class="evidence"><div class="ev"><div class="icon">01</div><div><h4>Hardware-near system analysis</h4><p>Oscilloscope, signal-generator, DAQ and protocol-based debugging across electrical signals, timing and embedded interface behaviour.</p></div><span class="badge direct">DIRECT</span></div><div class="ev"><div class="icon">02</div><div><h4>Automotive interfaces and Vector tools</h4><p>CAN, LIN, SENT, SPI, OWI, CANoe, CANalyzer and VT System used in production automotive development.</p></div><span class="badge direct">DIRECT</span></div><div class="ev"><div class="icon">03</div><div><h4>HiL, simulation and automation</h4><p>Physical and virtual closed-loop setups with Python/CAPL automation, diagnostics, fault tests and regression execution.</p></div><span class="badge direct">DIRECT</span></div><div class="ev"><div class="icon">04</div><div><h4>Safety-oriented development context</h4><p>Requirements-based work within ASPICE-compliant and ISO 26262-oriented processes, including traceable release evidence.</p></div><span class="badge direct">DIRECT</span></div><div class="ev"><div class="icon">05</div><div><h4>Production embedded C and RTOS</h4><p>Strong systems and C/C++ foundation, but direct production RTOS and MISRA-C ownership is the principal development area.</p></div><span class="badge ramp">RAMP</span></div></div></div><div class="card"><h3>Immediate value to Vay</h3><ul><li>Analyse difficult failures across hardware, interfaces and software state.</li><li>Improve testability, diagnostics and automated evidence collection.</li><li>Build HiL and bench workflows for fault and regression testing.</li><li>Translate physical-system observations into robust software requirements.</li><li>Collaborate naturally with hardware, controls, systems and test teams.</li></ul><h3 style="margin-top:22px">Focused growth path</h3><ul><li>Production embedded C patterns and defensive coding.</li><li>RTOS scheduling, interrupts and concurrency.</li><li>MISRA-C and static-analysis workflows.</li><li>AUTOSAR and vehicle-control software architecture.</li><li>Vehicle-level integration of steering, brake and propulsion control.</li></ul></div></div></section>
+<section id="cases" class="reveal"><div class="head"><div><div class="eyebrow">Technical evidence</div><h2>Five relevant case studies</h2></div></div><div class="grid2"><article class="card case"><div class="num">CASE 01 · TDK</div><h3>Automotive embedded-interface development and verification</h3><p>Developed and verified LIN, SENT, SPI and OWI behaviour from requirements, including timing, state logic, robustness and fault responses. Used hardware measurements and protocol analysis to isolate electrical, configuration and software causes.</p></article><article class="card case"><div class="num">CASE 02 · TDK</div><h3>Vector HiL and virtual validation platform</h3><p>Built a reusable closed-loop platform with physical sensors, virtual sensor models, ECU configurations and CAN networks. Automated stimulation, acquisition, diagnostics, fault cases and regressions using Python and CAPL.</p></article><article class="card case"><div class="num">CASE 03 · TDK</div><h3>FPGA/VHDL real-time interface emulation</h3><p>Developed the concept for FPGA-based OWI emulation to reproduce deterministic low-level interface behaviour and enable earlier verification before complete target hardware was available.</p></article><article class="card case"><div class="num">CASE 04 · KIT</div><h3>PLC-controlled robot and physical-system debugging</h3><p>Integrated servo drives, sensors, electrical connections and real-time control sequences in a pick-and-place system, then verified behaviour across sensing, actuation, wiring, mechanics and control logic.</p></article><article class="card case"><div class="num">CASE 05 · ITK</div><h3>Software ownership and reproducible tooling</h3><p>Designed and integrated a Flutter/Dart reporting module, supported ECU flashing and updates, and improved test-bench workflows with Git-controlled assets and structured documentation.</p></article><article class="card case"><div class="num">ENGINEERING PATTERN</div><h3>How I approach a safety-critical defect</h3><p>Define expected state behaviour, instrument the electrical and software layers, reproduce deterministically, correlate timestamps and transitions, isolate the dominant cause, verify degraded and recovery states, automate regression coverage, and communicate residual risk explicitly.</p></article></div></section>
+<section id="architecture" class="reveal"><div class="head"><div><div class="eyebrow">System thinking</div><h2>Remote-driving safety chain</h2></div><p>I would reason about Vay’s platform as an end-to-end distributed physical-control system rather than as isolated ECU code.</p></div><div class="card"><div class="flow"><div class="node"><strong>Driving Centre</strong><br>operator command</div><div class="arrow">→</div><div class="node"><strong>Communication</strong><br>latency / loss / integrity</div><div class="arrow">→</div><div class="node"><strong>Vehicle Controller</strong><br>state / arbitration / safety</div><div class="arrow">→</div><div class="node"><strong>Actuators</strong><br>steer / brake / propel</div><div class="arrow">→</div><div class="node"><strong>Feedback</strong><br>sensors / diagnostics</div></div></div><div class="grid3" style="margin-top:18px"><div class="card"><h3>Normal operation</h3><p>Correct command interpretation, timing, plausibility, actuator response and feedback closure.</p></div><div class="card"><h3>Degraded operation</h3><p>Communication loss, sensor failure, implausible states, power disturbance and controlled fallback.</p></div><div class="card"><h3>Recovery</h3><p>Deterministic re-entry, latched faults, reset conditions, diagnostics and prevention of unsafe oscillation between states.</p></div></div></section>
+<section class="reveal"><div class="head"><div><div class="eyebrow">First contribution</div><h2>30 / 60 / 90-day approach</h2></div></div><div class="grid3"><div class="card"><h3>First 30 days</h3><p>Understand the software architecture, safety concepts, build/test flow, hardware interfaces and existing defect patterns. Reproduce selected issues on bench or HiL.</p></div><div class="card"><h3>By 60 days</h3><p>Own a contained embedded feature or fault-handling improvement, add automated tests and improve diagnostic visibility across hardware and software.</p></div><div class="card"><h3>By 90 days</h3><p>Deliver a verified production contribution with traceable evidence and take broader ownership of an interface, state machine or safety-relevant subsystem.</p></div></div></section>
+
+  <section id="architecture" class="reveal">
+    <div class="section-head">
+      <div><div class="eyebrow">System Architecture</div><h2>Remote-driving safety chain</h2></div>
+      <p>Interactive view of how operator input, communication, vehicle control, actuation and diagnostics must remain deterministic as one safety-critical system.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="display:grid;place-items:center">
+        <div class="teleop-ring">
+          <div class="teleop-core">SAFE REMOTE<br>DRIVING LOOP</div>
+          <div class="teleop-node tn1">Driving<br>Center</div>
+          <div class="teleop-node tn2">Network &<br>Latency</div>
+          <div class="teleop-node tn3">Vehicle<br>Control</div>
+          <div class="teleop-node tn4">Diagnostics &<br>Fallback</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>What must be proven</h3>
+        <div class="stack-map" style="grid-template-columns:1fr 1fr">
+          <div class="stack-node active"><strong>Command integrity</strong><small>Correct input, sequence and timing.</small></div>
+          <div class="stack-node"><strong>Communication health</strong><small>Latency, loss, stale data and reconnection behavior.</small></div>
+          <div class="stack-node"><strong>Control execution</strong><small>Deterministic actuation and bounded response.</small></div>
+          <div class="stack-node"><strong>Fault reaction</strong><small>Detection, safe degradation and predictable recovery.</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="reveal">
+    <div class="section-head">
+      <div><div class="eyebrow">Embedded Stack Mapping</div><h2>Where my experience connects</h2></div>
+      <p>A layered view of the Vay system and the evidence I already bring from automotive embedded validation.</p>
+    </div>
+    <div class="stack-map">
+      <div class="stack-node"><strong>Vehicle hardware</strong><small>Schematics, oscilloscopes, signal generators, DAQ, sensors and ECU interfaces.</small></div>
+      <div class="stack-node"><strong>Low-level interfaces</strong><small>CAN, LIN, SENT, SPI and OWI timing, robustness and error behavior.</small></div>
+      <div class="stack-node active"><strong>Embedded logic</strong><small>State machines, fault handling, stimulation and deterministic behavior analysis.</small></div>
+      <div class="stack-node"><strong>HiL & simulation</strong><small>CANoe, CANalyzer, VT System, virtual sensors and virtual ECU configurations.</small></div>
+      <div class="stack-node"><strong>Tooling & evidence</strong><small>Python, CAPL, Git, automated regression and traceable release data.</small></div>
+    </div>
+  </section>
+
+  <section id="signal-lab" class="reveal">
+    <div class="section-head">
+      <div><div class="eyebrow">Interactive Signal Lab</div><h2>Normal vs. fault behavior</h2></div>
+      <p>Use the controls to switch between nominal communication and an injected fault pattern.</p>
+    </div>
+    <div class="signal-lab">
+      <div class="oscilloscope">
+        <div class="scope-grid">
+          <svg viewBox="0 0 800 250" preserveAspectRatio="none" aria-label="Animated embedded signal">
+            <path id="normalSignal" class="signal-path animate" d="M0,170 L70,170 L70,70 L120,70 L120,170 L210,170 L210,70 L260,70 L260,170 L350,170 L350,70 L400,70 L400,170 L490,170 L490,70 L540,70 L540,170 L630,170 L630,70 L680,70 L680,170 L800,170"/>
+            <path id="faultSignal" class="signal-path fault-path" style="display:none" d="M0,170 L70,170 L70,70 L120,70 L120,170 L210,170 L210,70 L260,70 L260,170 L360,170 L360,120 L390,120 L390,170 L520,170 L520,70 L560,70 L560,170 L640,170 L640,190 L710,190 L710,170 L800,170"/>
+          </svg>
+        </div>
+        <div class="scope-status">
+          <span>Channel: <strong id="signalMode">Nominal</strong></span>
+          <span>Fault detector: <strong id="faultStatus">Clear</strong></span>
+          <span>Recovery: <strong id="recoveryStatus">Not required</strong></span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Test controls</h3>
+        <div class="scenario-tabs">
+          <button class="scenario-tab active" data-signal="normal">Nominal signal</button>
+          <button class="scenario-tab" data-signal="fault">Injected fault</button>
+        </div>
+        <p id="signalExplanation">Stable timing, complete edges and expected state transitions. This is the baseline used for regression and margin comparison.</p>
+        <div class="fit-summary" style="margin-top:16px">
+          <span class="fit-summary-label">Engineering question</span>
+          <p>Can the embedded software detect the abnormal pattern, enter the correct degraded state and recover without unsafe actuation?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fault-scenarios" class="reveal">
+    <div class="section-head">
+      <div><div class="eyebrow">Fault-Injection Explorer</div><h2>How I would validate failure handling</h2></div>
+      <p>Select a scenario to see the expected embedded response chain.</p>
+    </div>
+    <div class="scenario-tabs">
+      <button class="scenario-tab active" data-scenario="dropout">Sensor dropout</button>
+      <button class="scenario-tab" data-scenario="latency">Network latency</button>
+      <button class="scenario-tab" data-scenario="power">Power disturbance</button>
+      <button class="scenario-tab" data-scenario="stale">Stale command</button>
+    </div>
+    <div class="scenario-display">
+      <div class="scenario-grid" id="scenarioGrid">
+        <div class="scenario-stage current"><strong>1 · Inject</strong><p>Remove or corrupt the sensor signal under controlled timing.</p></div>
+        <div class="scenario-stage"><strong>2 · Detect</strong><p>Measure detection latency and diagnostic confidence.</p></div>
+        <div class="scenario-stage"><strong>3 · Degrade</strong><p>Verify bounded actuation and entry into a safe state.</p></div>
+        <div class="scenario-stage"><strong>4 · Recover</strong><p>Confirm deterministic re-entry after valid conditions return.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="state-machine" class="reveal">
+    <div class="section-head">
+      <div><div class="eyebrow">Safety State Logic</div><h2>Normal, degraded and recovery behavior</h2></div>
+      <p>A compact state-machine view showing the system-level thinking expected in safety-critical vehicle control.</p>
+    </div>
+    <div class="state-machine">
+      <div class="state active"><strong>Normal</strong><span>Valid commands, healthy interfaces, bounded timing.</span></div>
+      <div class="state"><strong>Suspect</strong><span>Anomaly detected; plausibility and timeout checks triggered.</span></div>
+      <div class="state"><strong>Degraded</strong><span>Restricted function, fallback behavior, fault containment.</span></div>
+      <div class="state"><strong>Recovery</strong><span>Health re-confirmed before controlled return to normal.</span></div>
+    </div>
+  </section>
+
+  <section id="deep-dive" class="reveal tech-accordion">
+    <div class="section-head">
+      <div><div class="eyebrow">Technical Deep Dive</div><h2>Interview-ready engineering notes</h2></div>
+      <p>Expandable answers for common embedded and safety-critical discussion topics.</p>
+    </div>
+    <details open>
+      <summary>How would you debug an intermittent CAN-related control fault?</summary>
+      <p>First correlate bus traces, timestamps, command state, actuator response and supply behavior. Separate transport errors from application-state errors, verify timeout and counter handling, reproduce under controlled load, then vary one factor at a time. The goal is to identify whether the fault originates in signal integrity, scheduling, stale data, state logic or recovery handling.</p>
+    </details>
+    <details>
+      <summary>How would you test a safety-critical state machine?</summary>
+      <p>Enumerate valid and invalid transitions, trigger each through normal and fault inputs, measure timing, verify outputs and side effects, test repeated transitions, power-cycle persistence and recovery, then automate the sequence for regression. Every run should capture configuration, software version and trace evidence.</p>
+    </details>
+    <details>
+      <summary>What is your immediate contribution despite limited production RTOS ownership?</summary>
+      <p>I already bring strong hardware-near debugging, automotive interfaces, HiL, fault-response verification, test automation and system-level reasoning. These are directly useful while I deepen scheduler, concurrency and RTOS-specific implementation skills in the target codebase.</p>
+    </details>
+    <details>
+      <summary>How would you use AI responsibly in embedded development?</summary>
+      <p>Use it for faster hypothesis generation, test-case expansion, code-review prompts, documentation and log-pattern discovery, while retaining human ownership of requirements, safety assumptions, traceability, code correctness and final verification.</p>
+    </details>
+  </section>
+
+<section id="pitch" class="reveal"><div class="head"><div><div class="eyebrow">Interview pitch</div><h2>90-second introduction</h2></div></div><div class="card pitch">I am an automotive embedded-systems engineer with an M.Sc. in Sensor Systems Technology and more than eight years of engineering experience. My recent work at TDK was at the boundary of embedded software and physical hardware: I developed and verified LIN, SENT, SPI and OWI interfaces, built a Vector-based HiL environment with CANoe, CANalyzer and VT System, and automated fault and regression testing using Python and CAPL. I debugged problems using oscilloscopes and protocol analysis, so I am used to tracing a symptom from the electrical signal through timing and state behaviour to the software or configuration cause.<br><br>What I am seeking now is to move closer to the implementation itself. Vay is especially attractive because the code directly controls real vehicle functions and must behave predictably in normal, degraded and emergency states. I bring immediate value in automotive interfaces, hardware-software debugging, HiL, testability and safety-oriented verification. My focused growth area is deeper production embedded C and RTOS ownership, and I am prepared to demonstrate the fundamentals and ramp quickly. I see this as a deliberate progression from proving embedded behaviour to building the safety-critical software itself.</div></section>
+<div class="footer">Rajvishnu Meenakshi Sundaram · Embedded Software Portfolio · Vay</div>
+</div>
+<script>
+  const themeBtn = document.getElementById('themeBtn');
+  if(themeBtn){themeBtn.addEventListener('click',()=>document.body.classList.toggle('light'));}
+
+  const revealObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        entry.target.querySelectorAll('.card,.case-card,.scenario-card').forEach((el,i)=>{
+          el.style.transitionDelay = `${Math.min(i*70,420)}ms`;
+        });
+        entry.target.querySelectorAll('.signal-path').forEach(p=>p.classList.add('animate'));
+      }
+    });
+  },{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+  document.querySelectorAll('.card,.case-card,.scenario-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      if(!window.matchMedia('(pointer:fine)').matches) return;
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(950px) rotateX(${-y*2.4}deg) rotateY(${x*3}deg) translateY(-6px)`;
+    });
+    card.addEventListener('mouseleave',()=>card.style.transform='');
+  });
+
+  const normal=document.getElementById('normalSignal');
+  const fault=document.getElementById('faultSignal');
+  const signalMode=document.getElementById('signalMode');
+  const faultStatus=document.getElementById('faultStatus');
+  const recoveryStatus=document.getElementById('recoveryStatus');
+  const signalExplanation=document.getElementById('signalExplanation');
+
+  document.querySelectorAll('[data-signal]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('[data-signal]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const mode=btn.dataset.signal;
+      if(mode==='normal'){
+        normal.style.display='block'; fault.style.display='none';
+        normal.classList.remove('animate'); void normal.offsetWidth; normal.classList.add('animate');
+        signalMode.textContent='Nominal'; faultStatus.textContent='Clear'; recoveryStatus.textContent='Not required';
+        signalExplanation.textContent='Stable timing, complete edges and expected state transitions. This is the baseline used for regression and margin comparison.';
+      }else{
+        normal.style.display='none'; fault.style.display='block';
+        fault.classList.remove('animate'); void fault.offsetWidth; fault.classList.add('animate');
+        signalMode.textContent='Fault injected'; faultStatus.textContent='Detected'; recoveryStatus.textContent='Required';
+        signalExplanation.textContent='The abnormal pulse width and delayed edge represent a communication or hardware disturbance. The test objective is timely detection, bounded output and deterministic recovery.';
+      }
+    });
+  });
+
+  const scenarios={
+    dropout:[['1 · Inject','Remove or corrupt the sensor signal under controlled timing.'],['2 · Detect','Measure detection latency and diagnostic confidence.'],['3 · Degrade','Verify bounded actuation and entry into a safe state.'],['4 · Recover','Confirm deterministic re-entry after valid conditions return.']],
+    latency:[['1 · Delay','Introduce bounded and then excessive communication latency.'],['2 · Monitor','Track age counters, timeouts and command freshness.'],['3 · Contain','Prevent stale or late commands from causing unsafe response.'],['4 · Restore','Validate reconnection, resynchronization and controlled restart.']],
+    power:[['1 · Disturb','Apply a controlled dip, spike or brownout condition.'],['2 · Observe','Capture resets, watchdog events and interface behavior.'],['3 · Protect','Verify safe outputs and preserved diagnostic information.'],['4 · Restart','Confirm clean initialization and return to a known state.']],
+    stale:[['1 · Freeze','Hold the last valid command while timestamps advance.'],['2 · Detect','Verify freshness and sequence monitoring.'],['3 · Reject','Ensure outdated commands cannot continue actuation.'],['4 · Re-arm','Require a valid new command and healthy state before recovery.']]
+  };
+  document.querySelectorAll('[data-scenario]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('[data-scenario]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const grid=document.getElementById('scenarioGrid');
+      grid.innerHTML=scenarios[btn.dataset.scenario].map((s,i)=>`<div class="scenario-stage ${i===0?'current':''}"><strong>${s[0]}</strong><p>${s[1]}</p></div>`).join('');
+    });
+  });
+
+  let stateIndex=0;
+  const states=[...document.querySelectorAll('.state-machine .state')];
+  if(states.length){
+    setInterval(()=>{
+      states.forEach(s=>s.classList.remove('active'));
+      stateIndex=(stateIndex+1)%states.length;
+      states[stateIndex].classList.add('active');
+    },2200);
+  }
+</script>
+
+</body></html>
