@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rajvishnu Meenakshi Sundaram | Wearable Sensor Systems Portfolio</title>
+<style>
+:root{
+  --bg:#071325;
+  --bg2:#10234a;
+  --hero3:#1a2f62;
+  --primary:#43e3d7;
+  --secondary:#7da6ff;
+  --accent:#ff7f97;
+  --accent2:#ffd166;
+  --ink:#14243c;
+  --muted:#5b6c86;
+  --paper:#f5f8ff;
+  --white:#ffffff;
+  --surface:#ffffff;
+  --surface2:#eef4ff;
+  --line:#d8e3f2;
+  --good:#0d9f8f;
+  --shadow:0 18px 56px rgba(9,23,53,.14);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Verdana,Arial,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.58;
+  overflow-x:hidden;
+}
+a{color:inherit}
+img,svg{max-width:100%;display:block}
+.wrap{width:min(1220px,92vw);margin:auto}
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(7,19,37,.78);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-weight:900;letter-spacing:.03em;color:#fff;font-size:.96rem}
+.brand span{color:var(--primary)}
+.links{display:flex;gap:22px;flex-wrap:wrap}
+.links a{text-decoration:none;color:#d9e6ff;font-size:.84rem;position:relative}
+.links a:after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));transition:.25s}
+.links a:hover:after{width:100%}
+.hero{
+  position:relative;
+  padding:118px 0 84px;
+  min-height:98vh;
+  color:#fff;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 15% 18%, rgba(67,227,215,.18), transparent 24%),
+    radial-gradient(circle at 82% 22%, rgba(125,166,255,.18), transparent 24%),
+    linear-gradient(135deg,var(--bg),var(--bg2) 55%,var(--hero3));
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(2px);opacity:.65;
+}
+.hero:before{width:420px;height:420px;border:1px solid rgba(255,255,255,.08);right:-130px;top:90px;animation:floatA 11s ease-in-out infinite}
+.hero:after{width:560px;height:560px;border:1px solid rgba(255,255,255,.06);left:-190px;bottom:-260px;animation:floatB 15s ease-in-out infinite}
+@keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(20px)}}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;color:#8df2eb;font-weight:800}
+.hero h1{font-size:clamp(2.9rem,5.7vw,5.6rem);line-height:.97;margin:.55rem 0 1.1rem;max-width:900px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#fff,var(--primary));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.05rem;color:#dbe7fb;max-width:760px;text-align:justify}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;text-decoration:none;font-size:.84rem;font-weight:800;transition:.25s;border:1px solid rgba(255,255,255,.18)}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(90deg,var(--primary),#78f0e7);color:#03252a;border-color:transparent}
+.btn.ghost{color:#fff;background:rgba(255,255,255,.05)}
+.hero-side{display:grid;gap:16px}
+.signal-card,.mini-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:26px;
+  box-shadow:var(--shadow);
+}
+.signal-card{padding:24px;position:relative;overflow:hidden}
+.signal-card:before{content:"";position:absolute;inset:auto -80px -80px auto;width:180px;height:180px;background:radial-gradient(circle,rgba(67,227,215,.26),transparent 60%)}
+.signal-card h3{margin:0 0 6px;font-size:1.1rem}
+.signal-card p{margin:0;color:#c6d5ee;font-size:.84rem}
+.signal{height:220px;margin-top:18px;display:flex;align-items:center}
+.signal svg{overflow:visible}
+.pulse{stroke-dasharray:1100;stroke-dashoffset:1100;animation:draw 4.5s linear infinite}
+@keyframes draw{0%{stroke-dashoffset:1100}48%,100%{stroke-dashoffset:0}}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.metric{background:rgba(255,255,255,.07);padding:14px;border-radius:16px;text-align:center}
+.metric b{display:block;font-size:1.46rem}.metric span{font-size:.68rem;color:#c7d6ec}
+.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.mini-card{padding:16px;transition:.3s;transform:translateY(0)}
+.mini-card:hover{transform:translateY(-4px)}
+.mini-card .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:#8feae5;font-weight:800}
+.mini-card b{display:block;margin-top:6px;font-size:1rem}
+.mini-card span{display:block;margin-top:6px;color:#d7e5f8;font-size:.8rem;text-align:justify}
+.section{padding:92px 0}
+.section.alt{background:var(--white)}
+.kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;color:#397ed9;font-weight:900;margin-bottom:10px}
+.head{display:grid;grid-template-columns:.68fr 1.32fr;gap:40px;align-items:start;margin-bottom:38px}
+.head h2{margin:0;font-size:clamp(2rem,4.3vw,3.6rem);line-height:1.05}
+.head p{margin:0;color:var(--muted);text-align:justify}
+.role-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.stage{
+  background:linear-gradient(180deg,#fff,#f8fbff);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:18px;
+  min-height:175px;
+  cursor:pointer;
+  transition:.28s;
+  position:relative;
+  overflow:hidden;
+}
+.stage:before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:linear-gradient(180deg,var(--primary),var(--secondary));opacity:0;transition:.25s}
+.stage:hover,.stage.active{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#b9d7ff}
+.stage:hover:before,.stage.active:before{opacity:1}
+.stage .n{font-size:.72rem;font-weight:900;color:#3a7cd8}
+.stage h3{margin:9px 0 10px;font-size:1rem}
+.stage p{margin:0;font-size:.79rem;color:var(--muted);text-align:justify}
+.transfer{
+  margin-top:16px;
+  background:linear-gradient(135deg,#0b1a35,#132a54 55%,#1c3d71);
+  border-radius:26px;padding:26px;color:#fff;display:grid;grid-template-columns:1fr 1.7fr;gap:24px;
+  box-shadow:var(--shadow);
+}
+.transfer h3{margin:0;font-size:1.1rem}
+.transfer p{margin:0;color:#dbe7fb;text-align:justify}
+.transfer .badge{display:inline-block;margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:7px 10px;border-radius:999px;font-size:.72rem;font-weight:800;color:#9eeae4}
+.direct-note{border-left:4px solid var(--accent);background:#fff5f7;padding:14px 16px;border-radius:0 14px 14px 0;margin-top:18px;color:#6e4550;font-size:.85rem;text-align:justify}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.fbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font:800 .76rem Verdana,Arial,sans-serif;letter-spacing:.02em;color:#416189;cursor:pointer;transition:.25s}
+.fbtn.active,.fbtn:hover{background:linear-gradient(90deg,var(--secondary),var(--primary));color:#052631;border-color:transparent}
+.projects{display:grid;gap:16px}
+.project{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 6px 24px rgba(13,30,60,.04);
+  transition:.25s;
+}
+.project.hidden{display:none}
+.project:hover{box-shadow:var(--shadow)}
+.phead{display:grid;grid-template-columns:92px 1.35fr .8fr auto;gap:16px;align-items:center;padding:20px 22px;cursor:pointer;background:linear-gradient(180deg,#fff,#fbfdff)}
+.num{font-size:2rem;font-weight:900;color:#2d77db}
+.phead h3{margin:0;font-size:1.12rem}
+.phead p{margin:3px 0 0;font-size:.8rem;color:var(--muted)}
+.scope{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start}
+.scope span{font-size:.67rem;font-weight:800;padding:6px 8px;border-radius:999px;background:#eef4ff;color:#315d97}
+.plus{font-size:1.5rem;font-weight:900;color:#305f99;transition:.25s}
+.project.open .plus{transform:rotate(45deg)}
+.pbody{max-height:0;overflow:hidden;transition:max-height .65s ease}
+.project.open .pbody{max-height:2500px}
+.pinner{border-top:1px solid var(--line);padding:24px;display:grid;grid-template-columns:1.05fr .95fr;gap:28px;background:#fcfdff}
+.copy p{margin-top:0;color:var(--muted);text-align:justify}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 16px}
+.fact{background:#f3f8ff;border:1px solid #dde8f7;border-radius:16px;padding:12px}
+.fact b{display:block;font-size:.75rem;color:#366dbd;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.fact span{font-size:.82rem;color:#25415f}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.tag{font-size:.7rem;font-weight:800;color:#085d5b;background:#dffaf7;padding:6px 9px;border-radius:999px}
+.outcome{background:#fff;border:1px solid #dceaf0;border-left:4px solid var(--good);border-radius:16px;padding:15px;font-size:.82rem;color:#244056}
+.visual{
+  background:linear-gradient(145deg,#0d1d39,#17356a 58%,#1d478a);
+  border-radius:22px;padding:18px;color:#fff;min-height:290px;display:grid;place-items:center;overflow:hidden;position:relative;
+}
+.visual:before{content:"";position:absolute;inset:auto auto -40px -40px;width:150px;height:150px;background:radial-gradient(circle,rgba(67,227,215,.2),transparent 60%)}
+.visual svg{width:100%;height:auto;max-height:360px}
+.visual text{font-family:Verdana,Arial,sans-serif}
+.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(13,30,60,.04)}
+.skill h3{margin:0 0 14px}
+.bars{display:grid;gap:12px}
+.bar span{display:flex;justify-content:space-between;gap:12px;font-size:.76rem;margin-bottom:6px;color:#2a4d76}
+.track{height:9px;background:#e7eef8;border-radius:999px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,var(--secondary),var(--primary));width:var(--w);transform:scaleX(0);transform-origin:left;transition:1.2s}
+.visible .fill{transform:scaleX(1)}
+.evidence{background:linear-gradient(135deg,#0b1a35,#17335f 60%,#245590);color:#fff;border-radius:30px;padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:28px;box-shadow:var(--shadow)}
+.quote{border-left:4px solid var(--primary);padding-left:18px;color:#dbe7fb;text-align:justify}
+.quote b{color:#fff}
+.contact{background:linear-gradient(135deg,#09152b,#13294f);color:#fff;padding:72px 0}
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start}
+.contact h2{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1;margin:0}
+.contact p{color:#d6e4fb;text-align:justify}
+.contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:22px}
+.contact-card div{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.84rem}
+.contact-card div:last-child{border:0}
+.reveal{opacity:0;transform:translateY(22px);transition:.72s}
+.reveal.visible{opacity:1;transform:none}
+[data-tilt]{transform-style:preserve-3d}
+@media(max-width:980px){
+  .links{display:none}
+  .hero-grid,.head,.transfer,.evidence,.contact-grid,.pinner{grid-template-columns:1fr}
+  .role-tabs,.matrix{grid-template-columns:1fr 1fr}
+  .phead{grid-template-columns:78px 1fr auto;grid-template-areas:"num main plus" "num meta plus"}
+  .phead .num{grid-area:num}.phead .main{grid-area:main}.phead .scope{grid-area:meta}.phead .plus{grid-area:plus}
+  .mini-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .hero{min-height:auto}
+  .metrics,.summary-grid,.mini-grid,.matrix,.role-tabs{grid-template-columns:1fr}
+  .section{padding:74px 0}
+  .phead{grid-template-columns:66px 1fr auto;padding:18px}
+  .pinner{padding:18px}
+  .transfer,.evidence{padding:24px}
+}
+@media print{
+  .nav,.cta,.filters{display:none}
+  .reveal{opacity:1;transform:none}
+  .project .pbody{max-height:none}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap navin">
+    <div class="brand">RAJVISHNU <span>MEENAKSHI SUNDARAM</span></div>
+    <div class="links">
+      <a href="#fit">Role fit</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Capabilities</a>
+      <a href="#evidence">Evidence</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Portfolio · corvolution · wearable sensor systems</div>
+      <h1>From <em>physical sensing</em> to trusted data and validated evaluation.</h1>
+      <p>
+        I bring the engineering foundation behind reliable wearable products: sensor-system conception, hardware/software integration, controlled measurement, data processing, experimental validation, product optimization and cross-functional delivery. My direct experience is in automotive and industrial sensor systems; this portfolio shows the documented project work I would transfer into wearable biosignal acquisition and AI-supported evaluation.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">Explore all relevant projects</a>
+        <a class="btn ghost" href="#fit">See role mapping</a>
+      </div>
+    </div>
+
+    <div class="hero-side reveal" data-tilt>
+      <div class="signal-card">
+        <h3>Target engineering chain</h3>
+        <p>wearable hardware → clean acquisition → signal processing → validated output</p>
+        <div class="signal">
+          <svg viewBox="0 0 860 250" role="img" aria-label="Animated biosignal path">
+            <defs>
+              <linearGradient id="sig" x1="0" x2="1">
+                <stop stop-color="#5ef0e5"></stop>
+                <stop offset=".5" stop-color="#7aa6ff"></stop>
+                <stop offset="1" stop-color="#ff7f97"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M0 130 H80 L105 130 L128 92 L152 180 L183 30 L214 215 L243 130 H340 C365 130 385 102 412 102 S460 168 490 168 530 110 565 110 605 145 640 145 H860" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="9" stroke-linecap="round"></path>
+            <path class="pulse" d="M0 130 H80 L105 130 L128 92 L152 180 L183 30 L214 215 L243 130 H340 C365 130 385 102 412 102 S460 168 490 168 530 110 565 110 605 145 640 145 H860" fill="none" stroke="url(#sig)" stroke-width="6" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        <div class="metrics">
+          <div class="metric"><b>8+</b><span>years engineering</span></div>
+          <div class="metric"><b>30+</b><span>sensor concepts evaluated</span></div>
+          <div class="metric"><b>100</b><span>stable test cycles</span></div>
+        </div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini-card reveal"><div class="k">Direct strength</div><b>Validation architecture</b><span>From requirements and bench setup to data-driven evidence and optimization.</span></div>
+        <div class="mini-card reveal"><div class="k">Transfer value</div><b>Signal-data workflows</b><span>Python and MATLAB processing tied to real measurement questions and design choices.</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section alt" id="fit">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="kicker">Role mapping</div>
+        <h2>What translates directly to corvolution.</h2>
+      </div>
+      <p>
+        The vacancy asks for conception, development, validation and optimization of hardware/software solutions for wearable sensors with AI-supported biosignal evaluation. My strongest fit is in the engineering chain around the signal path: defining the sensing concept, integrating hardware and software, creating controlled test conditions, processing measurement data, validating behaviour and improving the system with evidence.
+      </p>
+    </div>
+
+    <div class="role-tabs reveal">
+      <article class="stage active" data-detail="I repeatedly moved from an open technical need to a structured solution concept, including sensor evaluation, trade-off analysis, architecture definition and experimental planning.">
+        <div class="n">01</div>
+        <h3>Conceive</h3>
+        <p>Translate an unclear technical need into a practical sensing and validation concept.</p>
+      </article>
+      <article class="stage" data-detail="I have built and integrated virtual and physical test environments, connected sensors, control logic, laboratory tools and software layers, and created repeatable engineering workflows.">
+        <div class="n">02</div>
+        <h3>Develop</h3>
+        <p>Build the hardware/software chain around acquisition, control, modelling and evaluation.</p>
+      </article>
+      <article class="stage" data-detail="My work consistently used structured experiments, interface verification, acceptance criteria, automated execution and documented results to verify behaviour under controlled conditions.">
+        <div class="n">03</div>
+        <h3>Validate</h3>
+        <p>Use controlled measurements, repeatable tests and traceable evidence to verify system behaviour.</p>
+      </article>
+      <article class="stage" data-detail="I analyse measurement data and failure behaviour with Python, MATLAB, CAPL and laboratory tools, turning that evidence into adjustments to logic, calibration, process or architecture.">
+        <div class="n">04</div>
+        <h3>Optimize</h3>
+        <p>Use measured behaviour to improve robustness, signal quality, timing and decision quality.</p>
+      </article>
+      <article class="stage" data-detail="My background connects mechanics, sensing, embedded behaviour, product data, quality, change control and root-cause closure, which is valuable in a startup environment where systems must work end to end.">
+        <div class="n">05</div>
+        <h3>Own end to end</h3>
+        <p>Work across hardware, software, measurement, product and process boundaries.</p>
+      </article>
+    </div>
+
+    <div class="transfer reveal" id="detailBox">
+      <div>
+        <h3 id="detailTitle">Selected stage: Conceive</h3>
+        <span class="badge">directly transferable engineering depth</span>
+      </div>
+      <p id="detailText">I repeatedly moved from an open technical need to a structured solution concept, including sensor evaluation, trade-off analysis, architecture definition and experimental planning.</p>
+    </div>
+
+    <div class="direct-note reveal">
+      <b>Important positioning:</b> this portfolio does not claim prior production experience in medical wearables, biosignal algorithms or AI-model development. It shows the documented engineering foundation I already have for building reliable sensing and evaluation systems and why that foundation is relevant for corvolution.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="kicker">Project evidence</div>
+        <h2>All relevant project work for the role.</h2>
+      </div>
+      <p>
+        The projects below are grouped across direct and transferable relevance. Together they cover sensing-concept evaluation, physical experiments, hardware/software integration, signal-oriented validation, automated reporting, reproducible software workflows, product-data discipline and structured root-cause analysis.
+      </p>
+    </div>
+
+    <div class="filters reveal">
+      <button class="fbtn active" data-filter="all">Show all</button>
+      <button class="fbtn" data-filter="direct">Direct fit</button>
+      <button class="fbtn" data-filter="transferable">Transferable fit</button>
+      <button class="fbtn" data-filter="product">Product / release</button>
+    </div>
+
+    <div class="projects">
+
+      <article class="project reveal open" data-type="direct transferable">
+        <div class="phead">
+          <div class="num">01</div>
+          <div class="main">
+            <h3>TDK Sensors · Virtual sensor-system platform before complete hardware existed</h3>
+            <p>Created the hardware/software validation environment used to model, stimulate and analyse sensor subsystems.</p>
+          </div>
+          <div class="scope">
+            <span>direct fit</span><span>system integration</span><span>validation platform</span>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="pbody"><div class="pinner">
+          <div class="copy">
+            <p>
+              I built a reusable Vector-based engineering environment around automotive sensor subsystems, combining virtual ECUs, CAPL sensor models, network configurations, physical tools and closed-loop verification. This is relevant because corvolution also needs a reliable engineering chain around sensing, acquisition and evaluation rather than isolated code or isolated hardware.
+            </p>
+            <div class="summary-grid">
+              <div class="fact"><b>Core work</b><span>virtual models, restbus simulation, CAPL behaviour, test setup architecture</span></div>
+              <div class="fact"><b>Interfaces</b><span>CAN, LIN, SENT, SPI and OWI in one reusable environment</span></div>
+              <div class="fact"><b>Value</b><span>evidence and development progress before full hardware availability</span></div>
+            </div>
+            <div class="tags"><span class="tag">Sensor systems</span><span class="tag">HW/SW integration</span><span class="tag">Virtual models</span><span class="tag">CAPL</span><span class="tag">Measurement setup</span></div>
+            <div class="outcome"><b>Outcome:</b> the methodology became a binding site standard and enabled structured interface development and verification.</div>
+          </div>
+          <div class="visual">
+            <svg viewBox="0 0 900 420" aria-label="TDK system diagram">
+              <defs><marker id="m1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7fe8df"/></marker></defs>
+              <g fill="#153a63" stroke="#7fe8df" stroke-width="2.5">
+                <rect x="26" y="145" width="140" height="98" rx="18"/>
+                <rect x="214" y="86" width="190" height="95" rx="18"/>
+                <rect x="214" y="222" width="190" height="95" rx="18"/>
+                <rect x="458" y="145" width="160" height="98" rx="18"/>
+                <rect x="670" y="86" width="190" height="95" rx="18"/>
+                <rect x="670" y="222" width="190" height="95" rx="18"/>
+              </g>
+              <g fill="#ffffff" text-anchor="middle" font-size="16" font-weight="700">
+                <text x="96" y="184"><tspan x="96" dy="0">Vector</tspan><tspan x="96" dy="20">environment</tspan></text>
+                <text x="309" y="126"><tspan x="309" dy="0">Virtual ECU</tspan><tspan x="309" dy="20">and network</tspan></text>
+                <text x="309" y="262"><tspan x="309" dy="0">CAPL sensor</tspan><tspan x="309" dy="20">models</tspan></text>
+                <text x="538" y="184"><tspan x="538" dy="0">Validation</tspan><tspan x="538" dy="20">logic</tspan></text>
+                <text x="765" y="126"><tspan x="765" dy="0">Physical tools</tspan><tspan x="765" dy="20">scope · DAQ</tspan></text>
+                <text x="765" y="262"><tspan x="765" dy="0">Product teams</tspan><tspan x="765" dy="20">evidence</tspan></text>
+              </g>
+              <g stroke="#7fe8df" stroke-width="4" marker-end="url(#m1)">
+                <path d="M166 194 H202"/>
+                <path d="M404 133 H446"/>
+                <path d="M404 269 H446"/>
+                <path d="M618 194 H658"/>
+                <path d="M538 243 V306 H765"/>
+              </g>
+              <text x="450" y="382" text-anchor="middle" fill="#ffb0c1" font-size="16">repeatable development and validation before complete hardware availability</text>
+            </svg>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="project reveal" data-type="direct transferable">
+        <div class="phead">
+          <div class="num">02</div>
+          <div class="main">
+            <h3>TDK Sensors · Interface validation, timing analysis and measurement-driven optimization</h3>
+            <p>Analysed communication behaviour, timing, calibration stability, error handling and failure modes.</p>
+          </div>
+          <div class="scope">
+            <span>direct fit</span><span>measurement</span><span>optimization</span>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="pbody"><div class="pinner">
+          <div class="copy">
+            <p>
+              I derived and executed validation concepts for interface behaviour, monitored signal timing and analysed faults using oscilloscopes, signal generators and DAQ equipment. This is directly relevant to wearable sensor development because reliable sensing depends on trustworthy acquisition, consistent timing and disciplined diagnosis of abnormal behaviour.
+            </p>
+            <div class="summary-grid">
+              <div class="fact"><b>Validation scope</b><span>startup, sleep/wake behaviour, timing, calibration, diagnostic paths and faults</span></div>
+              <div class="fact"><b>Tooling</b><span>CANoe, CANalyzer, VT System, oscilloscope, signal generator, DAQ</span></div>
+              <div class="fact"><b>Optimization path</b><span>measured behaviour → root cause → design or logic adjustment</span></div>
+            </div>
+            <div class="tags"><span class="tag">Signal timing</span><span class="tag">Diagnostics</span><span class="tag">Bench instrumentation</span><span class="tag">Fault analysis</span><span class="tag">Validation evidence</span></div>
+            <div class="outcome"><b>Outcome:</b> repeatable evidence for interface conformity and robust cross-domain debugging across hardware and software boundaries.</div>
+          </div>
+          <div class="visual">
+            <svg viewBox="0 0 900 420" aria-label="Validation loop diagram">
+              <defs><marker id="m2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7fe8df"/></marker></defs>
+              <g fill="#153a63" stroke="#7fe8df" stroke-width="2.5">
+                <rect x="52" y="150" width="150" height="98" rx="18"/>
+                <rect x="256" y="82" width="170" height="92" rx="18"/>
+                <rect x="256" y="246" width="170" height="92" rx="18"/>
+                <rect x="490" y="150" width="160" height="98" rx="18"/>
+                <rect x="704" y="150" width="150" height="98" rx="18"/>
+              </g>
+              <g fill="#fff" text-anchor="middle" font-size="16" font-weight="700">
+                <text x="127" y="191"><tspan x="127" dy="0">Sensor or</tspan><tspan x="127" dy="20">subsystem</tspan></text>
+                <text x="341" y="122"><tspan x="341" dy="0">Stimulate and</tspan><tspan x="341" dy="20">acquire</tspan></text>
+                <text x="341" y="286"><tspan x="341" dy="0">Measure and</tspan><tspan x="341" dy="20">inspect</tspan></text>
+                <text x="570" y="191"><tspan x="570" dy="0">Analyse</tspan><tspan x="570" dy="20">behaviour</tspan></text>
+                <text x="779" y="191"><tspan x="779" dy="0">Optimize</tspan><tspan x="779" dy="20">logic / setup</tspan></text>
+              </g>
+              <g stroke="#7fe8df" stroke-width="4" marker-end="url(#m2)">
+                <path d="M202 199 H244"/>
+                <path d="M426 128 H478"/>
+                <path d="M650 199 H692"/>
+              </g>
+              <path d="M779 248 C779 340 341 356 341 340 L341 338" fill="none" stroke="#ff7f97" stroke-width="4" marker-end="url(#m2)"/>
+              <text x="452" y="390" text-anchor="middle" fill="#ffd0da" font-size="16">timing · calibration stability · error handling · root cause</text>
+            </svg>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="project reveal" data-type="direct transferable">
+        <div class="phead">
+          <div class="num">03</div>
+          <div class="main">
+            <h3>Robert Bosch GmbH · Sensor concept evaluation and controlled physical experiments</h3>
+            <p>Master’s thesis: evaluated more than 30 sensing technologies and experimentally verified the shortlist.</p>
+          </div>
+          <div class="scope">
+            <span>direct fit</span><span>sensor evaluation</span><span>data analysis</span>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="pbody"><div class="pinner">
+          <div class="copy">
+            <p>
+              For my master’s thesis, I evaluated more than 30 sensor technologies for washer-reservoir level and quality sensing, using 10 weighted criteria such as integration, environmental robustness, manufacturability, performance and cost. I then built a controlled tank-based test setup and analysed the shortlisted ultrasonic approach under varying fill level, ethanol concentration, temperature and installation angle using Python and MATLAB.
+            </p>
+            <div class="summary-grid">
+              <div class="fact"><b>Concept space</b><span>30+ technologies narrowed through weighted engineering criteria</span></div>
+              <div class="fact"><b>Test variables</b><span>fill level, 0–50% ethanol, 0–60°C, 0–10° tilt</span></div>
+              <div class="fact"><b>Decision</b><span>ultrasonic recommendation accepted for continued series development</span></div>
+            </div>
+            <div class="tags"><span class="tag">Sensor trade-off</span><span class="tag">Python</span><span class="tag">MATLAB</span><span class="tag">Experimental design</span><span class="tag">Optimization evidence</span></div>
+            <div class="outcome"><b>Outcome:</b> clear technical recommendation backed by structured data and physical validation, directly aligned with early-stage sensing-product development.</div>
+          </div>
+          <div class="visual">
+            <svg viewBox="0 0 900 420" aria-label="Sensor evaluation funnel">
+              <g fill="#153a63" stroke="#7fe8df" stroke-width="2.4">
+                <path d="M90 72 H810 L640 185 V268 L470 345 L300 268 V185 Z"/>
+                <rect x="120" y="80" width="660" height="72" rx="18" fill="rgba(255,255,255,.03)"/>
+                <rect x="178" y="192" width="544" height="58" rx="18" fill="rgba(255,255,255,.03)"/>
+                <rect x="315" y="286" width="270" height="54" rx="18" fill="rgba(255,255,255,.03)"/>
+              </g>
+              <g fill="#fff" text-anchor="middle" font-size="16" font-weight="700">
+                <text x="450" y="116"><tspan x="450" dy="0">30+ sensing principles</tspan><tspan x="450" dy="22">candidate concepts</tspan></text>
+                <text x="450" y="222"><tspan x="450" dy="0">10 weighted criteria</tspan><tspan x="450" dy="22">technical trade-off</tspan></text>
+                <text x="450" y="317"><tspan x="450" dy="0">shortlist + physical validation</tspan></text>
+              </g>
+              <text x="450" y="384" text-anchor="middle" fill="#ffd0da" font-size="16">controlled test tank · Python/MATLAB evaluation · evidence-based recommendation</text>
+            </svg>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="project reveal" data-type="transferable direct">
+        <div class="phead">
+          <div class="num">04</div>
+          <div class="main">
+            <h3>KIT · Closed-loop mechatronic system commissioning and stability improvement</h3>
+            <p>Integrated sensors, actuators, PLC logic and confirmation rules until stable physical behaviour was achieved.</p>
+          </div>
+          <div class="scope">
+            <span>transferable</span><span>physical system</span><span>optimization</span>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="pbody"><div class="pinner">
+          <div class="copy">
+            <p>
+              I programmed and commissioned a PLC-controlled pick-and-place system in Beckhoff TwinCAT/BSD. When the bench showed a false-positive sensor condition, I traced the interaction, improved the confirmation and calibration strategy, added post-grip verification and retry handling, and validated the change through repeated closed-loop operation.
+            </p>
+            <div class="summary-grid">
+              <div class="fact"><b>System</b><span>sensors, actuators, motion, PLC sequence and real-world acceptance testing</span></div>
+              <div class="fact"><b>Issue</b><span>false-positive sensor condition during commissioning</span></div>
+              <div class="fact"><b>Result</b><span>100 consecutive cycles without failure after hardening the logic</span></div>
+            </div>
+            <div class="tags"><span class="tag">Commissioning</span><span class="tag">Acceptance testing</span><span class="tag">Root cause</span><span class="tag">Control logic</span><span class="tag">Repeatability</span></div>
+            <div class="outcome"><b>Outcome:</b> a measured and verified improvement cycle from observed behaviour to corrected logic and stable performance.</div>
+          </div>
+          <div class="visual">
+            <svg viewBox="0 0 900 420" aria-label="Closed loop pick and place">
+              <defs><marker id="m4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7fe8df"/></marker></defs>
+              <g fill="#153a63" stroke="#7fe8df" stroke-width="2.5">
+                <rect x="38" y="160" width="130" height="84" rx="16"/>
+                <rect x="208" y="160" width="130" height="84" rx="16"/>
+                <rect x="378" y="160" width="130" height="84" rx="16"/>
+                <rect x="548" y="160" width="130" height="84" rx="16"/>
+                <rect x="718" y="160" width="130" height="84" rx="16"/>
+              </g>
+              <g fill="#fff" text-anchor="middle" font-size="15" font-weight="700">
+                <text x="103" y="194"><tspan x="103" dy="0">Detect</tspan><tspan x="103" dy="18">part</tspan></text>
+                <text x="273" y="194"><tspan x="273" dy="0">Pick</tspan><tspan x="273" dy="18">part</tspan></text>
+                <text x="443" y="194"><tspan x="443" dy="0">Verify</tspan><tspan x="443" dy="18">grip</tspan></text>
+                <text x="613" y="194"><tspan x="613" dy="0">Move</tspan><tspan x="613" dy="18">part</tspan></text>
+                <text x="783" y="194"><tspan x="783" dy="0">Place</tspan><tspan x="783" dy="18">part</tspan></text>
+              </g>
+              <g stroke="#7fe8df" stroke-width="4" marker-end="url(#m4)">
+                <path d="M168 202 H196"/>
+                <path d="M338 202 H366"/>
+                <path d="M508 202 H536"/>
+                <path d="M678 202 H706"/>
+              </g>
+              <path d="M443 254 C443 336 228 336 228 252" fill="none" stroke="#ff7f97" stroke-width="4" marker-end="url(#m4)"/>
+              <text x="447" y="384" text-anchor="middle" fill="#ffd0da" font-size="16">second confirmation · tighter calibration · post-grip check · retry logic</text>
+            </svg>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="project reveal" data-type="transferable">
+        <div class="phead">
+          <div class="num">05</div>
+          <div class="main">
+            <h3>KIT · Engineering decision-support tool with reproducible software validation</h3>
+            <p>Built and validated a Java client/server tool with Docker and Jenkins-based repeatability.</p>
+          </div>
+          <div class="scope">
+            <span>transferable</span><span>software workflow</span><span>repeatability</span>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="pbody"><div class="pinner">
+          <div class="copy">
+            <p>
+              In a second KIT project, I developed and validated a Java-based client/server decision-support tool, containerised it with Docker and implemented Jenkins/Git-based automated builds and regression checks. While not a sensing product itself, it demonstrates how I create reproducible software behaviour and stable validation workflows around engineering logic.
+            </p>
+            <div class="summary-grid">
+              <div class="fact"><b>Software</b><span>client/server engineering application</span></div>
+              <div class="fact"><b>Validation</b><span>functional, integration and end-to-end checks against requirements</span></div>
+              <div class="fact"><b>Repeatability</b><span>Docker + Jenkins + Git for controlled builds and regression</span></div>
+            </div>
+            <div class="tags"><span class="tag">Java</span><span class="tag">Docker</span><span class="tag">Jenkins</span><span class="tag">Regression</span><span class="tag">Reproducibility</span></div>
+            <div class="outcome"><b>Outcome:</b> disciplined engineering software behaviour with traceable and repeatable validation.</div>
+          </div>
+          <div class="visual">
+            <svg viewBox="0 0 900 420" aria-label="Software workflow">
+              <defs><marker id="m5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7fe8df"/></marker></defs>
+              <g fill="#153a63" stroke="#7fe8df" stroke-width="2.5">
+                <rect x="62" y="150" width="160" height="92" rx="18"/>
+                <rect x="270" y="150" width="160" height="92" rx="18"/>
+                <rect x="478" y="150" width="160" height="92" rx="18"/>
+                <rect x="686" y="150" width="150" height="92" rx="18"/>
+              </g>
+              <g fill="#fff" text-anchor="middle" font-size="16" font-weight="700">
+                <text x="142" y="190"><tspan x="142" dy="0">Requirements</tspan><tspan x="142" dy="20">and logic</tspan></text>
+                <text x="350" y="190"><tspan x="350" dy="0">Java tool</tspan><tspan x="350" dy="20">validation</tspan></text>
+                <text x="558" y="190"><tspan x="558" dy="0">Docker</tspan><tspan x="558" dy="20">container</tspan></text>
+                <text x="761" y="190"><tspan x="761" dy="0">Jenkins / Git</tspan><tspan x="761" dy="20">regression</tspan></text>
+              </g>
+              <g stroke="#7fe8df" stroke-width="4" marker-end="url(#m5)">
+                <path d="M222 196 H258"/>
+                <path d="M430 196 H466"/>
+                <path d="M638 196 H674"/>
+              </g>
+              <text x="450" y="370" text-anchor="middle" fill="#ffd0da" font-size="16">stable builds · repeatable execution · controlled release behaviour</text>
+            </svg>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="project reveal" data-type="transferable direct">
+        <div class="phead">
+          <div class="num">06</div>
+          <div class="main">
+            <h3>ITK Engineering · Automated reporting and laboratory application support</h3>
+            <p>Converted structured test results into maintainable evidence while supporting ECU and bench-related workflows.</p>
+          </div>
+          <div class="scope">
+            <span>transferable</span><span>data to evidence</span><span>lab workflow</span>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="pbody"><div class="pinner">
+          <div class="copy">
+            <p>
+              At ITK Engineering, I implemented a Flutter/Dart PDF-reporting module for a test application, deliberately covering empty datasets, special characters and large result sets. I also supported ECU flashing, software updates, rework and test-bench documentation. This is relevant because wearable development also needs practical evidence workflows around tests, experiments and engineering decisions.
+            </p>
+            <div class="summary-grid">
+              <div class="fact"><b>Feature</b><span>report logic separated from UI for maintainability and reuse</span></div>
+              <div class="fact"><b>Edge cases</b><span>empty data, special characters and 500+ row runs handled deliberately</span></div>
+              <div class="fact"><b>Context</b><span>laboratory application, ECU verification support and documentation discipline</span></div>
+            </div>
+            <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Test reporting</span><span class="tag">Documentation</span><span class="tag">Laboratory workflow</span></div>
+            <div class="outcome"><b>Outcome:</b> automated evidence generation integrated into a live engineering workflow.</div>
+          </div>
+          <div class="visual">
+            <svg viewBox="0 0 900 420" aria-label="Data to evidence">
+              <defs><marker id="m6" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7fe8df"/></marker></defs>
+              <g fill="#153a63" stroke="#7fe8df" stroke-width="2.5">
+                <rect x="54" y="150" width="150" height="98" rx="18"/>
+                <rect x="250" y="150" width="175" height="98" rx="18"/>
+                <rect x="471" y="150" width="175" height="98" rx="18"/>
+                <rect x="692" y="150" width="154" height="98" rx="18"/>
+              </g>
+              <g fill="#fff" text-anchor="middle" font-size="16" font-weight="700">
+                <text x="129" y="191"><tspan x="129" dy="0">Structured</tspan><tspan x="129" dy="20">test data</tspan></text>
+                <text x="338" y="191"><tspan x="338" dy="0">Independent</tspan><tspan x="338" dy="20">data model</tspan></text>
+                <text x="558" y="191"><tspan x="558" dy="0">Report</tspan><tspan x="558" dy="20">engine</tspan></text>
+                <text x="769" y="191"><tspan x="769" dy="0">PDF evidence</tspan><tspan x="769" dy="20">for users</tspan></text>
+              </g>
+              <g stroke="#7fe8df" stroke-width="4" marker-end="url(#m6)">
+                <path d="M204 198 H238"/>
+                <path d="M425 198 H459"/>
+                <path d="M646 198 H680"/>
+              </g>
+              <text x="450" y="370" text-anchor="middle" fill="#ffd0da" font-size="16">empty datasets · special characters · large runs deliberately handled</text>
+            </svg>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="project reveal" data-type="product transferable">
+        <div class="phead">
+          <div class="num">07</div>
+          <div class="main">
+            <h3>Bosch Global Software Technologies · Product-data validation and release discipline</h3>
+            <p>3D models, assemblies, drawings, Teamcenter ownership and OEM release quality.</p>
+          </div>
+          <div class="scope">
+            <span>product</span><span>release quality</span><span>traceability</span>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="pbody"><div class="pinner">
+          <div class="copy">
+            <p>
+              Over more than three years in technical data exchange, I validated automotive assemblies, 3D models, drawings and release data for six OEM programmes. The role required configuration control, cross-functional coordination, data integrity and a disciplined approach to what may be released downstream. This supports wearable product development by bringing strong product-data and release-quality discipline.
+            </p>
+            <div class="summary-grid">
+              <div class="fact"><b>Products</b><span>Daimler wiper-linkage and steering assemblies among OEM programmes</span></div>
+              <div class="fact"><b>Scale</b><span>approximately 3,000 engineering orders; more than 1,000 tasks in one year</span></div>
+              <div class="fact"><b>Quality</b><span>no external defects in that one-year period</span></div>
+            </div>
+            <div class="tags"><span class="tag">NX / CATIA / Creo</span><span class="tag">Teamcenter</span><span class="tag">Q-Checker</span><span class="tag">Release discipline</span><span class="tag">Traceability</span></div>
+            <div class="outcome"><b>Outcome:</b> repeatable product-data quality and disciplined release decisions across complex programmes.</div>
+          </div>
+          <div class="visual">
+            <svg viewBox="0 0 900 420" aria-label="Product data flow">
+              <defs><marker id="m7" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7fe8df"/></marker></defs>
+              <g fill="#153a63" stroke="#7fe8df" stroke-width="2.5">
+                <rect x="44" y="152" width="160" height="94" rx="18"/>
+                <rect x="252" y="152" width="160" height="94" rx="18"/>
+                <rect x="460" y="152" width="160" height="94" rx="18"/>
+                <rect x="668" y="152" width="160" height="94" rx="18"/>
+              </g>
+              <g fill="#fff" text-anchor="middle" font-size="16" font-weight="700">
+                <text x="124" y="193"><tspan x="124" dy="0">Requirements</tspan><tspan x="124" dy="20">and source data</tspan></text>
+                <text x="332" y="193"><tspan x="332" dy="0">CAD / drawing</tspan><tspan x="332" dy="20">development</tspan></text>
+                <text x="540" y="193"><tspan x="540" dy="0">Quality</tspan><tspan x="540" dy="20">validation</tspan></text>
+                <text x="748" y="193"><tspan x="748" dy="0">Controlled</tspan><tspan x="748" dy="20">release</tspan></text>
+              </g>
+              <g stroke="#7fe8df" stroke-width="4" marker-end="url(#m7)">
+                <path d="M204 199 H240"/>
+                <path d="M412 199 H448"/>
+                <path d="M620 199 H656"/>
+              </g>
+              <text x="450" y="370" text-anchor="middle" fill="#ffd0da" font-size="16">geometry · materials · assembly constraints · data integrity · release readiness</text>
+            </svg>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="project reveal" data-type="product transferable">
+        <div class="phead">
+          <div class="num">08</div>
+          <div class="main">
+            <h3>Bosch Global Software Technologies · Engineering changes, risk analysis and 8D closure</h3>
+            <p>Managed technical changes and structured root-cause resolution across product, quality and production interfaces.</p>
+          </div>
+          <div class="scope">
+            <span>product</span><span>risk analysis</span><span>problem solving</span>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="pbody"><div class="pinner">
+          <div class="copy">
+            <p>
+              In engineering change management, I evaluated impacts, dependencies and release readiness for design and data changes, coordinated with design, manufacturing and quality teams, and supported structured problem solving through 8D, Ishikawa and 5-Why. That product-level discipline is useful in a startup where sensor systems, hardware iterations and process changes must stay controlled while the product evolves.
+            </p>
+            <div class="summary-grid">
+              <div class="fact"><b>Ownership</b><span>change lifecycle from analysis to controlled release</span></div>
+              <div class="fact"><b>Systems</b><span>SAP-controlled engineering data plus cross-functional coordination</span></div>
+              <div class="fact"><b>Problem solving</b><span>8D case connected to VW Mexico production stoppage</span></div>
+            </div>
+            <div class="tags"><span class="tag">ECR/ECO</span><span class="tag">Impact analysis</span><span class="tag">8D</span><span class="tag">Ishikawa</span><span class="tag">5-Why</span></div>
+            <div class="outcome"><b>Outcome:</b> disciplined closure of technical changes and structured decision support under production pressure.</div>
+          </div>
+          <div class="visual">
+            <svg viewBox="0 0 900 420" aria-label="Change management loop">
+              <defs><marker id="m8" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7fe8df"/></marker></defs>
+              <g fill="#153a63" stroke="#7fe8df" stroke-width="2.5">
+                <rect x="58" y="150" width="150" height="96" rx="18"/>
+                <rect x="250" y="150" width="150" height="96" rx="18"/>
+                <rect x="442" y="150" width="150" height="96" rx="18"/>
+                <rect x="634" y="150" width="150" height="96" rx="18"/>
+              </g>
+              <g fill="#fff" text-anchor="middle" font-size="16" font-weight="700">
+                <text x="133" y="192"><tspan x="133" dy="0">Change</tspan><tspan x="133" dy="20">request</tspan></text>
+                <text x="325" y="192"><tspan x="325" dy="0">Impact and</tspan><tspan x="325" dy="20">risk analysis</tspan></text>
+                <text x="517" y="192"><tspan x="517" dy="0">Cross-functional</tspan><tspan x="517" dy="20">actions</tspan></text>
+                <text x="709" y="192"><tspan x="709" dy="0">Verified</tspan><tspan x="709" dy="20">closure</tspan></text>
+              </g>
+              <g stroke="#7fe8df" stroke-width="4" marker-end="url(#m8)">
+                <path d="M208 198 H238"/>
+                <path d="M400 198 H430"/>
+                <path d="M592 198 H622"/>
+              </g>
+              <text x="450" y="370" text-anchor="middle" fill="#ffd0da" font-size="16">structured deviation handling · transparent decisions · controlled implementation</text>
+            </svg>
+          </div>
+        </div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="skills">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="kicker">Capabilities</div>
+        <h2>Technical depth across the sensing chain.</h2>
+      </div>
+      <p>
+        My contribution is strongest where sensing, product behaviour and evidence meet. I understand how to move from requirements to setup, from setup to measurement, from measurement to analysis, and from analysis to decisions that improve the system.
+      </p>
+    </div>
+
+    <div class="matrix">
+      <article class="skill reveal">
+        <h3>Sensor and signal foundations</h3>
+        <div class="bars">
+          <div class="bar"><span><b>Sensor-system engineering</b><i>direct</i></span><div class="track"><div class="fill" style="--w:94%"></div></div></div>
+          <div class="bar"><span><b>Measurement-data analysis</b><i>direct</i></span><div class="track"><div class="fill" style="--w:86%"></div></div></div>
+          <div class="bar"><span><b>Biosignal application domain</b><i>building</i></span><div class="track"><div class="fill" style="--w:45%"></div></div></div>
+        </div>
+      </article>
+      <article class="skill reveal">
+        <h3>Hardware and software integration</h3>
+        <div class="bars">
+          <div class="bar"><span><b>HW/SW integration</b><i>direct</i></span><div class="track"><div class="fill" style="--w:92%"></div></div></div>
+          <div class="bar"><span><b>Python / MATLAB / CAPL</b><i>direct</i></span><div class="track"><div class="fill" style="--w:85%"></div></div></div>
+          <div class="bar"><span><b>Wearable electronics context</b><i>building</i></span><div class="track"><div class="fill" style="--w:48%"></div></div></div>
+        </div>
+      </article>
+      <article class="skill reveal">
+        <h3>Validation and product discipline</h3>
+        <div class="bars">
+          <div class="bar"><span><b>Validation architecture</b><i>direct</i></span><div class="track"><div class="fill" style="--w:96%"></div></div></div>
+          <div class="bar"><span><b>Root cause and optimization</b><i>direct</i></span><div class="track"><div class="fill" style="--w:91%"></div></div></div>
+          <div class="bar"><span><b>Medical-device standards</b><i>building</i></span><div class="track"><div class="fill" style="--w:38%"></div></div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="evidence">
+  <div class="wrap">
+    <div class="evidence reveal">
+      <div>
+        <div class="kicker" style="color:#8cf0e8">Independent evidence</div>
+        <h2>Fast domain learning with engineering structure.</h2>
+        <p class="quote">
+          “He quickly familiarized himself with entirely new areas of application — new for himself and the entire department — established new processes, derived required structures and integrated them into our team and beyond.”
+          <br><br><b>Bert Hundertmark, Director of Electronic Design, TDK Sensors</b>
+        </p>
+      </div>
+      <div>
+        <div class="kicker" style="color:#8cf0e8">Value for corvolution</div>
+        <h3>What I can own from day one</h3>
+        <p class="quote">
+          Translate a sensing need into a concept and validation plan; build the acquisition and analysis environment around it; process measurement data with Python or MATLAB; diagnose behaviour across hardware and software boundaries; and improve the system through measured evidence rather than assumption.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="kicker" style="color:#8cf0e8">Application portfolio</div>
+      <h2>Reliable sensing before intelligent evaluation.</h2>
+      <p>Rajvishnu Meenakshi Sundaram · M.Sc. Sensor Systems Technology · B.E. Mechanical Engineering · more than eight years of engineering experience.</p>
+    </div>
+    <div class="contact-card">
+      <div><b>Email</b><br>rajvishnumech@gmail.com</div>
+      <div><b>Phone</b><br>+49 176 59311471</div>
+      <div><b>Location</b><br>Berlin · prepared for Karlsruhe / Ettlingen relocation</div>
+      <div><b>Work authorization</b><br>EU Blue Card valid until January 2029</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+document.querySelectorAll('.project .phead').forEach(head => {
+  head.addEventListener('click', () => head.parentElement.classList.toggle('open'));
+});
+
+document.querySelectorAll('.stage').forEach(stage => {
+  stage.addEventListener('click', () => {
+    document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
+    stage.classList.add('active');
+    document.getElementById('detailTitle').textContent = 'Selected stage: ' + stage.querySelector('h3').textContent;
+    document.getElementById('detailText').textContent = stage.dataset.detail;
+  });
+});
+
+document.querySelectorAll('.fbtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project').forEach(card => {
+      const show = filter === 'all' || card.dataset.type.includes(filter);
+      card.classList.toggle('hidden', !show);
+    });
+  });
+});
+
+const tiltCards = document.querySelectorAll('[data-tilt]');
+tiltCards.forEach(card => {
+  card.addEventListener('mousemove', e => {
+    if (window.innerWidth < 981) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rx = ((y / rect.height) - .5) * -4;
+    const ry = ((x / rect.width) - .5) * 4;
+    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+  });
+});
+</script>
+</body>
+</html>
