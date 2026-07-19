@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rajvishnu Meenakshi Sundaram | Tesla Manufacturing Test Engineer Portfolio</title>
+<style>
+:root{
+  --bg:#0b0d10;--panel:#13171c;--panel2:#181e25;--text:#f5f7fa;--muted:#aab4c0;
+  --line:#2a333d;--red:#e82127;--cyan:#2ec4d6;--green:#41d08f;--amber:#f6b84b;--violet:#a78bfa;
+  --shadow:0 18px 50px rgba(0,0,0,.28);--radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 16% 0%,rgba(232,33,39,.12),transparent 28%),radial-gradient(circle at 88% 22%,rgba(46,196,214,.08),transparent 25%),var(--bg);color:var(--text);font-family:Verdana,Arial,sans-serif;line-height:1.58}
+body.light{--bg:#f5f7fa;--panel:#ffffff;--panel2:#eef2f6;--text:#101317;--muted:#596572;--line:#d7dee6;--shadow:0 18px 50px rgba(17,24,39,.12)}
+p,li,.justified{text-align:justify;text-justify:inter-word;hyphens:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(11,13,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+body.light .topbar{background:rgba(245,247,250,.88)}
+.nav{max-width:1220px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,var(--red),#8a1115);display:grid;place-items:center;font-weight:800;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.brand strong{display:block;font-size:14px}.brand span{display:block;color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.navlinks{display:flex;gap:16px;font-size:12px;color:var(--muted)}
+.controls{display:flex;gap:8px}.iconbtn,.action{border:1px solid var(--line);color:var(--text);background:var(--panel);border-radius:12px;padding:9px 12px;cursor:pointer}.action.primary{background:var(--red);border-color:var(--red);color:white;font-weight:700}
+main{overflow:hidden}.wrap{max-width:1220px;margin:auto;padding:0 22px}.section{padding:88px 0}.section.compact{padding:64px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.eyebrow:before{content:"";width:28px;height:2px;background:currentColor}
+h1{font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.04em;margin:18px 0 22px;max-width:980px}h2{font-size:clamp(28px,4vw,46px);line-height:1.12;margin:12px 0 18px}h3{font-size:18px;margin:0 0 10px}.lead{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:930px}
+.hero{min-height:760px;display:flex;align-items:center;position:relative}.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,black,transparent 88%);pointer-events:none}
+.hero-content{position:relative;z-index:2;width:100%}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:end}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.hero-card{background:linear-gradient(160deg,rgba(232,33,39,.15),rgba(19,23,28,.95));border:1px solid rgba(232,33,39,.35);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}.metric b{display:block;font-size:28px;color:var(--text)}.metric span{font-size:11px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.chip{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:7px 10px;border-radius:999px;font-size:11px;color:var(--muted)}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}.card p{color:var(--muted)}
+.role-map .card{border-top:4px solid var(--red)}.role-map .card:nth-child(2){border-top-color:var(--cyan)}.role-map .card:nth-child(3){border-top-color:var(--green)}.role-map .card:nth-child(4){border-top-color:var(--amber)}
+.tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-radius:999px;padding:5px 8px;background:rgba(232,33,39,.12);color:#ff7a7f;margin-bottom:11px}.tag.cyan{background:rgba(46,196,214,.12);color:var(--cyan)}.tag.green{background:rgba(65,208,143,.12);color:var(--green)}.tag.amber{background:rgba(246,184,75,.12);color:var(--amber)}
+.lifecycle{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}.steps{display:flex;flex-direction:column;gap:9px}.step{display:flex;align-items:center;gap:11px;width:100%;text-align:left;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:14px;padding:13px;cursor:pointer;transition:.25s}.step:hover,.step.active{transform:translateX(7px);border-color:var(--red);background:rgba(232,33,39,.1)}.step .num{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:var(--panel2);font-weight:700;color:var(--muted)}.step.active .num{background:var(--red);color:white}.step-content{min-height:415px;position:relative;overflow:hidden}.step-panel{display:none}.step-panel.active{display:block;animation:fadeUp .45s ease}.deliverables{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.deliverable{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:15px}.deliverable strong{display:block;color:var(--cyan);margin-bottom:4px}
+.architecture{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:28px;align-items:stretch;margin-top:32px}.node{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px 14px;min-height:132px;display:flex;flex-direction:column;justify-content:center;text-align:center}.node strong{font-size:14px}.node span{font-size:11px;color:var(--muted);margin-top:7px}.node:not(:last-child):after{content:"→";position:absolute;right:-23px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--red);font-weight:800}.node:nth-child(2){border-color:rgba(46,196,214,.55)}.node:nth-child(3){border-color:rgba(65,208,143,.55)}.node:nth-child(4){border-color:rgba(246,184,75,.55)}.node:nth-child(5){border-color:rgba(167,139,250,.55)}
+.cockpit{display:grid;grid-template-columns:.86fr 1.14fr;gap:24px}.controls-card label{display:block;margin:16px 0 7px;color:var(--muted);font-size:12px}.controls-card input{width:100%;accent-color:var(--red)}.value-row{display:flex;justify-content:space-between;gap:8px}.score{font-size:64px;line-height:1;color:var(--green);font-weight:800}.gauge{height:14px;background:var(--panel2);border-radius:999px;overflow:hidden;margin:14px 0 18px}.gauge span{display:block;height:100%;width:80%;background:linear-gradient(90deg,var(--red),var(--amber),var(--green));transition:.3s}.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:16px}.kpi b{display:block;font-size:22px}.kpi span{font-size:11px;color:var(--muted)}.note{margin-top:16px;padding:12px;border-left:3px solid var(--amber);background:rgba(246,184,75,.08);font-size:11px;color:var(--muted)}
+.symptoms{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}.symptom{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:9px 12px;cursor:pointer}.symptom.active{border-color:var(--cyan);background:rgba(46,196,214,.1)}.fault-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.fault{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;min-height:142px}.fault b{display:block;color:var(--cyan);margin-bottom:7px}.fault p{font-size:12px;color:var(--muted);margin:0}.fault-arrow{text-align:center;color:var(--red);font-size:20px;display:none}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.filter{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:8px 12px;cursor:pointer}.filter.active{background:var(--red);border-color:var(--red);color:white}.project{transition:.28s}.project.hide{display:none}.project .outcome{color:var(--green);font-weight:700}.project ul{padding-left:18px;color:var(--muted)}
+.timeline{position:relative;padding-left:30px}.timeline:before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:linear-gradient(var(--red),var(--cyan),var(--green))}.timeline-item{position:relative;margin:0 0 24px}.timeline-item:before{content:"";position:absolute;left:-28px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--red);box-shadow:0 0 0 5px rgba(232,33,39,.12)}.timeline-item:nth-child(2):before{background:var(--cyan)}.timeline-item:nth-child(3):before{background:var(--green)}
+.evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.quote{position:relative}.quote:before{content:'“';font-size:54px;color:var(--red);position:absolute;top:3px;right:18px;opacity:.55}.quote small{color:var(--muted)}
+.contact{background:linear-gradient(120deg,rgba(232,33,39,.18),rgba(46,196,214,.08));border:1px solid var(--line);border-radius:28px;padding:36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.reveal{opacity:0;transform:translateY(24px);transition:.65s ease}.reveal.visible{opacity:1;transform:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(max-width:980px){.navlinks{display:none}.hero-grid,.grid-2,.cockpit,.contact{grid-template-columns:1fr}.grid-3,.evidence{grid-template-columns:repeat(2,1fr)}.architecture{grid-template-columns:repeat(3,1fr)}.node:nth-child(3):after{display:none}.lifecycle{grid-template-columns:1fr}.steps{display:grid;grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.wrap{padding:0 15px}.section{padding:64px 0}.hero{min-height:auto;padding:74px 0 50px}.grid-3,.evidence,.architecture,.deliverables,.kpi-grid,.steps{grid-template-columns:1fr}.node:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-28px;transform:translateX(-50%)}.node:nth-child(3):after{display:block}.nav{padding:11px 15px}.brand span{max-width:170px}.contact{padding:24px}.controls .action{display:none}.fault-grid{grid-template-columns:1fr}.fault-arrow{display:block}}
+@media print{.topbar,.hero-actions,.controls-card,.filters{display:none!important}.section{padding:28px 0}.reveal{opacity:1;transform:none}.card{box-shadow:none}.hero{min-height:auto}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="#top"><span class="logo">RM</span><span><strong>Rajvishnu Meenakshi Sundaram</strong><span>Manufacturing Test Engineer Portfolio</span></span></a>
+    <div class="navlinks"><a href="#fit">Role fit</a><a href="#lifecycle">Test lifecycle</a><a href="#architecture">Architecture</a><a href="#cases">Evidence</a></div>
+    <div class="controls"><button class="iconbtn" id="themeBtn" type="button">Theme</button><button class="action" id="printBtn" type="button">Print</button></div>
+  </nav>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-content">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Tesla · Req. ID 274873 · Tilburg</span>
+        <h1>Manufacturing test systems that remain reliable from commissioning through production.</h1>
+        <p class="lead">Automotive test-system ownership combining LabVIEW-operated laboratory infrastructure, Vector CAN/HiL platforms, Python/CAPL automation, BMS-related virtual validation, industrial sensors, DAQ and disciplined root-cause closure.</p>
+        <div class="hero-actions"><a class="action primary" href="#architecture">Explore the test architecture</a><a class="action" href="#cases">View verified projects</a></div>
+        <div class="chips"><span class="chip">CANoe / CANalyzer / VT System</span><span class="chip">LabVIEW laboratory operation</span><span class="chip">Python / CAPL</span><span class="chip">CAN / BMS context</span><span class="chip">Commissioning & qualification</span></div>
+      </div>
+      <aside class="hero-card">
+        <div class="metrics">
+          <div class="metric"><b class="counter" data-target="8">0</b><span>years of engineering experience</span></div>
+          <div class="metric"><b class="counter" data-target="100">0</b><span>verified consecutive PLC cycles</span></div>
+          <div class="metric"><b class="counter" data-target="30">0</b><span>sensor technologies evaluated</span></div>
+          <div class="metric"><b>1</b><span>site-wide test standard established</span></div>
+        </div>
+        <p class="justified">Core value: understand the product, test equipment, communication, measurement chain, failure evidence and production decision as one system.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section compact" id="fit"><div class="wrap">
+  <span class="eyebrow">Direct role alignment</span><h2>What Tesla needs - and the evidence behind it</h2>
+  <div class="grid-2 role-map reveal">
+    <article class="card"><span class="tag">Test equipment</span><h3>Develop, validate and commission</h3><p>Built and commissioned a Vector-based HiL and laboratory capability at TDK, integrating physical sensors, virtual ECUs/BMS models, CAN networks, instrumentation and automation.</p></article>
+    <article class="card"><span class="tag cyan">Reliability</span><h3>Uptime, stability and repeatability</h3><p>Converted fragmented test activity into repeatable methods, traceable configurations, regression evidence and a binding site-wide LIN/SENT standard.</p></article>
+    <article class="card"><span class="tag green">Debugging</span><h3>Failure isolation and corrective action</h3><p>Used oscilloscopes, DAQ, LabVIEW-operated test infrastructure and communication traces to isolate signal, timing, state, fixture and integration failures.</p></article>
+    <article class="card"><span class="tag amber">Production support</span><h3>Handover, ramp-up and cross-functional closure</h3><p>Worked with development, production, quality and external experts; supported ECU rework, controlled releases, documented handover and verified countermeasures.</p></article>
+  </div>
+</div></section>
+
+<section class="section" id="lifecycle"><div class="wrap">
+  <span class="eyebrow">Interactive test lifecycle</span><h2>From pre-deployment risk to sustained production performance</h2>
+  <div class="lifecycle reveal">
+    <div class="steps" id="steps">
+      <button class="step active" data-step="0" type="button"><span class="num">1</span><span>Understand product & VOC</span></button>
+      <button class="step" data-step="1" type="button"><span class="num">2</span><span>Design test architecture</span></button>
+      <button class="step" data-step="2" type="button"><span class="num">3</span><span>Validate & qualify</span></button>
+      <button class="step" data-step="3" type="button"><span class="num">4</span><span>Commission & hand over</span></button>
+      <button class="step" data-step="4" type="button"><span class="num">5</span><span>Ramp & stabilise</span></button>
+      <button class="step" data-step="5" type="button"><span class="num">6</span><span>Improve continuously</span></button>
+    </div>
+    <div class="card step-content" id="stepContent">
+      <div class="step-panel active"><span class="tag">01 · Definition</span><h3>Translate product behaviour and production needs into measurable test requirements.</h3><p>Review interfaces, operating states, expected signals, communication, environmental boundaries, failure modes, cycle constraints and operator needs. Use production and service feedback to expose deployment risks before equipment reaches the line.</p><div class="deliverables"><div class="deliverable"><strong>Inputs</strong>Product requirements, VOC, interface data, known failure history</div><div class="deliverable"><strong>Outputs</strong>Test concept, acceptance criteria, risk register, measurement plan</div></div></div>
+      <div class="step-panel"><span class="tag cyan">02 · Architecture</span><h3>Partition hardware, software, fixture, communication and data responsibilities.</h3><p>Define stimulus and measurement paths, sensor/actuator interfaces, CAN diagnostics, DAQ channels, safety interlocks, software sequencing, result storage and traceability. Design for serviceability, calibration and failure localisation.</p><div class="deliverables"><div class="deliverable"><strong>Design artefacts</strong>I/O map, fixture concept, state flow, diagnostic strategy</div><div class="deliverable"><strong>Toolchain</strong>LabVIEW environment, Vector interfaces, Python analysis, version control</div></div></div>
+      <div class="step-panel"><span class="tag green">03 · Qualification</span><h3>Prove function, repeatability, limits and controlled response to faults.</h3><p>Execute nominal, boundary, negative and regression tests. Characterise timing, communication, measurement uncertainty, repeatability and recovery. Document deviations and verify corrective actions against defined criteria.</p><div class="deliverables"><div class="deliverable"><strong>Evidence</strong>Qualification report, golden unit data, fault-injection results</div><div class="deliverable"><strong>Decision</strong>Release, conditional release or redesign with explicit risk</div></div></div>
+      <div class="step-panel"><span class="tag amber">04 · Deployment</span><h3>Commission the station and transfer a reproducible operating state to production.</h3><p>Verify installation, utilities, fixture alignment, software and parameter versions, calibration status, operator workflow and escalation paths. Deliver controlled documentation and hands-on training.</p><div class="deliverables"><div class="deliverable"><strong>Handover</strong>SOP, configuration baseline, maintenance checklist</div><div class="deliverable"><strong>Readiness</strong>Acceptance run, traceable open points, ownership matrix</div></div></div>
+      <div class="step-panel"><span class="tag">05 · Ramp</span><h3>Separate product, fixture, equipment and software causes using evidence.</h3><p>Monitor false-fail patterns, downtime, cycle losses, communication errors and component drift. Use traces, measurements and controlled A/B comparisons to close the highest-impact instability first.</p><div class="deliverables"><div class="deliverable"><strong>Focus</strong>FPY, uptime, MTTR, cycle time, repeatability</div><div class="deliverable"><strong>Actions</strong>Containment, root cause, correction, regression and closure</div></div></div>
+      <div class="step-panel"><span class="tag cyan">06 · Optimisation</span><h3>Turn operational data into robust countermeasures and reusable standards.</h3><p>Trend station performance, prioritise recurring losses, improve diagnostics, simplify maintenance and reduce unnecessary test time without weakening coverage. Feed lessons learned into the next deployment.</p><div class="deliverables"><div class="deliverable"><strong>Improvement</strong>Reliability actions, software/fixture updates, cycle optimisation</div><div class="deliverable"><strong>Governance</strong>Change validation, release notes, updated training and SOPs</div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section compact" id="architecture"><div class="wrap">
+  <span class="eyebrow">System understanding</span><h2>Automated manufacturing-test architecture</h2>
+  <p class="lead">A test engineer must understand the complete chain from the product under test to the production decision. The architecture below reflects the cross-domain integration used in my TDK, ITK and KIT work.</p>
+  <div class="architecture reveal">
+    <div class="node"><strong>Product under test</strong><span>Battery/BMS context · sensors · ECU states</span></div>
+    <div class="node"><strong>Fixture & interfaces</strong><span>Connectors · stimulus · routing · serviceability</span></div>
+    <div class="node"><strong>Measurement layer</strong><span>DAQ · oscilloscope · DMM · signal generation</span></div>
+    <div class="node"><strong>Automation layer</strong><span>LabVIEW environment · CANoe · CAPL · sequencing</span></div>
+    <div class="node"><strong>Data & diagnostics</strong><span>CAN traces · Python analysis · limits · trends</span></div>
+    <div class="node"><strong>Production decision</strong><span>Pass/fail · failure code · rework · release evidence</span></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <span class="eyebrow">Interactive engineering control model</span><h2>Tester-performance cockpit</h2>
+  <div class="cockpit reveal">
+    <div class="card controls-card">
+      <h3>Adjust the operating scenario</h3><p>This is a decision model, not a claim of historical Tesla metrics. It demonstrates how I structure tester performance.</p>
+      <label for="uptime">Tester uptime</label><div class="value-row"><span>90%</span><b id="uptimeV">97%</b></div><input id="uptime" type="range" min="90" max="100" value="97">
+      <label for="fpy">First-pass yield</label><div class="value-row"><span>85%</span><b id="fpyV">96%</b></div><input id="fpy" type="range" min="85" max="100" value="96">
+      <label for="cycle">Cycle time</label><div class="value-row"><span>150 s</span><b id="cycleV">72 s</b></div><input id="cycle" type="range" min="45" max="150" value="72">
+      <label for="mttr">Mean time to repair</label><div class="value-row"><span>60 min</span><b id="mttrV">24 min</b></div><input id="mttr" type="range" min="10" max="60" value="24">
+    </div>
+    <div class="card">
+      <span class="tag green">Calculated readiness</span><div class="score" id="score">89</div><div class="gauge"><span id="gauge"></span></div>
+      <div class="kpi-grid"><div class="kpi"><b id="lostTime">43 min</b><span>estimated lost tester time / day</span></div><div class="kpi"><b id="falseFail">4.0%</b><span>first-pass loss requiring investigation</span></div><div class="kpi"><b id="throughput">600</b><span>theoretical tests / 12 h</span></div><div class="kpi"><b id="priority">Diagnostics</b><span>highest-priority improvement area</span></div></div>
+      <div class="note">Engineering sequence: verify data integrity → separate product and station causes → contain production risk → remove root cause → regress → control the released configuration.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section compact"><div class="wrap">
+  <span class="eyebrow">Interactive troubleshooting</span><h2>From symptom to verified corrective action</h2>
+  <p class="lead">Select a symptom to see the investigation path. The method keeps product, fixture, instrumentation, communication and software causes separate until evidence connects them.</p>
+  <div class="symptoms" id="symptoms"><button class="symptom active" data-fault="can" type="button">CAN timeout</button><button class="symptom" data-fault="drift" type="button">Measurement drift</button><button class="symptom" data-fault="intermittent" type="button">Intermittent false fail</button><button class="symptom" data-fault="software" type="button">Automation stop</button></div>
+  <div class="fault-grid reveal" id="faultGrid"></div>
+</div></section>
+
+<section class="section" id="cases"><div class="wrap">
+  <span class="eyebrow">Verified engineering evidence</span><h2>Projects selected for Tesla’s manufacturing-test context</h2>
+  <div class="filters" id="filters"><button class="filter active" data-filter="all" type="button">All</button><button class="filter" data-filter="test" type="button">Test systems</button><button class="filter" data-filter="automation" type="button">Automation</button><button class="filter" data-filter="production" type="button">Production</button><button class="filter" data-filter="data" type="button">Data</button></div>
+  <div class="grid-3" id="projects">
+    <article class="card project" data-cat="test automation"><span class="tag">TDK Sensors</span><h3>Site test and HiL capability</h3><p>Integrated physical sensors, virtual ECUs/BMS models, CAN networks, Vector hardware/software and LabVIEW-operated laboratory infrastructure.</p><p class="outcome">Outcome: reusable validation capability before full hardware availability.</p></article>
+    <article class="card project" data-cat="test production"><span class="tag cyan">TDK Sensors</span><h3>LIN/SENT certification standard</h3><p>Derived requirements-based cases, limits, expected behaviour, traceability and regression evidence.</p><p class="outcome">Outcome: binding site-wide conformity method.</p></article>
+    <article class="card project" data-cat="test data"><span class="tag green">TDK Sensors</span><h3>Cross-domain fault isolation</h3><p>Analysed scope signals, DAQ data, LabVIEW infrastructure and bus traces to separate timing, communication, state and integration causes.</p><p class="outcome">Outcome: evidence-based corrective-action closure.</p></article>
+    <article class="card project" data-cat="production test"><span class="tag amber">ITK Engineering</span><h3>ECU update and test-bench handover</h3><p>Performed software-update rework and post-update verification and standardised test-bench architecture and operating documentation.</p><p class="outcome">Outcome: controlled configuration and reproducible handover.</p></article>
+    <article class="card project" data-cat="automation test"><span class="tag">KIT</span><h3>PLC commissioning and recovery logic</h3><p>Integrated sensors, actuators, I/O and control logic and eliminated a false-positive condition with confirmation, calibration and retry handling.</p><p class="outcome">Outcome: 100 consecutive failure-free cycles.</p></article>
+    <article class="card project" data-cat="data test"><span class="tag cyan">Bosch</span><h3>Sensor PoC and operating-window analysis</h3><p>Designed controlled tests across temperature, fluid composition, inclination and installation geometry and analysed results with Python/MATLAB.</p><p class="outcome">Outcome: recommendation adopted for continued series development.</p></article>
+    <article class="card project" data-cat="production"><span class="tag green">Bosch India</span><h3>Production-stop corrective action</h3><p>Led structured 8D, Ishikawa and 5-Why work associated with a Volkswagen Mexico production stoppage.</p><p class="outcome">Outcome: countermeasures tracked through verified closure.</p></article>
+    <article class="card project" data-cat="production data"><span class="tag amber">Bosch India</span><h3>High-volume release quality</h3><p>Validated product data across global OEM programmes and standardised workflows and training.</p><p class="outcome">Outcome: more than 1,000 tasks in one year without external defects.</p></article>
+  </div>
+</div></section>
+
+<section class="section compact"><div class="wrap">
+  <span class="eyebrow">First 90 days</span><h2>Contribution plan for Tilburg</h2>
+  <div class="grid-3 reveal">
+    <div class="card"><span class="tag">0-30 days</span><h3>Understand and baseline</h3><p>Learn Tesla product families, station architectures, safety rules, current KPI definitions, top downtime modes, open deployment risks, documentation and ownership interfaces.</p></div>
+    <div class="card"><span class="tag cyan">31-60 days</span><h3>Own and stabilise</h3><p>Take defined equipment issues end to end, reproduce failures, separate product and station causes, support qualification/ramp activities and close actions with traceable evidence.</p></div>
+    <div class="card"><span class="tag green">61-90 days</span><h3>Improve and standardise</h3><p>Implement one measurable reliability or cycle-time improvement, strengthen diagnostics or maintenance guidance, and transfer the learning into reusable test and handover standards.</p></div>
+  </div>
+</div></section>
+
+<section class="section compact"><div class="wrap">
+  <span class="eyebrow">Documented working style</span><h2>Evidence from recommendations and certificates</h2>
+  <div class="evidence reveal">
+    <article class="card quote"><h3>Ownership and learning speed</h3><p>TDK management confirmed rapid onboarding into new application areas, establishment of new processes and structures, expert networking and transparent technical decision support.</p><small>TDK letter of recommendation</small></article>
+    <article class="card quote"><h3>Systematic, independent delivery</h3><p>ITK’s certificate confirms structured technical documentation, process support, ECU rework, software/report development and consistently responsible, high-quality execution.</p><small>ITK Engineering work certificate</small></article>
+    <article class="card quote"><h3>Quality under volume and pressure</h3><p>Bosch evidence confirms high-volume delivery without external defects, international coordination, colleague training and structured production-problem resolution.</p><small>Bosch recommendation and employment evidence</small></article>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap"><div class="contact reveal">
+  <div><span class="eyebrow">Ready for relocation</span><h2>Manufacturing Test Engineer · Tilburg</h2><p>English C2 · German B1 · German EU Blue Card valid until January 2029 · prepared to complete the required Dutch work-authorisation process · available 15 August or 1 September 2026.</p></div>
+  <div><a class="action primary" href="mailto:rajvishnumech@gmail.com">rajvishnumech@gmail.com</a><p style="text-align:right;color:var(--muted);font-size:12px">+49 176 59311471</p></div>
+</div></div></section>
+</main>
+<script>
+const themeBtn=document.getElementById('themeBtn');themeBtn.addEventListener('click',()=>document.body.classList.toggle('light'));
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+const counters=document.querySelectorAll('.counter');const animateCounters=()=>counters.forEach(el=>{const target=+el.dataset.target;let n=0;const timer=setInterval(()=>{n+=Math.max(1,Math.ceil(target/35));if(n>=target){n=target;clearInterval(timer)}el.textContent=n+(target===8?'+':target===30?'+':'')},28)});animateCounters();
+const revealObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>revealObs.observe(x));
+const steps=[...document.querySelectorAll('.step')],panels=[...document.querySelectorAll('.step-panel')];steps.forEach((s,i)=>s.addEventListener('click',()=>{steps.forEach(x=>x.classList.remove('active'));panels.forEach(x=>x.classList.remove('active'));s.classList.add('active');panels[i].classList.add('active')}));
+const ids=['uptime','fpy','cycle','mttr'];ids.forEach(id=>document.getElementById(id).addEventListener('input',updateKpi));
+function updateKpi(){const u=+uptime.value,f=+fpy.value,c=+cycle.value,m=+mttr.value;uptimeV.textContent=u+'%';fpyV.textContent=f+'%';cycleV.textContent=c+' s';mttrV.textContent=m+' min';const cycleScore=Math.max(0,100-(c-45)*.55),mttrScore=Math.max(0,100-(m-10)*1.35);const s=Math.round(u*.3+f*.3+cycleScore*.22+mttrScore*.18);score.textContent=s;gauge.style.width=s+'%';lostTime.textContent=Math.round(720*(1-u/100))+' min';falseFail.textContent=(100-f).toFixed(1)+'%';throughput.textContent=Math.round(43200/c);priority.textContent=u<95?'Uptime':f<94?'False fails':c>95?'Cycle time':m>35?'MTTR':'Diagnostics'}updateKpi();
+const faultData={can:[['Confirm symptom','Reproduce with timestamped CAN trace and station state.'],['Separate layers','Check power, connector, transceiver, bus load, ID/timing and automation sequence.'],['Prove cause','Use controlled substitution, scope measurement and A/B software/configuration comparison.'],['Close correctly','Contain, correct, regress, update failure code and release the controlled configuration.']],drift:[['Confirm symptom','Trend reference and DUT measurements against time, temperature and channel.'],['Separate layers','Check sensor, fixture contact, DAQ range, calibration, grounding and filtering.'],['Prove cause','Repeat with golden unit/channel swap and quantified measurement uncertainty.'],['Close correctly','Calibrate or redesign, define monitoring limits and verify long-run repeatability.']],intermittent:[['Confirm symptom','Capture failure frequency, product/fixture position and operator/shift context.'],['Separate layers','Inspect connector wear, fixture movement, timing race, threshold and environmental sensitivity.'],['Prove cause','Instrument the suspected path and reproduce through controlled disturbance.'],['Close correctly','Implement robust detection/retry only after removing the physical or software cause.']],software:[['Confirm symptom','Collect application logs, station state, version, resource use and last successful step.'],['Separate layers','Check sequencing, communication timeout, exception path, driver and external-device response.'],['Prove cause','Replay inputs, compare versions and isolate dependency through controlled mock/stub or hardware substitution.'],['Close correctly','Correct, add diagnostic coverage, regress edge cases and document recovery behaviour.']]};
+const faultGrid=document.getElementById('faultGrid');function renderFault(k){faultGrid.innerHTML=faultData[k].map((x,i)=>`<div class="fault"><b>${i+1}. ${x[0]}</b><p>${x[1]}</p></div>`).join('')};renderFault('can');document.querySelectorAll('.symptom').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.symptom').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderFault(b.dataset.fault)}));
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;document.querySelectorAll('.project').forEach(p=>p.classList.toggle('hide',f!=='all'&&!p.dataset.cat.includes(f)))}));
+</script>
+</body>
+</html>
