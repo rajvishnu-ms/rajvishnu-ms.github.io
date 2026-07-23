@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rajvishnu Meenakshi Sundaram | ADAS HIL Automation Portfolio</title>
+<style>
+:root{
+  --navy:#111c44; --blue:#174ea6; --cyan:#00a3d7; --mint:#1fbf9a; --orange:#f5a623;
+  --ink:#142033; --muted:#5b677a; --line:#d7e1ee; --panel:#f7fbff; --white:#ffffff;
+  --shadow:0 18px 50px rgba(17,28,68,.14); --radius:22px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Verdana,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#f6f9ff,#fff 28%,#f5f8ff);line-height:1.55;overflow-x:hidden}
+a{color:inherit}.wrap{width:min(1180px,92vw);margin:auto}.pill{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1px solid #b7d8ff;border-radius:999px;background:#fff;color:#174ea6;font-weight:700;font-size:13px}.hero{position:relative;min-height:92vh;padding:38px 0 72px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(circle at 80% 10%,rgba(0,163,215,.24),transparent 30%),radial-gradient(circle at 10% 90%,rgba(31,191,154,.18),transparent 25%)}
+.hero:before{content:"";position:absolute;inset:-20%;background:linear-gradient(110deg,transparent 0 48%,rgba(23,78,166,.08) 49% 51%,transparent 52% 100%);background-size:70px 70px;animation:gridMove 13s linear infinite}.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}.eyebrow{font-size:13px;font-weight:800;letter-spacing:.16em;color:#174ea6;text-transform:uppercase}.hero h1{font-size:clamp(38px,6vw,76px);line-height:.98;margin:18px 0 18px;color:#0b173d;letter-spacing:-.05em}.lead{font-size:19px;max-width:760px;color:#3b4860;text-align:justify}.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{padding:13px 18px;border-radius:14px;border:1px solid #cbd7ee;background:#fff;box-shadow:0 8px 24px rgba(17,28,68,.1);font-weight:800;text-decoration:none}.btn.primary{background:#174ea6;color:#fff}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.metric{padding:15px;border-radius:18px;background:#fff;border:1px solid #d9e6f7;box-shadow:0 10px 28px rgba(17,28,68,.08)}.metric strong{font-size:26px;color:#174ea6;display:block}.metric span{font-size:12px;font-weight:700;color:#59677c}.bench{position:relative;height:510px;border-radius:32px;background:linear-gradient(160deg,#112153,#1e3e7b);box-shadow:var(--shadow);overflow:hidden;padding:26px}.bench h3{color:#fff;margin:0 0 12px;font-size:18px}.bench small{color:#cfe6ff}.board{position:absolute;inset:96px 28px 52px;border-radius:26px;background:#ecf5ff;border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}.node{position:absolute;padding:12px;border-radius:16px;background:#fff;border:1px solid #c7d7ec;box-shadow:0 10px 26px rgba(17,28,68,.15);font-size:12px;font-weight:800;text-align:center;min-width:104px}.n1{left:30px;top:46px}.n2{left:210px;top:42px}.n3{right:32px;top:45px}.n4{left:44px;bottom:42px}.n5{left:230px;bottom:38px}.n6{right:50px;bottom:42px}.bus{position:absolute;height:7px;border-radius:8px;background:#174ea6;left:82px;right:88px;top:168px}.pulse{position:absolute;width:18px;height:18px;border-radius:50%;background:#00a3d7;top:162px;left:90px;box-shadow:0 0 18px rgba(0,163,215,.9);animation:pulseMove 4.2s linear infinite}.pulse.p2{animation-delay:1.3s;background:#1fbf9a}.pulse.p3{animation-delay:2.5s;background:#f5a623}.wire{position:absolute;height:3px;background:#9eb9dd;transform-origin:left}.w1{width:95px;left:132px;top:90px;transform:rotate(0deg)}.w2{width:110px;left:329px;top:92px}.w3{width:115px;left:103px;top:245px;transform:rotate(-29deg)}.w4{width:106px;right:124px;top:245px;transform:rotate(28deg)}@keyframes gridMove{to{transform:translateX(70px)}}@keyframes pulseMove{0%{transform:translateX(0);opacity:0}8%{opacity:1}90%{opacity:1}100%{transform:translateX(470px);opacity:0}}
+section{padding:82px 0}.section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}.section-title h2{font-size:clamp(28px,4vw,48px);line-height:1.05;margin:0;color:#0b173d;letter-spacing:-.04em}.section-title p{max-width:580px;color:#4b5a70;text-align:justify;margin:0}.grid{display:grid;gap:18px}.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 12px 34px rgba(17,28,68,.08);position:relative;overflow:hidden}.card h3{margin:0 0 10px;color:#0b173d;font-size:20px}.card p,.card li{text-align:justify;color:#3d4b62}.card ul{padding-left:20px;margin:10px 0 0}.tag{display:inline-block;margin:4px 6px 4px 0;padding:6px 10px;border-radius:999px;background:#edf6ff;color:#174ea6;font-size:12px;font-weight:800}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.tab{cursor:pointer;border:1px solid #c7d7ec;background:#fff;border-radius:999px;padding:9px 14px;font-weight:800}.tab.active{background:#174ea6;color:#fff;border-color:#174ea6}.tab-panel{display:none}.tab-panel.active{display:block;animation:fadeIn .45s ease}.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;align-items:stretch;margin:22px 0}.step{position:relative;border:1px solid #c7d7ec;background:#fff;border-radius:18px;padding:14px;min-height:94px;font-size:13px;font-weight:800;text-align:center;display:flex;align-items:center;justify-content:center}.step:after{content:"→";position:absolute;right:-16px;top:50%;transform:translateY(-50%);color:#174ea6;font-weight:900;font-size:22px}.step:last-child:after{display:none}.split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.timeline{position:relative;padding-left:26px}.timeline:before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:3px;background:#cce3ff;border-radius:3px}.event{position:relative;margin:0 0 18px}.event:before{content:"";position:absolute;left:-25px;top:6px;width:14px;height:14px;border-radius:50%;background:#174ea6;box-shadow:0 0 0 5px #e8f4ff}.diagram{border-radius:22px;border:1px solid #cfe0f4;background:linear-gradient(180deg,#fff,#f4f9ff);padding:18px}.proto-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.proto{padding:14px;border-radius:16px;background:#fff;border:1px solid #d7e1ee;min-height:94px;text-align:center;font-weight:800;font-size:13px;display:grid;place-items:center}.matrix{width:100%;border-collapse:collapse;font-size:13px}.matrix th{background:#111c44;color:#fff;text-align:left;padding:11px}.matrix td{border-bottom:1px solid #e0e8f4;padding:10px;vertical-align:top}.matrix td:nth-child(3){font-weight:800;color:#174ea6}.reveal{opacity:0;transform:translateY(24px);transition:all .65s cubic-bezier(.2,.8,.2,1)}.reveal.show{opacity:1;transform:none}.filterbar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}.filter{cursor:pointer;border:1px solid #c7d7ec;border-radius:999px;padding:8px 13px;background:#fff;font-weight:800}.filter.active{background:#0b173d;color:#fff}.accordion{border-radius:18px;border:1px solid #d7e1ee;overflow:hidden;background:#fff}.acc-head{cursor:pointer;padding:18px;font-weight:900;border-bottom:1px solid #e4edf7;display:flex;justify-content:space-between;gap:12px}.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;background:#fbfdff}.acc-body>div{padding:18px}.acc.open .acc-body{max-height:450px}.footer{padding:40px 0 60px;background:#0b173d;color:#dce9ff}.footer h2{color:#fff;margin:0 0 8px}@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:900px){.hero-grid,.grid.cols-3,.grid.cols-2,.split{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.step:after{display:none}.proto-grid{grid-template-columns:1fr 1fr}.bench{height:440px}.node{font-size:11px;min-width:90px}.n2{left:170px}.n5{left:175px}.pulse{display:none}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Ford ADAS HIL Automation Developer</div>
+      <h1>Automated verification for real ECUs, benches and vehicle networks.</h1>
+      <p class="lead">A focused portfolio showing my HIL/SIL-relevant work: TDK Vector test-platform ownership, Python/CAPL automation, virtual ECU and BMS modelling, embedded C++ assignments, ECU verification, CI/CD workflows and systematic root-cause analysis.</p>
+      <div class="cta"><a class="btn primary" href="#tdk">Explore TDK HIL work</a><a class="btn" href="#pipeline">Automation pipeline</a><a class="btn" href="#evidence">Evidence map</a></div>
+      <div class="metrics"><div class="metric"><strong>9+</strong><span>HIL/SIL match</span></div><div class="metric"><strong>CAN</strong><span>network integration</span></div><div class="metric"><strong>Python</strong><span>automation + data</span></div><div class="metric"><strong>TDK</strong><span>site-wide platform</span></div></div>
+    </div>
+    <div class="bench" aria-label="Animated HIL bench architecture">
+      <h3>Live bench concept</h3><small>Requirement → automation → ECU/network stimulation → evidence</small>
+      <div class="board">
+        <div class="wire w1"></div><div class="wire w2"></div><div class="wire w3"></div><div class="wire w4"></div>
+        <div class="node n1">Python<br>orchestration</div><div class="node n2">CANoe<br>CANalyzer</div><div class="node n3">VT System<br>DUT I/O</div>
+        <div class="node n4">Virtual ECU</div><div class="node n5">BMS + sensors</div><div class="node n6">Reports<br>Jira</div>
+        <div class="bus"></div><div class="pulse"></div><div class="pulse p2"></div><div class="pulse p3"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="evidence"><div class="wrap reveal">
+  <div class="section-title"><h2>Role requirements mapped to real evidence</h2><p>Ford needs automation that interacts with embedded targets and bench environments. The strongest evidence comes from my TDK HIL work, supported by ITK ECU verification, KIT CI/CD and my Bosch ADAS-related sensor thesis.</p></div>
+  <table class="matrix"><thead><tr><th>Ford requirement</th><th>Relevant work</th><th>Strength</th></tr></thead><tbody>
+    <tr><td>Python/C++ automation frameworks</td><td>Python/CAPL orchestration at TDK; embedded C++ register and state-machine work on NXP FRDM hardware; Python APIs and data processing.</td><td>Direct + supporting</td></tr>
+    <tr><td>HIL/SIL/bench execution</td><td>Vector CANoe, CANalyzer, VT System, virtual ECUs/BMS, physical sensors, mixed physical/virtual integration and automated test execution.</td><td>Direct</td></tr>
+    <tr><td>Networked embedded targets</td><td>CAN, LIN, SENT, SPI, OWI, UDS/J1939, TCP/IP/HTTP and Wireshark analysis; active ramp-up in XCP and DoIP.</td><td>Strong transfer</td></tr>
+    <tr><td>CI/CD and repeatability</td><td>Jenkins, Git and Docker concepts at KIT; version-controlled Power BI/test assets at ITK; reproducible reports and regression workflows.</td><td>Direct transfer</td></tr>
+    <tr><td>Root-cause debugging</td><td>CAN traces, oscilloscopes, signal generators, multimeters, DAQ, Jira, 8D/5-Why and verified corrective-action closure.</td><td>Direct</td></tr>
+  </tbody></table>
+</div></section>
+
+<section id="tdk"><div class="wrap reveal">
+  <div class="section-title"><h2>TDK flagship project: HIL/SIL platform ownership</h2><p>I did not only execute tests. I introduced the toolchain, built the environment, integrated the physical and virtual system, automated workflows and created validation methods that became a site-wide standard.</p></div>
+  <div class="diagram">
+    <div class="flow"><div class="step">Product / customer requirements</div><div class="step">Python + CAPL orchestration</div><div class="step">CANoe / CANalyzer / VT System</div><div class="step">Virtual ECU + BMS + sensors</div><div class="step">Fault stimulation + measurement</div><div class="step">Regression + release evidence</div></div>
+  </div>
+  <div class="grid cols-3" style="margin-top:18px">
+    <div class="card"><h3>Architecture</h3><p>Mixed physical and virtual environment integrating real sensors, virtual ECUs, BMS models, CAN networks and test hardware.</p></div>
+    <div class="card"><h3>Automation</h3><p>Python and CAPL workflows for stimulation, acquisition, state checking, regression, pass/fail evaluation and reporting.</p></div>
+    <div class="card"><h3>Outcome</h3><p>Early ECU/system integration, repeatable fault reproduction, traceable release evidence and reusable validation methods.</p></div>
+  </div>
+</div></section>
+
+<section id="pipeline"><div class="wrap reveal">
+  <div class="section-title"><h2>Interactive automation pipeline</h2><p>Click the tabs to see how the same engineering logic maps to Ford's ADAS bench automation work: target preparation, stimulus, capture, verdict and regression.</p></div>
+  <div class="tabs"><button class="tab active" data-tab="stim">Stimulus</button><button class="tab" data-tab="capture">Data capture</button><button class="tab" data-tab="verdict">Verdict</button><button class="tab" data-tab="ci">CI/CD</button></div>
+  <div class="card tab-panel active" id="stim"><h3>Stimulus and control</h3><p>At TDK, I generated CAN, LIN, SENT, SPI and OWI interface conditions through CAPL/Python-controlled scenarios. The tests covered startup, sleep, wake-up, timing deviation, invalid sensor values, missing nodes and fault recovery.</p></div>
+  <div class="card tab-panel" id="capture"><h3>Data capture</h3><p>Evidence came from bus traces, measurement channels, virtual model states, oscilloscope captures, signal-generator responses, DAQ data and structured configuration records.</p></div>
+  <div class="card tab-panel" id="verdict"><h3>Actionable pass/fail</h3><p>Expected behaviour was compared with measured response, including timing, state transitions, error reporting, diagnostics and recovery. Failures were converted into reproducible regression cases.</p></div>
+  <div class="card tab-panel" id="ci"><h3>CI/CD transfer</h3><p>KIT work with Jenkins, Git and Docker, plus version-controlled ITK reports, supports the transfer into Ford-style bench scheduling, artifact handling, automated execution and traceable results.</p></div>
+</div></section>
+
+<section><div class="wrap reveal split">
+  <div class="card"><h3>Virtual ECU / BMS / sensor modelling</h3><p>Inside Vector CANoe, I modelled virtual ECU communication and simulated BMS behaviour with internal CAPL sensor nodes. The virtual NBP8S pressure sensor model included register behaviour, timers, state-machine transitions, diagnostic responses and fault-injection capability.</p><span class="tag">state machines</span><span class="tag">register behaviour</span><span class="tag">fault states</span><span class="tag">CAN/SPI</span></div>
+  <div class="diagram"><div class="proto-grid"><div class="proto">Virtual ECU</div><div class="proto">CAN restbus</div><div class="proto">Simulated BMS</div><div class="proto">NBP8S register model</div><div class="proto">Acceleration sensor model</div></div></div>
+</div></section>
+
+<section><div class="wrap reveal">
+  <div class="section-title"><h2>Projects that support Ford ADAS HIL</h2><p>Each project adds a specific layer: ECU target handling, CI/CD, physical system integration, sensor/ADAS context and production-quality problem solving.</p></div>
+  <div class="filterbar"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="hil">HIL</button><button class="filter" data-filter="ci">CI/CD</button><button class="filter" data-filter="sensor">Sensors</button><button class="filter" data-filter="rca">RCA</button></div>
+  <div class="grid cols-2">
+    <div class="card item" data-cat="hil rca"><h3>ITK ECU verification</h3><p>ECU flashing, software update rework, post-update configuration checks and traceable deviation documentation strengthened bench target handling and deployment validation.</p></div>
+    <div class="card item" data-cat="ci"><h3>KIT Jenkins/Git/Docker</h3><p>Client-server software validation using functional, API/data-flow, integration and regression testing with reproducible build and delivery concepts.</p></div>
+    <div class="card item" data-cat="sensor"><h3>Bosch ADAS-related sensor thesis</h3><p>More than 30 technologies evaluated; ultrasonic sensor tested under temperature, ethanol concentration, tilt, geometry and repeatability; MATLAB/Python analysis supported product decision-making.</p></div>
+    <div class="card item" data-cat="rca"><h3>Bosch production RCA</h3><p>Engineering change verification, configuration control, 8D/Ishikawa/5-Why and production issue closure, including work linked to a VW Mexico production stoppage.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap reveal">
+  <div class="section-title"><h2>Open ramp-up areas handled honestly</h2><p>I do not present XCP, DoIP, QNX or direct ACC/AEB feature validation as past ownership. I present them as Ford-specific ramp-up areas built on a strong HIL and embedded-network foundation.</p></div>
+  <div class="grid cols-3">
+    <div class="card"><h3>XCP / DoIP</h3><p>Transfer from CAN, UDS, TCP/IP, HTTP, Wireshark, data capture and automated diagnostic-style evaluation.</p></div>
+    <div class="card"><h3>QNX</h3><p>Transfer from Linux, Docker, embedded integration concepts, target configuration and systematic logs/traces-based debugging.</p></div>
+    <div class="card"><h3>ADAS features</h3><p>Transfer from ADAS-related sensor validation, automotive interfaces, system testing and feature-level requirement analysis.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap reveal split">
+  <div><div class="section-title"><h2>Failure-to-regression workflow</h2></div><div class="timeline"><div class="event"><strong>Symptom</strong><br>Bench or field-like deviation is captured in traces and measurements.</div><div class="event"><strong>Reproduction</strong><br>Trigger conditions are reduced to a stable automated scenario.</div><div class="event"><strong>Isolation</strong><br>Software, network, timing, electronics, fixture and configuration layers are separated.</div><div class="event"><strong>Closure</strong><br>Corrective action is verified and converted into a regression test.</div></div></div>
+  <div class="card"><h3>What I would contribute to Ford</h3><ul><li>Reusable Python HIL test libraries and bench utilities.</li><li>Stable stimulus/capture/verdict workflows for ECU targets.</li><li>Traceable reporting linked to Jira and release evidence.</li><li>Systematic flakiness reduction and root-cause triage.</li><li>Strong collaboration with developers, feature owners, systems and calibration teams.</li></ul></div>
+</div></section>
+
+<footer class="footer"><div class="wrap"><h2>Rajvishnu Meenakshi Sundaram</h2><p>ADAS HIL Automation Developer | Python · C++ · CANoe/CANalyzer · ECU benches · CI/CD · Root-cause analysis</p><p>Berlin, Germany · Open to relocate to the United States · rajvishnumech@gmail.com · +49 176 59311471</p></div></footer>
+<script>
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active')}));
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');let f=btn.dataset.filter;document.querySelectorAll('.item').forEach(card=>{card.style.display=(f==='all'||card.dataset.cat.includes(f))?'block':'none'})}));
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('mouseenter',()=>c.style.transform='translateY(-4px)'));document.querySelectorAll('.card').forEach(c=>c.addEventListener('mouseleave',()=>c.style.transform='none'));
+</script>
+</body></html>
